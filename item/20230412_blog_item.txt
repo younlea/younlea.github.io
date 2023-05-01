@@ -1,0 +1,6 @@
+big data - big query  (sql workbench 앱 깔아보기)
+data science - ml
+blog 
+AI - generate youtube contenct using AI tech
+
+https://www.datamanim.com/dataset/99_pandas/pandasMain.html
