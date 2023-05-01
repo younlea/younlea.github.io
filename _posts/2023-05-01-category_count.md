@@ -11,7 +11,8 @@ toc_sticky : true
 
 
 # category item count 하는 방법
-![image](https://user-images.githubusercontent.com/1435846/235418924-a3d7c4c9-5512-4406-8e3a-91ea8d8edd27.png)
+<!-- ![image](https://user-images.githubusercontent.com/1435846/235418924-a3d7c4c9-5512-4406-8e3a-91ea8d8edd27.png) -->
+<img src="https://user-images.githubusercontent.com/1435846/235418924-a3d7c4c9-5512-4406-8e3a-91ea8d8edd27.png" width="50" height="50"/>
 
 mmistakes/minimal-mistakes를 fork해 왔다면 _include/nav_list 를 아래 코드로 변경해 주면 됩니다.   
 
