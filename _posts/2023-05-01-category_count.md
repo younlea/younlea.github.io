@@ -18,7 +18,7 @@ mmistakes/minimal-mistakes를 fork해 왔다면 _include/nav_list 를 아래 코
 
 ## 변경 코드 
 ```
-{% assign navigation = site.data.navigation[include.nav] %}
+{% raw %}{% assign navigation = site.data.navigation[include.nav] %}
 {% assign sum = site.posts | size %}
 
 <nav class="nav__list">
@@ -59,5 +59,5 @@ mmistakes/minimal-mistakes를 fork해 왔다면 _include/nav_list 를 아래 코
       </li>
     {% endfor %}
   </ul>
-</nav>
+</nav>{% endraw %}
 ```
