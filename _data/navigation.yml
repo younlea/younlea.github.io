@@ -37,6 +37,6 @@ sidebar-category:
   - title: "👔 일상"
     children: 
       - title: "여행"
-        url: "/여행"
-        category : "여행"
+        url: "/travel"
+        category : "travel"
         

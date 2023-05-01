@@ -1,7 +1,7 @@
 ---
-title: "여행"
+title: "travel"
 layout: archive
-permalink: 여행
+permalink: travel
 author_profile: true
 sidebar_main: true
 ---
