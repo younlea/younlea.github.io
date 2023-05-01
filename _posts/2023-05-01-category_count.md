@@ -15,6 +15,7 @@ toc_sticky : true
 
 mmistakes/minimal-mistakes를 fork해 왔다면 _include/nav_list 를 아래 코드로 변경해 주면 됩니다.   
 
+## 변경 코드 
 ```
 {% assign navigation = site.data.navigation[include.nav] %}
 {% assign sum = site.posts | size %}
