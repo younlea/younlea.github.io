@@ -1,10 +1,10 @@
 ---
-title: "write here "
+title: "python으로 그래프 그리기"
 excerpt_separator: "<!--more-->"
 categories:
   - dataScience
 tags:
-  - write here
+  - matplotlib
 
 toc : true
 toc_sticky : true
