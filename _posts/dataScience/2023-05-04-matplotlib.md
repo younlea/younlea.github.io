@@ -16,3 +16,14 @@ toc_sticky : true
 
 # matplotlib site
 [matplotlib](https://matplotlib.org/)
+
+# seaborn 
+[seaborn](https://seaborn.pydata.org/)   
+> import seaborn as sns
+> sns.set() #시각화 기본 테마 설정
+> sns.name_of_graph(x축 리스트, y축 리스트, name_of_data, 다양한 옵션)
+
+```python
+import seaborn as ans
+sns.name_of_graph(x,y,dataset, options)
+```
