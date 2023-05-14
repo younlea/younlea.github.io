@@ -5,6 +5,7 @@ categories:
   - dataScience
 tags:
   - seabon
+  - kaggle
 
 toc : true
 toc_sticky : true
