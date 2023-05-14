@@ -4,8 +4,8 @@ excerpt_separator: "<!--more-->"
 categories:
   - dataScience
 tags:
-  - seabon
   - kaggle
+  - seabon
 
 toc : true
 toc_sticky : true
