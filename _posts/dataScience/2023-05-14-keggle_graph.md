@@ -78,7 +78,32 @@ sns.lineplot(museum_data["Avila Adobe"])
 
 
 # 3. Bar Charts and Heatmaps
+bar type 차트와 heatmaps type 차트를 그릴줄 안다. 
 
+```python
+import pandas as pd
+pd.plotting.register_matplotlib_converters()
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn as sns
+# Path of the file to read
+ign_filepath = "../input/ign_scores.csv"
+
+# Fill in the line below to read the file into a variable ign_data
+ign_data = pd.read_csv(ign_filepath, index_col="Platform")
+
+# Bar chart showing average score for racing games by platform
+plt.figure(figsize=(10,6))     
+sns.barplot(y= ign_data.index, x = ign_data["Racing"]) 
+
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/d43a3797-35c8-497d-b5ae-248af98906dd)
+
+```pyton
+# Heatmap showing average game score by platform and genre
+sns.heatmap(data= ign_data, annot= True) # Your code here
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/33969e7d-940a-4821-b893-90cbf497adbb)
 # 4. Scatter Plots
 
 # 5. Distributions
