@@ -162,6 +162,50 @@ sns.swarmplot(x=candy_data['chocolate'], y=candy_data['winpercent'])
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/155bf006-0c75-478f-8670-099eb15d6223)
 
 # 5. Distributions
+## histograms and density plots.
+```python
+# Histogram 
+sns.histplot(iris_data['Petal Length (cm)'])
+# KDE plot (kernel density estimate (KDE))
+sns.kdeplot(data=iris_data['Petal Length (cm)'], shade=True)
+# 2D KDE plot
+sns.jointplot(x=iris_data['Petal Length (cm)'], y=iris_data['Sepal Width (cm)'], kind="kde")
+
+#color-coded (대충 다 넣으면 알아서 처리해 주는듯.)
+# Histograms for each species
+sns.histplot(data=iris_data, x='Petal Length (cm)', hue='Species')
+
+# KDE plots for each species
+sns.kdeplot(data=iris_data, x='Petal Length (cm)', hue='Species', shade=True)
+```
+
+```python
+import pandas as pd
+pd.plotting.register_matplotlib_converters()
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn as sns
+# Path of the files to read
+cancer_filepath = "../input/cancer.csv"
+
+# Fill in the line below to read the file into a variable cancer_data
+cancer_data = pd.read_csv(cancer_filepath, index_col="Id")
+# Print the first five rows of the data
+cancer_data.head(5)
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/5a427d16-51e4-487f-948e-4a25c94b70c9)
+
+```python
+# Histograms for benign and maligant tumors
+sns.histplot(data=cancer_data, x='Area (mean)', hue='Diagnosis')
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/76fdd2e6-c989-4f2f-95cd-70f89dd89563)
+
+```python
+# KDE plots for benign and malignant tumors
+sns.kdeplot(data=cancer_data, x='Radius (worst)', hue='Diagnosis', shade=True)
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/efa40ea9-481c-4711-8ae0-994823831568)
 
 # 6. Choosing Plot Types and Custom Styles
 
