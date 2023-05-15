@@ -99,11 +99,12 @@ sns.barplot(y= ign_data.index, x = ign_data["Racing"])
 ```
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/d43a3797-35c8-497d-b5ae-248af98906dd)
 
-```pyton
+```python
 # Heatmap showing average game score by platform and genre
 sns.heatmap(data= ign_data, annot= True) # Your code here
 ```
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/33969e7d-940a-4821-b893-90cbf497adbb)
+
 # 4. Scatter Plots
 
 # 5. Distributions
