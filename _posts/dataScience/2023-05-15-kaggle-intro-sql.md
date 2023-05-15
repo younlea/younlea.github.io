@@ -281,6 +281,106 @@ print(deleted_posts)
 
 # 4. Order By
 > Order your results to focus on the most important data for your use case.    
+## Order By
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/f54a60a0-9e91-4467-87e0-1dad38e971c5)
+
+## dates
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/5e11a108-73e0-45f6-bbf8-49abfdb8d5e1)
+
+## EXTRACT
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/4ebf562c-a9b0-400c-aab4-e8d0785e75b8)
+
+### sample
+```python
+# Query to find out the number of accidents for each day of the week
+query = """
+        SELECT COUNT(consecutive_number) AS num_accidents, 
+               EXTRACT(DAYOFWEEK FROM timestamp_of_crash) AS day_of_week
+        FROM `bigquery-public-data.nhtsa_traffic_fatalities.accident_2015`
+        GROUP BY day_of_week
+        ORDER BY num_accidents DESC
+        """
+# Set up the query (cancel the query if it would use too much of 
+# your quota, with the limit set to 1 GB)
+safe_config = bigquery.QueryJobConfig(maximum_bytes_billed=10**9)
+query_job = client.query(query, job_config=safe_config)
+
+# API request - run the query, and convert the results to a pandas DataFrame
+accidents_by_day = query_job.to_dataframe()
+
+# Print the DataFrame
+accidents_by_day        
+        
+```
+
+## 실습
+```python
+from google.cloud import bigquery
+
+# Create a "Client" object
+client = bigquery.Client()
+
+# Construct a reference to the "world_bank_intl_education" dataset
+dataset_ref = client.dataset("world_bank_intl_education", project="bigquery-public-data")
+
+# API request - fetch the dataset
+dataset = client.get_dataset(dataset_ref)
+
+# Construct a reference to the "international_education" table
+table_ref = dataset_ref.table("international_education")
+
+# API request - fetch the table
+table = client.get_table(table_ref)
+
+# Preview the first five lines of the "international_education" table
+client.list_rows(table, max_results=5).to_dataframe()
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/371ce7ae-40a1-4116-b0a0-b11cca8eda25)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/c050d6eb-f283-4951-bb75-f8e09571ecc4)
+
+```python
+country_spend_pct_query = """
+                          SELECT country_name, AVG(value) AS avg_ed_spending_pct
+                          FROM `bigquery-public-data.world_bank_intl_education.international_education`
+                          WHERE indicator_code = 'SE.XPD.TOTL.GD.ZS' and year >= 2010 and year <= 2017
+                          GROUP BY country_name
+                          ORDER BY avg_ed_spending_pct DESC
+                          """
+
+# Set up the query (cancel the query if it would use too much of 
+# your quota, with the limit set to 1 GB)
+safe_config = bigquery.QueryJobConfig(maximum_bytes_billed=10**10)
+country_spend_pct_query_job = client.query(country_spend_pct_query, job_config=safe_config)
+
+# API request - run the query, and return a pandas DataFrame
+country_spending_results = country_spend_pct_query_job.to_dataframe()
+
+# View top few rows of results
+print(country_spending_results.head())
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/cd3fe1b2-19df-4ddd-b5a6-8de963e297e0)
+
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/bf1f1b02-4ecb-4d5b-b958-bba35126c436)
+```python
+code_count_query = """
+                   SELECT indicator_code, indicator_name, COUNT(1) AS num_rows
+                   FROM `bigquery-public-data.world_bank_intl_education.international_education`
+                   WHERE year = 2016
+                   GROUP BY indicator_name, indicator_code
+                   HAVING COUNT(1) >= 175
+                   ORDER BY COUNT(1) DESC
+                   """
+
+# Set up the query
+safe_config = bigquery.QueryJobConfig(maximum_bytes_billed=10**10)
+code_count_query_job = client.query(code_count_query, job_config=safe_config)
+
+# API request - run the query, and return a pandas DataFrame
+code_count_results = code_count_query_job.to_dataframe()
+
+# View top few rows of results
+print(code_count_results.head())
+```
 
 # 5. As & With
 > Organize your query for better readability. This becomes especially important for complex queries.   
