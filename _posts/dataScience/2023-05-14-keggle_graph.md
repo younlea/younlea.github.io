@@ -248,6 +248,18 @@ sns.lineplot(data=spotify_data)
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/c3242da7-85b0-48b9-80b5-6eac43b17bcb)
 
 # 7. Final Project
+> https://www.kaggle.com/datasets  참고    
+>>  해당 dataset에서 검색후 다운받아서 확인한다.    
 
 # 8. Creating Your Own Notebooks
+> https://www.kaggle.com/code   
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/ddf52df2-eb31-4d9c-aed8-8d1e91983edd)
+```python
+import pandas as pd
+pd.plotting.register_matplotlib_converters()
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn as sns
+print("Setup Complete")
+```
 
