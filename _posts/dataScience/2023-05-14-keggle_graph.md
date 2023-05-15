@@ -106,6 +106,60 @@ sns.heatmap(data= ign_data, annot= True) # Your code here
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/33969e7d-940a-4821-b893-90cbf497adbb)
 
 # 4. Scatter Plots
+example    
+```python
+sns.scatterplot(x=insurance_data['bmi'], y=insurance_data['charges'])    
+sns.regplot(x=insurance_data['bmi'], y=insurance_data['charges'])
+sns.scatterplot(x=insurance_data['bmi'], y=insurance_data['charges'], hue=insurance_data['smoker'])    
+sns.lmplot(x="bmi", y="charges", hue="smoker", data=insurance_data)      
+sns.swarmplot(x=insurance_data['smoker'], y=insurance_data['charges'])      
+```
+
+```python
+import pandas as pd
+pd.plotting.register_matplotlib_converters()
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn as sns
+# Path of the file to read
+candy_filepath = "../input/candy.csv"
+
+# Fill in the line below to read the file into a variable candy_data
+candy_data = pd.read_csv(candy_filepath,index_col="id")
+
+candy_data.head(5)
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/fe68369a-4abd-407b-9e5b-a78f4e9d9bc8)
+
+```python
+# Scatter plot showing the relationship between 'sugarpercent' and 'winpercent'
+sns.scatterplot(x=candy_data['sugarpercent'], y=candy_data['winpercent']) 
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/6bb027c7-8b42-4e21-ae95-5071b5f202b4)
+
+```python
+# Scatter plot w/ regression line showing the relationship between 'sugarpercent' and 'winpercent'
+sns.regplot(x=candy_data['sugarpercent'], y=candy_data['winpercent']) # Your code here
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/04bfc53a-3931-44c0-aaca-5cc75cdbdb83)
+
+```python
+# Scatter plot showing the relationship between 'pricepercent', 'winpercent', and 'chocolate'
+sns.scatterplot(x=candy_data['sugarpercent'], y=candy_data['winpercent'], hue=candy_data['chocolate']) 
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/39a2142f-7470-41c7-a309-346bd0c12c92)
+
+```python
+# Color-coded scatter plot w/ regression lines
+sns.lmplot(x="sugarpercent", y="winpercent", hue="chocolate", data=candy_data)    
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/b042ba12-e217-42f0-afd2-85ca54e46d9e)
+
+```python
+# Scatter plot showing the relationship between 'chocolate' and 'winpercent'
+sns.swarmplot(x=candy_data['chocolate'], y=candy_data['winpercent'])    
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/155bf006-0c75-478f-8670-099eb15d6223)
 
 # 5. Distributions
 
