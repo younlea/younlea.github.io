@@ -381,11 +381,292 @@ code_count_results = code_count_query_job.to_dataframe()
 # View top few rows of results
 print(code_count_results.head())
 ```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/75fb49bc-9b00-4a66-9cec-148c2e75247f)
 
 # 5. As & With
 > Organize your query for better readability. This becomes especially important for complex queries.   
+## AS
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/4a664f5b-8ba2-4c9f-8733-92cc4812fd39)
+
+## WITH... AS
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/172a1448-250b-46ee-9923-5d32a7c2a125)
+
+## example
+```python
+# Query to select the number of transactions per date, sorted by date
+query_with_CTE = """ 
+                 WITH time AS 
+                 (
+                     SELECT DATE(block_timestamp) AS trans_date
+                     FROM `bigquery-public-data.crypto_bitcoin.transactions`
+                 )
+                 SELECT COUNT(1) AS transactions,
+                        trans_date
+                 FROM time
+                 GROUP BY trans_date
+                 ORDER BY trans_date
+                 """
+
+# Set up the query (cancel the query if it would use too much of 
+# your quota, with the limit set to 10 GB)
+safe_config = bigquery.QueryJobConfig(maximum_bytes_billed=10**10)
+query_job = client.query(query_with_CTE, job_config=safe_config)
+
+# API request - run the query, and convert the results to a pandas DataFrame
+transactions_by_date = query_job.to_dataframe()
+
+# Print the first five rows
+transactions_by_date.head()
+```
+
+## 실습
+```python
+from google.cloud import bigquery
+
+# Create a "Client" object
+client = bigquery.Client()
+
+# Construct a reference to the "chicago_taxi_trips" dataset
+dataset_ref = client.dataset("chicago_taxi_trips", project="bigquery-public-data")
+
+# API request - fetch the dataset
+dataset = client.get_dataset(dataset_ref)
+```
+
+```python
+# List all the tables in the dataset
+tables = list(client.list_tables(dataset))
+
+# Print names of all tables in the dataset (there is only one!)
+for table in tables:  
+    print(table.table_id)
+
+table_name = 'taxi_trips'
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/26d5b9a9-1708-4308-afdc-d72155fdc04a)
+
+```python
+# Check your answer (Run this code cell to receive credit!)
+# Construct a reference to the "taxi_trips" table
+table_ref = dataset_ref.table("taxi_trips")
+
+# API request - fetch the table
+table = client.get_table(table_ref)
+
+# Preview the first five lines of the "taxi_trips" table
+client.list_rows(table, max_results=5).to_dataframe()
+q_2.solution()
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/a543674a-70d8-463f-a683-47ab8bc110e4)
+```python
+rides_per_year_query = """
+                       SELECT EXTRACT(YEAR FROM trip_start_timestamp) AS year, 
+                              COUNT(1) AS num_trips
+                       FROM `bigquery-public-data.chicago_taxi_trips.taxi_trips`
+                       GROUP BY year
+                       ORDER BY year
+                       """
+
+# Set up the query (cancel the query if it would use too much of 
+# your quota)
+safe_config = bigquery.QueryJobConfig(maximum_bytes_billed=10**10)
+rides_per_year_query_job = client.query(rides_per_year_query, job_config=safe_config)
+
+# API request - run the query, and return a pandas DataFrame
+rides_per_year_result = rides_per_year_query_job.to_dataframe()
+
+# View results
+print(rides_per_year_result)
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/5358b85c-bc70-48a3-bdc3-e9d28dd9f8b6)
+```python
+rides_per_month_query = """
+                        SELECT EXTRACT(MONTH FROM trip_start_timestamp) AS month, 
+                               COUNT(1) AS num_trips
+                        FROM `bigquery-public-data.chicago_taxi_trips.taxi_trips`
+                        WHERE EXTRACT(YEAR FROM trip_start_timestamp) = 2016
+                        GROUP BY month
+                        ORDER BY month
+                        """
+
+# Set up the query (cancel the query if it would use too much of 
+# your quota)
+safe_config = bigquery.QueryJobConfig(maximum_bytes_billed=10**10)
+rides_per_month_query_job = client.query(rides_per_month_query, job_config=safe_config)
+
+# API request - run the query, and return a pandas DataFrame
+rides_per_month_result = rides_per_month_query_job.to_dataframe()
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/e0356c62-a3d5-469b-bfed-e1d2bec5bda2)
+```python
+speeds_query = """
+               WITH RelevantRides AS
+               (
+                   SELECT EXTRACT(HOUR FROM trip_start_timestamp) AS hour_of_day, 
+                          trip_miles, 
+                          trip_seconds
+                   FROM `bigquery-public-data.chicago_taxi_trips.taxi_trips`
+                   WHERE trip_start_timestamp > '2016-01-01' AND 
+                         trip_start_timestamp < '2016-04-01' AND 
+                         trip_seconds > 0 AND 
+                         trip_miles > 0
+               )
+               SELECT hour_of_day, 
+                      COUNT(1) AS num_trips, 
+                      3600 * SUM(trip_miles) / SUM(trip_seconds) AS avg_mph
+               FROM RelevantRides
+               GROUP BY hour_of_day
+               ORDER BY hour_of_day
+               """
+
+# Set up the query (cancel the query if it would use too much of 
+# your quota)
+safe_config = bigquery.QueryJobConfig(maximum_bytes_billed=10**10)
+speeds_query_job = client.query(speeds_query, job_config=safe_config)
+
+# API request - run the query, and return a pandas DataFrame
+speeds_result = speeds_query_job.to_dataframe()
+```
 
 # 6. Joining Data
 > Combine data sources. Critical for almost all real-world data problems   
 
+## Example
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/607d3856-5f97-41c1-bf8f-96124b9f0435)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/13c6f140-67f9-46e1-b468-aea4ce91364f)
 
+### sample code
+```python
+# Query to determine the number of files per license, sorted by number of files
+query = """
+        SELECT L.license, COUNT(1) AS number_of_files
+        FROM `bigquery-public-data.github_repos.sample_files` AS sf
+        INNER JOIN `bigquery-public-data.github_repos.licenses` AS L 
+            ON sf.repo_name = L.repo_name
+        GROUP BY L.license
+        ORDER BY number_of_files DESC
+        """
+
+# Set up the query (cancel the query if it would use too much of 
+# your quota, with the limit set to 10 GB)
+safe_config = bigquery.QueryJobConfig(maximum_bytes_billed=10**10)
+query_job = client.query(query, job_config=safe_config)
+
+# API request - run the query, and convert the results to a pandas DataFrame
+file_count_by_license = query_job.to_dataframe()
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/21bb09c2-ed95-4e99-9557-4cdc366abad9)
+
+## 실습  
+```python
+from google.cloud import bigquery
+
+# Create a "Client" object
+client = bigquery.Client()
+
+# Construct a reference to the "stackoverflow" dataset
+dataset_ref = client.dataset("stackoverflow", project="bigquery-public-data")
+
+# API request - fetch the dataset
+dataset = client.get_dataset(dataset_ref)
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/2b47c064-610f-4d23-a945-90cdb8456a65)
+```python
+# Get a list of available tables 
+tables = list(client.list_tables(dataset))
+list_of_tables = [table.table_id for table in tables]
+
+# Print your answer
+print(list_of_tables)
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/a3220c11-bb24-4dba-a9f1-f0ddcacc8f73)
+
+```python
+# Construct a reference to the "posts_answers" table
+answers_table_ref = dataset_ref.table("posts_answers")
+​
+# API request - fetch the table
+answers_table = client.get_table(answers_table_ref)
+​
+# Preview the first five lines of the "posts_answers" table
+client.list_rows(answers_table, max_results=5).to_dataframe()
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/a9a05dd2-51e8-43ab-9676-8a5cf8a40fcb)
+
+```python
+# Construct a reference to the "posts_questions" table
+questions_table_ref = dataset_ref.table("posts_questions")
+
+# API request - fetch the table
+questions_table = client.get_table(questions_table_ref)
+
+# Preview the first five lines of the "posts_questions" table
+client.list_rows(questions_table, max_results=5).to_dataframe()
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/d63a713a-97bb-4bda-a64b-d38cf4a15bf5)
+
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/83a42e3d-5bee-4fdb-922e-2f97cb807e2f)
+```python
+questions_query = """
+                  SELECT id, title, owner_user_id
+                  FROM `bigquery-public-data.stackoverflow.posts_questions`
+                  WHERE tags LIKE '%bigquery%'
+                  """
+
+# Set up the query (cancel the query if it would use too much of 
+# your quota, with the limit set to 1 GB)
+safe_config = bigquery.QueryJobConfig(maximum_bytes_billed=10**10)
+questions_query_job = client.query(questions_query, job_config=safe_config)
+
+# API request - run the query, and return a pandas DataFrame
+questions_results = questions_query_job.to_dataframe()
+
+# Preview results
+print(questions_results.head())
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/07597fe3-7000-4f1b-9115-653ddf04dd4b)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/a3ff1fd2-2a0c-4e7d-8e69-f3e1a4dabbb8)
+```python
+answers_query = """
+                SELECT a.id, a.body, a.owner_user_id
+                FROM `bigquery-public-data.stackoverflow.posts_questions` AS q 
+                INNER JOIN `bigquery-public-data.stackoverflow.posts_answers` AS a
+                    ON q.id = a.parent_id
+                WHERE q.tags LIKE '%bigquery%'
+                """
+
+# Set up the query (cancel the query if it would use too much of 
+# your quota, with the limit set to 27 GB)
+safe_config = bigquery.QueryJobConfig(maximum_bytes_billed=27*10**10)
+answers_query_job = client.query(answers_query, job_config=safe_config)
+
+# API request - run the query, and return a pandas DataFrame
+answers_results = answers_query_job.to_dataframe()
+
+# Preview results
+print(answers_results.head())
+```
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/2c389b6b-1580-46f8-afb1-6e4bb597f1eb)
+
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/5de696dc-f1cf-4992-8114-78702c6d129e)
+```python
+bigquery_experts_query = """
+                         SELECT a.owner_user_id AS user_id, COUNT(1) AS number_of_answers
+                         FROM `bigquery-public-data.stackoverflow.posts_questions` AS q
+                         INNER JOIN `bigquery-public-data.stackoverflow.posts_answers` AS a
+                             ON q.id = a.parent_Id
+                         WHERE q.tags LIKE '%bigquery%'
+                         GROUP BY a.owner_user_id
+                         """
+
+# Set up the query (cancel the query if it would use too much of 
+# your quota, with the limit set to 1 GB)
+safe_config = bigquery.QueryJobConfig(maximum_bytes_billed=10**10)
+bigquery_experts_query_job = client.query(bigquery_experts_query, job_config=safe_config)
+
+# API request - run the query, and return a pandas DataFrame
+bigquery_experts_results = bigquery_experts_query_job.to_dataframe()
+
+# Preview results
+print(bigquery_experts_results.head())
+```
