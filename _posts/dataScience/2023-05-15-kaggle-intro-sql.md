@@ -13,6 +13,7 @@ toc_sticky : true
 
 # 1. Getting Started With SQL and BigQuery
 > Learn the workflow for handling big datasets with BigQuery and SQL    
+
 ```python
 from google.cloud import bigquery
 
