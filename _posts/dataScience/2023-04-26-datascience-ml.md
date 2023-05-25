@@ -56,7 +56,7 @@ bmi_data_nor.head(2)
 #model.labels_
 model = KMeans(n_clusters=4, random_state= 123).fit(bmi_data_nor)   #모델을 만들때는 정규화 실시한 내용을 바탕으로 만들고.. 
 bmi_data["cluster"] = model.labels_
-bmi_data.head(3)
+bmi_data.head(3) 
 bmi_data["cluster"].value_counts()
 bmi_data.groupby("cluster")["Age"].mean()
 
@@ -88,11 +88,26 @@ mean_squared_error(y_pred = pred, y_true = df_test["independent"])**0.5  #RMSE
 #LinearRegression
 from sklearn.linear_model import LinearRegression
 model = LinearRegression().fit(X = df[["PL"]], y=df["PW"])
-model.coef_
-mddel.intercept_
+model.coef_         # 기울기
+mddel.intercept_    # 절편
 model.predict(df[["PL"]])
 
+#결정계수 (R^2, Coefficient of determination)
+model.score(X, y)
 ```
+### 결정계수 수식으로 구하기    
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/70f8808a-2aa4-41be-a6ed-53f88c253179)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/2ea58a44-05f9-4870-93e7-f2cd27904330)
+```python
+y_pred = model.predict(X_test)
+r2 = 1 - ((y_test - y_pred)**2).sum() / ((y_test - y_test.mean())**2).sum()
+print(r2)
+```
+
+### 조정된 결정계수 구하기
+독립변수의 개수가 증가하면 일방적으로 증가하는 결정계수와 달리 조정된 결정계수는 독립변수가 증가할때 분자를 감소시켜주는 연산을 통해 일방적인 증가를 방지합니다.    
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/ca292971-9b9f-4e51-a116-11dbc0304443)
+
 
 ## 다중 회귀 분석 - 다중 공선성, 선형 [선형방정식이 모델이고, 독립변수 넣으면 추정값이 나온다.]
 ```python
