@@ -97,6 +97,7 @@ model.score(X, y)
 ```
 ### 결정계수 수식으로 구하기    
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/70f8808a-2aa4-41be-a6ed-53f88c253179)     
+
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/2ea58a44-05f9-4870-93e7-f2cd27904330)     
 ```python
 y_pred = model.predict(X_test)
