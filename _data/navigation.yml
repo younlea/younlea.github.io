@@ -33,6 +33,10 @@ sidebar-category:
       - title: "github.io blog"
         url: "/blog"
         category : "blog"
+        
+      - title: "develop env"
+        url: "/develop_env"
+        category : "develop_env"
 
   - title: "👔 일상"
     children: 
