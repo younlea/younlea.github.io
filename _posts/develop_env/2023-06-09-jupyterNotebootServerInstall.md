@@ -4,7 +4,7 @@ excerpt_separator: "<!--more-->"
 categories:
   - develop_env
 tags:
-  - jupyter notebook
+  - jupyter-notebook
 
 toc : true
 toc_sticky : true
