@@ -80,4 +80,17 @@ API 키 문제: OpenAI 계정과 연결된 올바른 API 키를 사용하고 있
 
 이러한 이유가 귀하의 상황에 해당하지 않는다고 생각되면 OpenAI 지원 팀에 직접 문의하는 것이 좋습니다. 그들은 문제의 원인을 식별하고 해결하는 데 도움을 줄 수 있습니다.
 ```
-# 유료 결재하고 테스트 해봐야 할듯.
+# 무료 토큰관련 문의
+```
+prompt:
+무료 토큰 사용자는  api를 사용하지 못하는거야?
+answer:
+As of March 1st, 2023, with the launch of the ChatGPT API, free trial users can no longer access the API for free. API access comes with its own separate cost and is not included in the free trial. If you're using a free trial account, you won't be able to make API requests without upgrading to a paid plan.
+For more information about the pricing and details regarding API access, I recommend visiting the OpenAI Pricing page (https://openai.com/pricing) or contacting the OpenAI sales team for further assistance.
+
+번역결과
+
+2023년 3월 1일부터 ChatGPT API가 출시되면서 무료 평가판 사용자는 더 이상 무료로 API에 액세스할 수 없습니다. API 액세스에는 별도의 비용이 부과되며 무료 평가판에는 포함되지 않습니다. 무료 평가판 계정을 사용 중인 경우 유료 플랜으로 업그레이드하지 않으면 API 요청을 할 수 없습니다.
+API 액세스에 대한 가격 및 세부 정보에 대한 자세한 내용은 OpenAI 가격 책정 페이지(https://openai.com/pricing)를 방문하거나 OpenAI 영업팀에 문의하여 추가 지원을 받는 것이 좋습니다.
+```
+## 결국 3월부터 정책이 바꼈군. 결재 해야것다 ㅜㅜ
