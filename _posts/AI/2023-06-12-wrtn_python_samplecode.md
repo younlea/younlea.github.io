@@ -1,5 +1,5 @@
 ---
-title: "wrtn에서 토큰 걱정없이 python code 만들기 "
+title: "wrtn에서 토큰 걱정없이 python code 만들기 != 안되네 ㅜㅜ "
 excerpt_separator: "<!--more-->"
 categories:
   - AI
@@ -11,6 +11,7 @@ toc_sticky : true
 ---
 
 chatgpt의 경우 3월 1일부로 무료사용자는 api콜을 못하게 되어서 다른 방법을 찾다 wrtn을 사용해 보았습니다. 
+결론 : wrtn에게 물어보면 된다고 하나 실제로는 제공 안함.. 이놈의 할루시네이션 ㅜㅜ
 
 # wrtn.ai에 가입하고 질문을 해봅니다.
 ```
@@ -76,3 +77,9 @@ https://wrtn.ai/docs/api/
 
 자세한 내용은 Wrtn 웹사이트에서 가격정책을 확인해보시기 바랍니다.
 ```
+## 어디에서 위에 제공한 곳이 안나옴.. 심지어 문의도
+## 결론.. (Q&A 들어가서 확인해 보니 공식 답변은 제공 안한다네 ㅜㅜ)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/d773adba-991b-4d6e-be10-364341cd16b8)
+
+## 된다더니 ㅜㅜ
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/93c98073-190d-49e6-a0af-76380d50e343)
