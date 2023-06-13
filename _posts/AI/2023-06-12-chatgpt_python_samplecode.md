@@ -111,6 +111,9 @@ API 액세스에 대한 가격 및 세부 정보에 대한 자세한 내용은 O
 실제로 바뀐걸 볼수 있다. 
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/9f595fd9-6488-43b8-bd87-253f1d9c7216)
 
+질문 하나 날렸는데.. 아래와 같이 사용량이 나오는걸 볼수 있다. ^^
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/4f18a4e9-fc95-4d3f-8547-54a6a6e10dbe)
+
 써보고 나중에 월정액으로 바꿔 봐야것다.
 
 참고로 vscode에 추가된 AICodeHelper 같은 경우 ChatGPT API를 쓰기 때문에 결재 하지 않으면 위에 보였던 에러가 나오니 참고 하시길 ^^;
