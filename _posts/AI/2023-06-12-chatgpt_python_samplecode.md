@@ -94,3 +94,23 @@ For more information about the pricing and details regarding API access, I recom
 API 액세스에 대한 가격 및 세부 정보에 대한 자세한 내용은 OpenAI 가격 책정 페이지(https://openai.com/pricing)를 방문하거나 OpenAI 영업팀에 문의하여 추가 지원을 받는 것이 좋습니다.
 ```
 ## 결국 3월부터 정책이 바꼈군. 결재 해야것다 ㅜㅜ
+
+## 아 결재를 따로 안해도 카드만 등록하면 된다. 
+아래 링크 들어가서 Payment Methods 창에서 입력하면 됨.
+[카드등록](https://platform.openai.com/account/billing/overview)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/56822fe1-e068-4ab0-ba45-8aaeb5270a68)
+
+이후 사용량을 보면 Usage this month가 생긴걸 볼수 있다.     
+움 가격이 120불 리미트가 걸려 있는데 
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/10aee741-6aa9-41c9-a913-3a33d6c767ba)
+
+아래 그림처럼 사용량 제한을 걸어 둘수 있다.
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/895a427b-6938-434c-b3c2-98eb3574bc3d)
+기존 120$ 였는데 2$로 수정
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/b0bbb656-df9d-40f3-8916-a8fd56f12377)
+실제로 바뀐걸 볼수 있다. 
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/9f595fd9-6488-43b8-bd87-253f1d9c7216)
+
+써보고 나중에 월정액으로 바꿔 봐야것다.
+
+참고로 vscode에 추가된 AICodeHelper 같은 경우 ChatGPT API를 쓰기 때문에 결재 하지 않으면 위에 보였던 에러가 나오니 참고 하시길 ^^;
