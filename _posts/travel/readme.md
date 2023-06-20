@@ -1,12 +1,12 @@
 sample code for start bolg
 ```markdown
 ---
-title: "write here "
+title: "타이틀  "
 excerpt_separator: "<!--more-->"
 categories:
-  - dataScience
+  - travel
 tags:
-  - write here
+  - 나라, 도시, 
 
 toc : true
 toc_sticky : true
