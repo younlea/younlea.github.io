@@ -27,12 +27,17 @@ stable diffusion만 쓰면 어려워서 webui를 만들어서 배포함.
 [google driver 설치](https://www.youtube.com/watch?v=CI4SdgFZDVk)
 
 # hugging face에서 webui까지 다 올려둠 
+[hugging face stable diffusion webui](https://huggingface.co/spaces/stabilityai/stable-diffusion)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/58f21c2c-5ef0-4efc-91b1-eb2fde03dd9f)
 
-# lora file 받는곳
-hugging face
-civitai
+# 모델 받는곳 
+[hugging face](https://huggingface.co/)   
+[civitai](https://civitai.com/)   
 
 # 무료 stable diffusion web이 있네
 [stablediffusionweb](https://stablediffusionweb.com/)   
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/b7ee5dd9-04f0-4408-99a4-8d4771f3804f)
 
+# 실사로 그리는 방법 관련 youtube 컨텐츠
+[유튜브 타이탄 정리](https://www.youtube.com/playlist?list=PLwgtdf-kDFVg7hRctkSnLy-1QGqoJOT3I)
+[statble diffsion 정리](https://www.youtube.com/watch?v=lIeUcj9LJyQ&list=PLO17sM0EdVS5Joa-fDw2MlcIo9PMGPB4C)   
