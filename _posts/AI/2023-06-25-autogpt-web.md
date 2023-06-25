@@ -20,7 +20,8 @@ toc_sticky : true
 ## agent gpt
 [agent gtp](https://agentgpt.reworkd.ai/ko)   
 목적과 몇가지 조건을 주면 알아서 해결해준다.    
-![image](https://github.com/younlea/younlea.github.io/assets/1435846/b403117c-dcd3-4c4d-a1db-d4291e9a19b2)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/b403117c-dcd3-4c4d-a1db-d4291e9a19b2)   
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YIvwK9ZH-Rw" frameborder="0" allowfullscreen></iframe>
 
 ## godmode
 [godmode](https://godmode.space/)   
