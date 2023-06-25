@@ -15,6 +15,9 @@ toc_sticky : true
 무료로 솔루션을 공유함.. ^^; 
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/503bf2de-c532-43dd-8197-47eb58622938)
 
+# stable diffusion 기능 
+[stable diffusion 기능](https://github.com/AUTOMATIC1111/stable-diffusion-webui-feature-showcase)  
+
 # stable diffusion webui  
 stable diffusion만 쓰면 어려워서 webui를 만들어서 배포함. 
 [stable diffusion webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)  
