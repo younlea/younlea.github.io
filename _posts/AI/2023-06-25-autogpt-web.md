@@ -26,4 +26,6 @@ toc_sticky : true
 ## godmode
 [godmode](https://godmode.space/)   
 목표만 주면 필요한 추가 사항을 추천해줌.   
-![image](https://github.com/younlea/younlea.github.io/assets/1435846/2f28df6d-0f1b-44a8-83b2-9ea9ebdccbb8)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/2f28df6d-0f1b-44a8-83b2-9ea9ebdccbb8)  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/G8OYqEgWs5g" frameborder="0" allowfullscreen></iframe>   
+
