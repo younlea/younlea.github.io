@@ -27,6 +27,8 @@ stable diffusion만 쓰면 어려워서 webui를 만들어서 배포함.
 [로컬PC 설치 정리](https://rupicat.com/entry/Stable-Diffusion-WebUI-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EA%B8%B0%EB%B3%B8-%EC%84%B8%ED%8C%85)   
 
 # stable diffusion webui on google drive
+[google drive에 설치방법](https://thegreat.io/stable-diffusion-install/)   
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CI4SdgFZDVk" frameborder="0" allowfullscreen></iframe>
 
 # hugging face에서 webui까지 다 올려둠 
