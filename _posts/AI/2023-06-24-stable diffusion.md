@@ -43,6 +43,8 @@ vae 설치 위치 : sd\stable-diffusion-webui\models\VAE
 [fastapi error 해결 방법](https://www.youtube.com/watch?v=Zd3tMRvI-jg)    
 해결 방법이.. 그냥 새로 설치하는거네요. ^^;    
 
+[prompt 추천](https://prompthero.com/)    
+
 # hugging face에서 webui까지 다 올려둠 
 [hugging face stable diffusion webui](https://huggingface.co/spaces/stabilityai/stable-diffusion)  
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/58f21c2c-5ef0-4efc-91b1-eb2fde03dd9f)  
