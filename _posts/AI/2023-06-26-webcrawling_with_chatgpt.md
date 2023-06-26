@@ -23,7 +23,7 @@ toc_sticky : true
 2. 해당 코드(클롤링후 저장해 달라는)를 chatgpt를 이용해서 python으로 생성한 후에     
    ![image](https://github.com/younlea/younlea.github.io/assets/1435846/1091e1f5-6ac3-47a0-a1a2-2c14f0da85c6)
    
-``` 
+```python 
 import os
 import requests
 from bs4 import BeautifulSoup
@@ -75,7 +75,7 @@ print("All images downloaded successfully!")
 모.. 다시 해결해 달라고 하고..   
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/c159c1de-3643-494b-82d7-fe4532abc672)   
 
-```
+```python
 import os
 import requests
 from bs4 import BeautifulSoup
