@@ -1,5 +1,5 @@
 ---
-title: "ChatGPT를 이용해서 웹크롤링 해보기 "
+title: "ChatGPT를 이용해서 웹 크롤링 해보기 "
 excerpt_separator: "<!--more-->"
 categories:
   - AI
