@@ -29,9 +29,13 @@ stable diffusion만 쓰면 어려워서 webui를 만들어서 배포함.
 # stable diffusion webui on google drive
 [google drive에 설치방법](https://thegreat.io/stable-diffusion-install/)   
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aqwGPLlEKCI" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aqwGPLlEKCI" frameborder="0" allowfullscreen></iframe>    
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CI4SdgFZDVk" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TG00SxoJ5fo" frameborder="0" allowfullscreen></iframe>    
+checkpoint 설치 위치 : sd\stable-diffusion-webui\models\stable-diffusion   
+vae 설치 위치 : sd\stable-diffusion-webui\models\VAE
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CI4SdgFZDVk" frameborder="0" allowfullscreen></iframe>    
 
 
 [fastapi error 해결 방법](https://www.youtube.com/watch?v=Zd3tMRvI-jg)    
