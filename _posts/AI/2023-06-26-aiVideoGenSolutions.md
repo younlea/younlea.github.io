@@ -13,7 +13,9 @@ toc_sticky : true
 # AI 솔루션들 영상
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ba5bs548ORA" frameborder="0" allowfullscreen></iframe>   
 
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZdFMpKT_wO0" frameborder="0" allowfullscreen></iframe>   
+
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rv23EXwB1Ac" frameborder="0" allowfullscreen></iframe>   
 
