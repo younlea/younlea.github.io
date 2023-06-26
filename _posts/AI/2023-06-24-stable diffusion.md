@@ -31,8 +31,8 @@ stable diffusion만 쓰면 어려워서 webui를 만들어서 배포함.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CI4SdgFZDVk" frameborder="0" allowfullscreen></iframe>
 
-fastapi error 해결 방법    
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Zd3tMRvI-jg" frameborder="0" allowfullscreen></iframe>
+[fastapi error 해결 방법](https://www.youtube.com/watch?v=Zd3tMRvI-jg)    
+해결 방법이.. 그냥 새로 설치하는거네요. ^^;    
 
 # hugging face에서 webui까지 다 올려둠 
 [hugging face stable diffusion webui](https://huggingface.co/spaces/stabilityai/stable-diffusion)  
