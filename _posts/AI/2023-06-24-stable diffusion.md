@@ -36,6 +36,7 @@ stable diffusion만 쓰면 어려워서 webui를 만들어서 배포함.
 checkpoint 설치 위치 : sd\stable-diffusion-webui\models\stable-diffusion   
 vae 설치 위치 : sd\stable-diffusion-webui\models\VAE
 
+[stable diffusion webui colab](https://github.com/camenduru/stable-diffusion-webui-colab)   
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CI4SdgFZDVk" frameborder="0" allowfullscreen></iframe>    
 
 
