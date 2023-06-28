@@ -25,5 +25,13 @@ toc_sticky : true
 외부에서 7860으로 포트포워딩해서 들어옴.    
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/8f75363c-034e-43f0-a5e3-c50ad1dabb2e)
 
+civitai에서 checkpoint와 vae 받아서 설치    
 
- 
+예제 참고해서 실행    
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/6d3abf67-a102-4200-b550-258a0c216076)
+
+진행중.. (시간이 오래 걸린다)    
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/d1f226d9-0f98-4c9c-be2a-5031cb843547)
+
+vae 적용 전.
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/d7e9c919-1ae1-4adb-9813-5d25433f831a)
