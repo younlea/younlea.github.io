@@ -1,5 +1,14 @@
 ---
+title: "ubunut 22.04 설치후 sleep 들어가지 않게 막기  "
+excerpt_separator: "<!--more-->"
+categories:
+  - develop_env
+tags:
+  - ubuntu
+  - sleep
 
+toc : true
+toc_sticky : true
 ---
 
 [ref](https://github.com/HeekangPark/HeekangPark.github.io/blob/master/documents/_linux/ubuntu-server-sleep.md).   
