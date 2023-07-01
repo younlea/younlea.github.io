@@ -15,7 +15,10 @@ toc_sticky : true
 그래픽 카드가 구려서 cpu Only로 로 동작.   
 
 아래옵션으로 실행하고 외부에서 7860 으로 포트포워딩해서 들어옴. 
+```
  ./webui.sh --skip-torch-cuda-test --listen --precision full --no-half   
+```
+
 > --skip-torch-cuda-test : GPU가 1070정도라서 GPU 사용자하지 않게 설정   
 > --listen : 외부망에서 접근 가능하도록 셋팅    
 > --precision full --no-half : 어떤에러가 났었는데.. 그거 해결    
