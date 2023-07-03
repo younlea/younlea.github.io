@@ -19,6 +19,10 @@ toc_sticky : true
  ./webui.sh --skip-torch-cuda-test --listen --precision full --no-half   
 ```
 
+```
+login mode : --gradio-auth username:password 추가
+```
+
 > --skip-torch-cuda-test : GPU가 1070정도라서 GPU 사용자하지 않게 설정   
 > --listen : 외부망에서 접근 가능하도록 셋팅    
 > --precision full --no-half : 어떤에러가 났었는데.. 그거 해결    
