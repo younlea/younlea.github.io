@@ -40,6 +40,8 @@ vae 설치 위치 : sd\stable-diffusion-webui\models\VAE
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CI4SdgFZDVk" frameborder="0" allowfullscreen></iframe>    
 [stable diffusion webui colab 한국어버젼](https://github.com/ninjaneural/webui)    
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OlCavVB63vg" frameborder="0" allowfullscreen></iframe>   
+
 [fastapi error 해결 방법](https://www.youtube.com/watch?v=Zd3tMRvI-jg)    
 해결 방법이.. 그냥 새로 설치하는거네요. ^^;    
 
