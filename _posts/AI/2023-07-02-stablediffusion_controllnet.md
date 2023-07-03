@@ -41,10 +41,8 @@ error : AssertionError: extension access disabled because of command line flags
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/4c5f2cc2-5483-42b9-8b03-d35ba6139b00)
 
 
-아래 내용은 하지 않으셔도 될듯 하네요. 찾아보니 기본 설치할때 같이 설치가 되는걸로 보입니다.  
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/57fc8908-83e3-465e-b6e0-59173fa0621f)
 
-그래도 참고로 남겨 두도록 하겠습니다.   
 설치후 추가 모델들을 허깅페이스에 가서 받아서 아래 폴더에 카피 합니다.  
 [https://huggingface.co/lllyasviel/ControlNet/tree/main/models](https://huggingface.co/lllyasviel/ControlNet/tree/main/models)
 ```
@@ -63,3 +61,5 @@ pip install opencv-python
 ```
 [ref](https://cantips.com/3789)   
 [ref](https://coconuts.tistory.com/1027)   
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ky2yHWWYfpg" frameborder="0" allowfullscreen></iframe>
