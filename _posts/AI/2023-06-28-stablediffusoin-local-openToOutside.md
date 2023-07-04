@@ -42,3 +42,11 @@ civitai에서 checkpoint와 vae 받아서 설치
 
 vae 적용 전.
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/d7e9c919-1ae1-4adb-9813-5d25433f831a)
+
+
+
+### GPU 4070 있는 경우
+ID 추가    
+./webui.sh --listen --enable-insecure-extension-access --gradio-auth kibwa:kibwa --port 7860   
+특정 포트 열기   
+./webui.sh --listen --enable-insecure-extension-access --port 7865   
