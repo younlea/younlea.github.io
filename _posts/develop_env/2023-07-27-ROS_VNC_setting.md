@@ -13,28 +13,30 @@ toc_sticky : true
 
 # docker 설치
 [docker](https://www.docker.com/)   
-![image](https://github.com/younlea/company_project/assets/1435846/79d934a5-adfc-4d16-9976-4eec4691e6ae)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/a9f859b3-bd95-45a3-84d2-07d9aa5760ed)
+
 
 Docker Desktop Installer.exe 파일 실행해서 설치 (설치 완료후 로그 아웃 누르면 한번 나갔다 옴)    
 
 Docker 실행   
-![image](https://github.com/younlea/company_project/assets/1435846/57830e46-6f14-40ef-a9be-dbbc9c0e04a8)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/39f21be3-b4f3-441e-9d93-e5207c9e7916)
 
 Docker sign up or sign in 
-![image](https://github.com/younlea/company_project/assets/1435846/2fabf3de-f122-41a7-a616-6552685bb24c)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/02c75587-0141-4f18-b99c-86a9f53325d3)
 
 실행 결과  
-![image](https://github.com/younlea/company_project/assets/1435846/7f910a58-6397-4eda-bf96-2dc62d5d719a)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/5c0c0983-9615-42ec-85f4-93ba3820ff9f)
+
 
 # Pull ROS2 VNC image  
 docker 이미지를 가져 온다.   
 ```
 docker pull tiryoh/ros2-desktop-vnc:foxy  
 ```
-![image](https://github.com/younlea/company_project/assets/1435846/107a2aa9-4e71-4848-8b7a-e8ef7b0f82c3)
-다 받으면 아래 처럼 나온다. 
-![image](https://github.com/younlea/company_project/assets/1435846/29fe612c-3dd0-4d89-b90f-0853b2745967)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/6d02ed6d-6cbc-4a69-9f30-85b056945668)
 
+다 받으면 아래 처럼 나온다. 
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/b202b476-74ea-4e67-ac60-511cf948128c)
 
 [github](https://github.com/Tiryoh/docker-ros2-desktop-vnc)    
 [docker hub](https://hub.docker.com/r/tiryoh/ros2-desktop-vnc)   
@@ -44,14 +46,18 @@ docker pull tiryoh/ros2-desktop-vnc:foxy
 ```
 docker run -it -p 8080:80 --name ros tiryoh/ros2-desktop-vnc:foxy  
 ```
-![image](https://github.com/younlea/company_project/assets/1435846/da61e65d-d1d2-4dee-85a3-1aa8671a3e69)   
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/655293e1-eb85-448e-a1cb-85497b0bb907)
+
 동작 확인   
-![image](https://github.com/younlea/company_project/assets/1435846/da9ce82f-ad47-4b17-b9a0-a5d0bed26b21)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/60471729-b00b-487c-8afd-99f41b599533)
+
 
 browser에서 localhost:8080을 입력함   
-![image](https://github.com/younlea/company_project/assets/1435846/665ab253-e9eb-4328-9ee2-093e1119163d)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/964c128c-aa61-470e-8bed-f3089afff67f)
+
 연결을 누르면 UI가 나오는걸 확인할수 있다.        
-![image](https://github.com/younlea/company_project/assets/1435846/533c86be-9f51-4a64-89f4-eba298f6e79b)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/33e8bc3d-ed83-4147-8717-36a5a746209a)
+
 
 
 # turtlesim demo    
@@ -60,7 +66,8 @@ ros2 run turtlesim turtlesim_node
 ros2 run turtlesim turtle_teleop_key
 rqt_graph
 ```
-![image](https://github.com/younlea/company_project/assets/1435846/9bded586-49de-4a66-90b8-9477f877e570)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/087a13a9-3296-47d0-bc2c-00df24a59c8d)
+
 
 
 # ROS sample 예제 (talker & listener)   
@@ -70,15 +77,17 @@ ros2 run demo_nodes_cpp talker
 ros2 run demo_nodes_cpp listener
 rqt_graph
 ```
-![image](https://github.com/younlea/company_project/assets/1435846/fa5c00c4-83ed-4f2b-8b86-868d2bb30e84)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/6a8a7259-91ab-4d5f-b752-18cd7b4578fa)
+
 
 # ROS topic  
 [ROS2 DOC](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html)   
 
 # Gazebo 실행   
-![image](https://github.com/younlea/company_project/assets/1435846/dc8128a1-a118-4262-9121-de1def1a6031)
-![image](https://github.com/younlea/company_project/assets/1435846/9e42d52e-90d4-4e77-b617-9341b3cd26d1)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/65438323-1c6f-495a-b37f-9f7ccbbd10b4)
+
 
 # gazebo quick start   
-![image](https://github.com/younlea/company_project/assets/1435846/3114fa27-da3f-4d51-839a-7a7b104ed574)
-![image](https://github.com/younlea/company_project/assets/1435846/d4a77221-a17b-4a95-9f6d-eb8b6c0a89bf)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/fac651c9-0b8a-44c9-94f1-5e57d25298c5)
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/0fbb7a99-caa9-4fb4-b741-f7b0800cd04f)
+
