@@ -11,7 +11,7 @@ toc : true
 toc_sticky : true
 ---
 
-# docker 설치
+# 1. docker 설치
 [docker](https://www.docker.com/)   
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/a9f859b3-bd95-45a3-84d2-07d9aa5760ed)
 
@@ -28,7 +28,7 @@ Docker sign up or sign in
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/5c0c0983-9615-42ec-85f4-93ba3820ff9f)
 
 
-# Pull ROS2 VNC image  
+# 2. Pull ROS2 VNC image  
 docker 이미지를 가져 온다.   
 ```
 docker pull tiryoh/ros2-desktop-vnc:foxy  
@@ -41,7 +41,7 @@ docker pull tiryoh/ros2-desktop-vnc:foxy
 [github](https://github.com/Tiryoh/docker-ros2-desktop-vnc)    
 [docker hub](https://hub.docker.com/r/tiryoh/ros2-desktop-vnc)   
 
-# Create ROS2 container   
+# 3. Create ROS2 container   
 이미지 실행 
 ```
 docker run -it -p 8080:80 --name ros tiryoh/ros2-desktop-vnc:foxy  
