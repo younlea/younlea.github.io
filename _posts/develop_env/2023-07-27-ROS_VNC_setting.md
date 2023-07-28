@@ -85,7 +85,7 @@ rqt_graph
 # 6. ROS topic  
 [ROS2 DOC](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html)   
 
-# 7. Gazebo 실행   
+# 7. Gazebo(3D simulator) 실행   
 [gazebo](https://gazebosim.org/home)    
 [gazebo to ROS2 sample guide](https://docs.ros.org/en/foxy/Tutorials/Advanced/Simulators/Ignition/Ignition.html?highlight=gazebo)    
 
