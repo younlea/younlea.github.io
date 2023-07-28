@@ -60,7 +60,7 @@ browser에서 localhost:8080을 입력함
 
 
 
-# turtlesim demo    
+# 4. turtlesim demo 실행      
 ``` 
 ros2 run turtlesim turtlesim_node
 ros2 run turtlesim turtle_teleop_key
@@ -70,7 +70,7 @@ rqt_graph
 
 
 
-# ROS sample 예제 (talker & listener)   
+# 5. ROS sample 예제 (talker & listener)   
 실제 talker와 listener를 실행시키고 노드 그래프를 볼수 있다.  
 ```
 ros2 run demo_nodes_cpp talker
@@ -80,14 +80,14 @@ rqt_graph
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/6a8a7259-91ab-4d5f-b752-18cd7b4578fa)
 
 
-# ROS topic  
+# 6. ROS topic  
 [ROS2 DOC](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html)   
 
-# Gazebo 실행   
+# 7. Gazebo 실행   
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/65438323-1c6f-495a-b37f-9f7ccbbd10b4)
+[gazebo sample guide](https://docs.ros.org/en/foxy/Tutorials/Advanced/Simulators/Ignition/Ignition.html?highlight=gazebo)    
 
-
-# gazebo quick start   
+## 7-1.gazebo quick start   
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/fac651c9-0b8a-44c9-94f1-5e57d25298c5)
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/0fbb7a99-caa9-4fb4-b741-f7b0800cd04f)
 
