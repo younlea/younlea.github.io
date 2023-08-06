@@ -11,4 +11,6 @@ toc : true
 toc_sticky : true
 ---
 # stable diffusion Lora만들기
-[Ref](https://www.youtube.com/watch?v=t6rFIFVP-SU)    
+[kohya_ss](https://github.com/bmaltais/kohya_ss)   
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/t6rFIFVP-SU" frameborder="0" allowfullscreen></iframe>    
