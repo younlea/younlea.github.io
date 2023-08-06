@@ -26,3 +26,5 @@ toc_sticky : true
 [roop](https://github.com/s0md3v/sd-webui-roop)    
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_J5bVy9aZzk" frameborder="0" allowfullscreen></iframe>    
 
+# 실사영상 에니메이션으로 바꾸기   
+<iframe width="560" height="315" src="https://www.youtube.com/embed/38X5a79pCzI" frameborder="0" allowfullscreen></iframe>    
