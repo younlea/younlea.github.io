@@ -95,3 +95,14 @@ rqt_graph
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/fac651c9-0b8a-44c9-94f1-5e57d25298c5)
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/0fbb7a99-caa9-4fb4-b741-f7b0800cd04f)
 
+
+# 8. troubleshooting
+재 부팅후 다시 실행하는데 아래와 같이 에러가 난다.      
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/2d3026a5-9a3d-4abe-ac02-cdfdd92b691e)
+
+이럴때는 기존에 컨테이너가 동일한 이름을 있어서 이 부분을 찾아서 지워주면 된다.   
+아래 ros 체크하고 휴지통 클릭 하면 됨.    
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/faceb8f3-4262-475b-bef3-eea3c97102a1)
+
+다시 실행하고 localhost 접속하면 잘 된다.   
+![image](https://github.com/younlea/younlea.github.io/assets/1435846/ca14a513-af11-47ce-9cac-e7c554ac8892)
