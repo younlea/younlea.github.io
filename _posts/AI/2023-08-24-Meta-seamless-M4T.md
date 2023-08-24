@@ -18,3 +18,5 @@ toc_sticky : true
 
 # github   
 [https://github.com/facebookresearch/seamless_communication](https://github.com/facebookresearch/seamless_communication)    
+
+[wisper ai link](https://younlea.github.io/ai/Create-subtitles/)    
