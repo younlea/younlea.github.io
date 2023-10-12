@@ -30,17 +30,29 @@ sidebar-category:
         url: "/AI"
         category : "AI"
 
-      - title: "github.io blog"
-        url: "/blog"
-        category : "blog"
-
-      - title: "drone"
+      - title: "Drone"
         url: "/drone"
         category : "drone"
+
+      - title: "Robot"
+        url: "/robot"
+        category : "robot"
+
+      - title: "Embedded"
+        url: "/embedded"
+        category : "embedded"
         
       - title: "develop env"
         url: "/develop_env"
         category : "develop_env"
+
+      - title: "github.io blog"
+        url: "/blog"
+        category : "blog"
+
+      - title: "Etc"
+        url: "/etc"
+        category : "etc"
 
   - title: "👔 일상"
     children: 
