@@ -1,5 +1,5 @@
 ---
-title: "머신러닝 함수들 "
+title: "[S][데싸]머신러닝 함수들 "
 excerpt_separator: "<!--more-->"
 categories:
   - dataScience
