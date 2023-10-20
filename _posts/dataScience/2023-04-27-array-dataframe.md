@@ -1,5 +1,5 @@
 ---
-title: "python array to dataframe "
+title: "[S][데싸]python array to dataframe "
 excerpt_separator: "<!--more-->"
 categories:
   - dataScience
