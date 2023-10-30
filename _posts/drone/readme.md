@@ -1,5 +1,5 @@
-sample code for start bolg
-```
+sample code for start drone
+```markdown
 ---
 title: "write here "
 excerpt_separator: "<!--more-->"
