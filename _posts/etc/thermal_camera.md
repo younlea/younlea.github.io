@@ -10,12 +10,6 @@ toc : true
 toc_sticky : true
 ---
 
-# 기고문
-[https://m.fpn119.co.kr/132311](https://m.fpn119.co.kr/132311)    
-[https://m.fpn119.co.kr/133111](https://m.fpn119.co.kr/133111)   
-[https://m.fpn119.co.kr/133319](https://m.fpn119.co.kr/133319)    
-[https://m.fpn119.co.kr/133395](https://m.fpn119.co.kr/133395)    
-
 # 개발 영상    
 ## 아이디어단계   
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rXdblUqNZUY" frameborder="0" allowfullscreen></iframe>    
@@ -36,5 +30,12 @@ toc_sticky : true
 ## 플래쉬오버    
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2PmyMqFWtkw" frameborder="0" allowfullscreen></iframe>    
 
+# 기고문
+[https://m.fpn119.co.kr/132311](https://m.fpn119.co.kr/132311)    
+[https://m.fpn119.co.kr/133111](https://m.fpn119.co.kr/133111)   
+[https://m.fpn119.co.kr/133319](https://m.fpn119.co.kr/133319)    
+[https://m.fpn119.co.kr/133395](https://m.fpn119.co.kr/133395)    
 
+# 드론 플랫폼 기부   
+[https://www.fpn119.co.kr/149484](https://www.fpn119.co.kr/149484)    
 
