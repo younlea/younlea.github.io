@@ -2,9 +2,9 @@
 title: "나의 열화상 카메라 개발기 "
 excerpt_separator: "<!--more-->"
 categories:
-  - thermalImageCamera
+  - etc
 tags:
-  - write here
+  - thermalImageCamera
 
 toc : true
 toc_sticky : true
