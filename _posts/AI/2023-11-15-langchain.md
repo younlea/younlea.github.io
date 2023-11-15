@@ -23,3 +23,9 @@ LLM model's framework
 
 # streamlit.io (frontend)  
 [https://streamlit.io/](https://streamlit.io/)    
+
+# LLAMA2
+[LLAMA2 homepage](https://ai.meta.com/llama/)    
+[경량화 LLAMA2](https://huggingface.co/TheBloke/Llama-2-7B-GGML)     
+
+
