@@ -28,4 +28,6 @@ LLM model's framework
 [LLAMA2 homepage](https://ai.meta.com/llama/)    
 [경량화 LLAMA2](https://huggingface.co/TheBloke/Llama-2-7B-GGML)     
 
-
+## ctransformers
+경량화 llama2를 쓰기 위해 필요함
+[https://github.com/marella/ctransformers](https://github.com/marella/ctransformers)    
