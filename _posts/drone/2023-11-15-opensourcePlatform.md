@@ -12,7 +12,7 @@ toc_sticky : true
 
 # multiwii
 처음 써본 opensource platform 이다. 8bit cpu를 이용해서 만들어 졌고 이름에서 알수 있듯이  wii의 눈차크에서 mpu6050을 분해서
-드론의 가속도, 자이로 센서로 활용해서 만든 쿼드콥터 플렛폼이다. 
+드론의 가속도, 자이로 센서로 활용해서 만든 쿼드콥터 플렛폼이다.     
 [Multiwii 대표싸이트](http://www.multiwii.com/)    
 [Multiwii github](https://github.com/multiwii)    
 
@@ -35,7 +35,7 @@ github는 위의 multiwii repo에 같이 있다.
 
 ## betaflight 
 ![image](https://github.com/younlea/younlea.github.io/assets/1435846/fed5f16f-6357-46af-8c36-f2a3dda3afd7)    
-요세 많이들 쓰는 레이싱 드론 플렛폼입니다. 
+요세 많이들 쓰는 레이싱 드론 플렛폼입니다.  
 [betaflight](https://betaflight.com/)     
 [betaflight github](https://github.com/betaflight/)     
 
