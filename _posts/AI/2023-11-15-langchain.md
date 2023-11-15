@@ -2,7 +2,7 @@
 title: "langchain 과 llm을 이용해서 무언가(?) 만들기 "
 excerpt_separator: "<!--more-->"
 categories:
-  - ai
+  - AI
 tags:
   - langchain
 
