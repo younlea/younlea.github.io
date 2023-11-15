@@ -31,6 +31,7 @@ LLM model's framework
 ## ctransformers
 경량화 llama2를 쓰기 위해 필요함
 [https://github.com/marella/ctransformers](https://github.com/marella/ctransformers)    
+
 '''
 from ctransformers import AutoModelForCausalLM
 
