@@ -18,7 +18,7 @@ LLM model's framework
 [langchain python](https://python.langchain.com/docs/get_started/introduction)    
 [langchain github](https://github.com/langchain-ai/langchain)     
 
-## opengtp
+## opengpts
 [https://github.com/langchain-ai/opengpts](https://github.com/langchain-ai/opengpts)    
 
 # streamlit.io (frontend)  
