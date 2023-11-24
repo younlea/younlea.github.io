@@ -186,7 +186,7 @@ from sklearn.tree import DecisionTreeRegressor #회귀 나무
 
 ```
 
-[sklearn 설명](https://www.datamanim.com/dataset/98_sklearn/sklearn.html#)
+# [sklearn 설명](https://www.datamanim.com/dataset/98_sklearn/sklearn.html#)
   
 ```
 sklearn 함수가 기억 안나면 아래처럼 원하는 depth에서 하나씩 확인하고 찾아 들어갈수 있다.
@@ -268,7 +268,7 @@ sklearn
         └── VotingRegressor
 ```
 
-[scipy설명](https://www.datamanim.com/dataset/97_scipy/scipy.html)    
+# [scipy설명](https://www.datamanim.com/dataset/97_scipy/scipy.html)    
 
 
 ```
@@ -287,7 +287,7 @@ scipy
 └── 06 stats (통계 분석) 
 ```
 
-[statsmodels설명](https://www.datamanim.com/dataset/96_statsmodels/statsmodels.html)   
+# [statsmodels설명](https://www.datamanim.com/dataset/96_statsmodels/statsmodels.html)   
 ```
 statsmodels 함수가 기억 안나면 아래처럼 원하는 depth에서 하나씩 확인하고 찾아 들어갈수 있다.
 import statsmodels
