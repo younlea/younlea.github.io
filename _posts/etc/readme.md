@@ -1,4 +1,5 @@
-```
+
+```markdown
 ---
 title: "제목"
 excerpt_separator: "<!--more-->"
