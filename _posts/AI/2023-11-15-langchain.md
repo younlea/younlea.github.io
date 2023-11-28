@@ -32,3 +32,8 @@ LLM model's framework
 경량화 llama2를 쓰기 위해 필요함
 [https://github.com/marella/ctransformers](https://github.com/marella/ctransformers)    
 
+## llama2 chatgpt처럼 쓰기
+[https://labs.perplexity.ai/](https://labs.perplexity.ai/)     
+
+## ai 사용 관련 참고 
+[https://wikidocs.net](https://wikidocs.net/208922)      
