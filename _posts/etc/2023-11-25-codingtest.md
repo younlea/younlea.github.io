@@ -34,3 +34,5 @@ toc_sticky : true
 
 ## [코드트리](https://www.codetree.ai/curriculums/4)   
 삼성 특화 알고리즘 공유 되는 곳..     
+
+## [구사과님블로그링크](https://koosaga.com/217)     
