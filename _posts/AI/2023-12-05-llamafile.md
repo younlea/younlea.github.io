@@ -4,7 +4,7 @@ excerpt_separator: "<!--more-->"
 categories:
   - AI
 tags:
-  - llama
+  - llamafile
 
 toc : true
 toc_sticky : true
