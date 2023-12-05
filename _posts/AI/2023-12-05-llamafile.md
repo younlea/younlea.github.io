@@ -50,3 +50,62 @@ chmod +x llava-v1.5-7b-q4-server.llamafile
 ```Control-C``` to shut down llamafile.
 
 **Having trouble? See the "Gotchas" section below.**
+
+# 간단 결과
+써보니 나름 괜츈한데요 ^^; 
+
+```
+User: what's your name?
+
+Llama: My name is Llama!
+
+User: What do you think about meta?
+
+Llama: I think that the concept of "meta" refers to self-awareness, particularly in regards to artificial intelligence or consciousness. It can also refer to a level of abstraction beyond which something becomes difficult to understand or define.
+
+User: could you make python code? I want to solve prime number check code.
+input : 1 ~ 100 number
+output : prime number in input.
+
+Llama: Sure, here's some Python code that will take an integer between 1 and 100 as input and return a list of all the prime numbers within that range:
+def is_prime(n):
+    if n < 2 or n == 1:
+        return False
+    for i in range(2, int(n0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+numbers = list(range(1, 101))
+primenumbers = [num for num in numbers if isprime(num)]
+print(prime_numbers)
+
+User: could you make using c language?
+
+Llama: Sure! Here's a C program that will take an integer between 1 and 100 as input and return a list of all the prime numbers within that range:
+#include <stdio.h>
+#include <math.h>
+
+int is_prime(int n);
+void get_primes();
+
+int main() {
+    int num, i;
+    printf("Enter an integer between 1 and 100: ");
+    scanf("%d", &num);
+    
+    get_primes(num);
+    
+    return 0;
+}
+
+void get_primes(int n) {
+    int i, j;
+    for (i = 2; i <= sqrt(n); i++) { //sqrt is square root function
+        if (n % i == 0) {
+            printf("%d ", i);
+            for (j = i + 1; j * j <= n; j += n / j) {} //if number is not prime then it will be printed
+        }
+    }
+}
+```
