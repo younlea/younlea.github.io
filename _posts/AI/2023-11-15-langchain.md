@@ -46,7 +46,7 @@ llama2 down받기
 pip install ctransformers   
 
 '''python
-from lanchain.llms import CTransformers
+from langchain.llms import CTransformers
 
 llm = CTransformers(
   model="llama-2-7b.ggmlv3.q8_0.bin",
