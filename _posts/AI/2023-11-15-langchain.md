@@ -18,6 +18,9 @@ LLM model's framework
 [langchain python](https://python.langchain.com/docs/get_started/introduction)    
 [langchain github](https://github.com/langchain-ai/langchain)     
 
+## local llm model 
+[https://python.langchain.com/docs/guides/local_llms](https://python.langchain.com/docs/guides/local_llms)     
+
 ## opengpts
 [https://github.com/langchain-ai/opengpts](https://github.com/langchain-ai/opengpts)    
 
