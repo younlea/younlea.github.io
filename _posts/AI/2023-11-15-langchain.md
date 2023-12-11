@@ -40,3 +40,20 @@ LLM model's framework
 
 ## ai 사용 관련 참고 
 [https://wikidocs.net](https://wikidocs.net/208922)      
+
+# 직접 만들기
+llama2 down받기    
+pip install ctransformers   
+
+'''python
+from lanchain.llms import CTransformers
+
+llm = CTransformers(
+  model="llama-2-7b.ggmlv3.q8_0.bin",
+  model_type="llama"
+)
+
+result = llm.predict("what do you name?")
+print(result)
+
+'''
