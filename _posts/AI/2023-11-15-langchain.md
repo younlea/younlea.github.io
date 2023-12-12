@@ -41,13 +41,13 @@ LLM model's framework
 ## ai 사용 관련 참고 
 [https://wikidocs.net](https://wikidocs.net/208922)      
 
-# 직접 만들기
-llama2 down받기 (llama-2-7b.ggmlv3.q8_0.bin)      
-pip install langchain
-pip install ctransformers   
+# 직접 만들기    
+llama2 down받기 (llama-2-7b.ggmlv3.q8_0.bin)       
+pip install langchain     
+pip install ctransformers     
 
-## source code 
-```python
+## source code    
+```python    
 from langchain.llms import CTransformers
 
 llm = CTransformers(
@@ -58,4 +58,4 @@ llm = CTransformers(
 result = llm.predict("what do you name?")
 print(result)
 
-```
+```    
