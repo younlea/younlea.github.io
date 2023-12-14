@@ -32,8 +32,8 @@ toc_sticky : true
 [https://youtu.be/QEQXxTo1OkQ](https://youtu.be/QEQXxTo1OkQ)    
 
 # 450급 기체 (px4)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gtjNa2lh5fY" frameborder="0" allowfullscreen></iframe>    
-[https://youtu.be/gtjNa2lh5fY](https://youtu.be/gtjNa2lh5fY)    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/67XnJGIuxAo" frameborder="0" allowfullscreen></iframe>    
+[https://youtu.be/gtjNa2lh5fY](https://youtu.be/67XnJGIuxAo)    
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Rk40Sy200kM" frameborder="0" allowfullscreen></iframe>    
 [https://youtu.be/Rk40Sy200kM](https://youtu.be/Rk40Sy200kM)   
 
