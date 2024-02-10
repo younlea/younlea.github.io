@@ -26,9 +26,9 @@ sidebar-category:
         url: "/dataScience"
         category : "dataScience"
         
-      - title: "algorithm"
-        url: "/algorithm"
-        category : "algorithm"
+      # - title: "algorithm"
+      #   url: "/algorithm"
+      #   category : "algorithm"
         
       - title: "AI"
         url: "/AI"
