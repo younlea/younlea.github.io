@@ -1,3 +1,4 @@
+```markdown
 ---
 title: "제목"
 excerpt_separator: "<!--more-->"
@@ -9,3 +10,4 @@ tags:
 toc : true
 toc_sticky : true
 ---
+```
