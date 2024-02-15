@@ -1,5 +1,5 @@
 ---
-title: "제목"
+title: "Robot simulator"
 excerpt_separator: "<!--more-->"
 categories:
   - robot
