@@ -20,3 +20,5 @@ toc_sticky : true
 
 ## semple. 
 [Yolo-Object-Detection-and-Distance-Measurement-with-Zed-camera](https://github.com/MehmetOKUYAR/Yolo-Object-Detection-and-Distance-Measurement-with-Zed-camera)
+[Depth-estimation-using-Depth-Camera-D435i-for-YOLOv5-detected-objects](https://github.com/jithin8mathew/Depth-estimation-using-Depth-Camera-D435i-for-YOLOv5-detected-objects)   
+[Face-Detection-with-Intel-D435i](https://github.com/kylelscott/Face-Detection-with-Intel-D435i)    
