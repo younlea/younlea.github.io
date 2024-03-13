@@ -14,8 +14,7 @@ toc_sticky : true
 
 ## URDF in Gazebo
 [Unified Robotic Description Format](https://classic.gazebosim.org/tutorials?tut=ros_urdf)     
-
-https://www.youtube.com/watch?v=uvPFDQxfm2w
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uvPFDQxfm2w" frameborder="0" allowfullscreen></iframe>     
 
 ## Custom Manipulator Simulation  
 [Gazebo and MoveIt](https://medium.com/@tahsincankose/custom-manipulator-simulation-in-gazebo-and-motion-planning-with-moveit-c017eef1ea90)     
