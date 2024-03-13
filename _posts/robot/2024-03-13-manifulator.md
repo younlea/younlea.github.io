@@ -22,3 +22,6 @@ toc_sticky : true
 ## MoveIt
 [MoveIt Tutorials](https://moveit.picknik.ai/main/doc/tutorials/tutorials.html)     
 
+## real device
+[RB Series](https://www.rainbow-robotics.com/rb?gad_source=1&gclid=Cj0KCQjw-r-vBhC-ARIsAGgUO2Dn8gK6JsNapwJqJS8YD27HxcaOL-iTJdFJVDCDAuniJrEK2Y5VESEaAlI1EALw_wcB)    
+[RT Corp](https://rt-net.jp/service/rd-robot-en/#sciurus17)    
