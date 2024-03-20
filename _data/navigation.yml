@@ -54,6 +54,10 @@ sidebar-category:
         url: "/blog"
         category : "blog"
 
+      - title: "경제 공부"
+        url: "/financial"
+        category : "financial"
+
       - title: "Etc"
         url: "/etc"
         category : "etc"
