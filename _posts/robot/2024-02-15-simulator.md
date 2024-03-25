@@ -25,6 +25,7 @@ toc_sticky : true
  
 ## test
 [model sample](https://mujoco.readthedocs.io/en/stable/models.html)     
+[model sample github](https://github.com/google-deepmind/mujoco_menagerie)     
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0ORsj_E17B0" frameborder="0" allowfullscreen></iframe>    
 
 ## mujoco 언어
