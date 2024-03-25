@@ -23,7 +23,7 @@ toc_sticky : true
 
 ## test
 [model sample](https://mujoco.readthedocs.io/en/stable/models.html)     
-youtube = 0ORsj_E17B0
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0ORsj_E17B0" frameborder="0" allowfullscreen></iframe>    
 
 ## mujoco 언어
 MJCF(mujoco xml file)   
