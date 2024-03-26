@@ -2,7 +2,7 @@
 title: "코테 준비"
 excerpt_separator: "<!--more-->"
 categories:
-  - etc
+  - algorithm
 tags:
   - 코딩 테스트
 
