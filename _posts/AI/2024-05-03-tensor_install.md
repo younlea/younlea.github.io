@@ -57,3 +57,11 @@ sudo apt-get -y install cuda
 
 ref : [blog1](https://sanghyunpark01.github.io/ubuntu/tips/Ubuntu_GDriver/)    
       [blog2](https://sanghyunpark01.github.io/ubuntu/tips/Uubntu_Cuda/)
+
+
+# tensorflow install
+
+```
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+```
+[ref link](https://www.cherryservers.com/blog/install-tensorflow-ubuntu)
