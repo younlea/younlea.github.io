@@ -63,5 +63,24 @@ ref : [blog1](https://sanghyunpark01.github.io/ubuntu/tips/Ubuntu_GDriver/)
 
 ```
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+conda config --set auto_activate_base false
+>>reboot
+conda create --name=tf python=3.10
+conda activate tf
+>>
+conda install -c conda-forge cudnn
+mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/' > $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+>>
+python3 -m pip install TensorFlow
+python -c "import TensorFlow as tf; print(tf.random.normal([5, 5]))"
+conda deactivate
 ```
 [ref link](https://www.cherryservers.com/blog/install-tensorflow-ubuntu)
+
+에러 케이스   
+```
+CondaSSLError: Encountered an SSL error. Most likely a certificate verification issue.
+```
+
