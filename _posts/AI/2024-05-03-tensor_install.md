@@ -52,6 +52,8 @@ sudo apt-get update
 sudo apt-get -y install cuda
 ```
 
+sudo apt install nvidia-cuda-toolkit    
+
 최종 설치 확인 : nvcc -V     
 
 
