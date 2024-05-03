@@ -73,7 +73,8 @@ conda install -c conda-forge cudnn
 mkdir -p $CONDA_PREFIX/etc/conda/activate.d
 echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/' > $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 >>
-python3 -m pip install TensorFlow
+python3 -m pip install TensorFlow (안된다.)
+conda install tensorflow
 python -c "import TensorFlow as tf; print(tf.random.normal([5, 5]))"
 conda deactivate
 ```
