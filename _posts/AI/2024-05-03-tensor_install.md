@@ -50,9 +50,8 @@ sudo dpkg -i cuda-repo-ubuntu2204-12-2-local_12.2.2-535.104.05-1_amd64.deb
 sudo cp /var/cuda-repo-ubuntu2204-12-2-local/cuda-*-keyring.gpg /usr/share/keyrings/
 sudo apt-get update
 sudo apt-get -y install cuda
-```
-
 sudo apt install nvidia-cuda-toolkit    
+```
 
 최종 설치 확인 : nvcc -V     
 
