@@ -34,12 +34,26 @@ driver   : nvidia-driver-535-open - distro non-free
 driver   : nvidia-driver-418-server - distro non-free
 driver   : xserver-xorg-video-nouveau - distro free builtin
 ```
-
 install
 sudo apt-get install nvidia-driver-535
 
 
+# CUDA 설치
+## 버젼확인 
+nvidia-smi -> CUDA version : 12.2    
+[version 다운로드 링크](https://developer.nvidia.com/cuda-toolkit-archive)    
+```
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
+sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/12.2.2/local_installers/cuda-repo-ubuntu2204-12-2-local_12.2.2-535.104.05-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu2204-12-2-local_12.2.2-535.104.05-1_amd64.deb
+sudo cp /var/cuda-repo-ubuntu2204-12-2-local/cuda-*-keyring.gpg /usr/share/keyrings/
+sudo apt-get update
+sudo apt-get -y install cuda
+```
+
+최종 설치 확인 : nvcc -V     
 
 
-ref : [blog1](https://sanghyunpark01.github.io/ubuntu/tips/Ubuntu_GDriver/)
+ref : [blog1](https://sanghyunpark01.github.io/ubuntu/tips/Ubuntu_GDriver/)    
       [blog2](https://sanghyunpark01.github.io/ubuntu/tips/Uubntu_Cuda/)
