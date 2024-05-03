@@ -82,5 +82,7 @@ conda deactivate
 에러 케이스   
 ```
 CondaSSLError: Encountered an SSL error. Most likely a certificate verification issue.
+>> 해결책
+conda config --set ssl_verify false
 ```
 
