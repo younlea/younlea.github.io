@@ -62,18 +62,19 @@ ref : [blog1](https://sanghyunpark01.github.io/ubuntu/tips/Ubuntu_GDriver/)
 # tensorflow install
 
 ```
+>> Miniconda install <<
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 conda config --set auto_activate_base false
 >>reboot
 conda create --name=tf python=3.10
 conda activate tf
->>
+>> conda install <<
 conda install -c conda-forge cudnn
 mkdir -p $CONDA_PREFIX/etc/conda/activate.d
 echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/' > $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
->>
-python3 -m pip install TensorFlow (안된다.)
+>> tensorflow install <<
+-- python3 -m pip install TensorFlow (안된다.)
 conda install tensorflow
 python -c "import TensorFlow as tf; print(tf.random.normal([5, 5]))"
 conda deactivate
@@ -82,8 +83,15 @@ conda deactivate
 
 에러 케이스   
 ```
+>> ssl error case <<
 CondaSSLError: Encountered an SSL error. Most likely a certificate verification issue.
 >> 해결책
 conda config --set ssl_verify false
+
+>> tensorflow 설치 이슈 <<
+ERROR: Could not find a version that satisfies the requirement TensorFlow (from versions: none) ERROR: No matching distribution found for TensorFlow
+>> 해결책
+conda install tensorflow
+
 ```
 
