@@ -16,7 +16,7 @@ nvidia-smi
 설치가능 버젼 확인     
 - ubuntu-drivers devices 
 
-'''
+```
 younleakim@younleakim-400TEA-400SEA:~$ ubuntu-drivers devices
 == /sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0 ==
 modalias : pci:v000010DEd00001F82sv0000144Dsd000080B3bc03sc00i00
@@ -33,7 +33,7 @@ driver   : nvidia-driver-545-open - distro non-free
 driver   : nvidia-driver-535-open - distro non-free
 driver   : nvidia-driver-418-server - distro non-free
 driver   : xserver-xorg-video-nouveau - distro free builtin
-'''
+```
 
 install
 sudo apt-get install nvidia-driver-535
