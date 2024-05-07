@@ -124,5 +124,8 @@ ERROR: Could not find a version that satisfies the requirement TensorFlow (from 
 >> 해결책
 conda install tensorflow
 
+>> cuda 삭제
+sudo apt-get --purge remove 'cuda*'
+sudo apt-get autoremove --purge 'cuda*'
 ```
 
