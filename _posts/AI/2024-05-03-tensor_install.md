@@ -68,6 +68,7 @@ CUDA 버젼에 맞는 cuDNN, python, tensorflow version 확인
 텐서플로우-2.15.0	3.9-3.11	클랭 16.0.0	바젤 6.1.0	8.9	 12.2
 ```
 [Cudnn download](https://developer.nvidia.com/rdp/cudnn-archive)     
+>> cudnn-local-repo-ubuntu2204-8.9.7.29_1.0-1_amd64.deb
 
 # tensorflow install
 
