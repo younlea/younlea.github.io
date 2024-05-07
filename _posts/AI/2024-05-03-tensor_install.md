@@ -93,6 +93,7 @@ conda deactivate
 # tensorflow version 확인
 ```
 python3 -c 'import tensorflow as tf; print(tf.__version__)'
+pip list | grep tensor
 ```
 # tensorflow vesrion 변경
 ```
