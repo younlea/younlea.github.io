@@ -52,9 +52,24 @@ sudo apt-get update
 sudo apt-get -y install cuda
 sudo apt install nvidia-cuda-toolkit    
 ```
+```
+실행파일로 설치 하는 방법. 
+wget https://developer.download.nvidia.com/compute/cuda/12.2.2/local_installers/cuda_12.2.2_535.104.05_linux.run
+sudo sh cuda_12.2.2_535.104.05_linux.run
+설치후 .bashrc에 아래 코드 추가 하고 source .bashrc 실행해야 함. 
+export PATH="/usr/local/cuda-12.2/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda-12.2/lib64:$LD_LIBRARY_PATH"
+```
 
 최종 설치 확인 : nvcc -V     
-
+```
+~$ nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2023 NVIDIA Corporation
+Built on Tue_Aug_15_22:02:13_PDT_2023
+Cuda compilation tools, release 12.2, V12.2.140
+Build cuda_12.2.r12.2/compiler.33191640_0
+```
 
 ref : [blog1](https://sanghyunpark01.github.io/ubuntu/tips/Ubuntu_GDriver/)    
       [blog2](https://sanghyunpark01.github.io/ubuntu/tips/Uubntu_Cuda/)
