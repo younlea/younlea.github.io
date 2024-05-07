@@ -59,6 +59,14 @@ sudo apt install nvidia-cuda-toolkit
 ref : [blog1](https://sanghyunpark01.github.io/ubuntu/tips/Ubuntu_GDriver/)    
       [blog2](https://sanghyunpark01.github.io/ubuntu/tips/Uubntu_Cuda/)
 
+## Cudnn version 확인
+CUDA 버젼에 맞는 cuDNN, python, tensorflow version 확인    
+[tensorflow version 확인](https://www.tensorflow.org/install/source?hl=ko#gpu)      
+```
+버전	           파이썬 버전	컴파일러	     빌드 도구	 cuDNN 쿠다
+텐서플로우-2.16.1	3.9-3.12	클랭 17.0.6	바젤 6.5.0	8.9	 12.3
+텐서플로우-2.15.0	3.9-3.11	클랭 16.0.0	바젤 6.1.0	8.9	 12.2
+```
 
 # tensorflow install
 
