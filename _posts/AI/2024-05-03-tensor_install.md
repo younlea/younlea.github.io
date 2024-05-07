@@ -111,6 +111,15 @@ conda deactivate
 ```
 python3 -c 'import tensorflow as tf; print(tf.__version__)'
 pip list | grep tensor
+
+$ conda list | grep tensor
+tensorboard               2.15.2             pyhd8ed1ab_0    conda-forge
+tensorboard-data-server   0.7.0           py310h52d8a92_0
+tensorboard-plugin-wit    1.8.1           py310h06a4308_0
+tensorflow                2.15.0          cuda120py310h9360858_3    conda-forge
+tensorflow-base           2.15.0          cuda120py310heceb7ac_3    conda-forge
+tensorflow-estimator      2.15.0          cuda120py310h549c77d_3    conda-forge
+
 ```
 # tensorflow vesrion 변경
 ```
