@@ -85,7 +85,7 @@ CUDA 버젼에 맞는 cuDNN, python, tensorflow version 확인
 [Cudnn download](https://developer.nvidia.com/rdp/cudnn-archive)     
 > cudnn-local-repo-ubuntu2204-8.9.7.29_1.0-1_amd64.deb
 
-# tensorflow install
+# cudnn & tensorflow install (using conda)
 
 ```
 >> Miniconda install <<
