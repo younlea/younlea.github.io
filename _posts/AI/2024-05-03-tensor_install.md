@@ -82,7 +82,26 @@ conda deactivate
 ```
 [ref link](https://www.cherryservers.com/blog/install-tensorflow-ubuntu)
 
-에러 케이스   
+# tensorflow version 확인
+```
+python3 -c 'import tensorflow as tf; print(tf.__version__)'
+```
+# tensorflow vesrion 변경
+```
+# gpu 버전이 아닌 경우
+pip install --upgrade tensorflow==버전
+# gpu 버전인 경우
+pip install --upgrade tensorflow-gpu==버전
+
+# 업그레이드 예시
+pip install --upgrade tensorflow==2.7.0
+# 다운그레이드 예시
+pip install --upgrade tensorflow==1.15.0
+
+
+```
+
+# 에러 케이스   
 ```
 >> ssl error case <<
 CondaSSLError: Encountered an SSL error. Most likely a certificate verification issue.
