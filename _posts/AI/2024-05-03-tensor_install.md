@@ -124,6 +124,8 @@ pip install --upgrade tensorflow==2.7.0
 # 다운그레이드 예시
 pip install --upgrade tensorflow==1.15.0
 
+# codna로 업글하니까된다. 
+conda install tensorflow==2.15.0
 
 ```
 
