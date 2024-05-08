@@ -37,9 +37,10 @@ driver   : xserver-xorg-video-nouveau - distro free builtin
 install
 sudo apt-get install nvidia-driver-535
 
+# miniconda 사용하지 않고 설치
 
-# CUDA 설치
-## 버젼확인 
+## CUDA 설치
+### 버젼확인 
 nvidia-smi -> CUDA version : 12.2    
 [version 다운로드 링크](https://developer.nvidia.com/cuda-toolkit-archive)    
 ```
@@ -74,7 +75,7 @@ Build cuda_12.2.r12.2/compiler.33191640_0
 ref : [blog1](https://sanghyunpark01.github.io/ubuntu/tips/Ubuntu_GDriver/)    
       [blog2](https://sanghyunpark01.github.io/ubuntu/tips/Uubntu_Cuda/)
 
-## Cudnn version 확인
+## 적절한 버젼의 Cudnn version 확인
 CUDA 버젼에 맞는 cuDNN, python, tensorflow version 확인    
 [tensorflow version 확인](https://www.tensorflow.org/install/source?hl=ko#gpu)      
 ```
@@ -82,10 +83,18 @@ CUDA 버젼에 맞는 cuDNN, python, tensorflow version 확인
 텐서플로우-2.16.1	3.9-3.12	클랭 17.0.6	바젤 6.5.0	8.9	 12.3
 텐서플로우-2.15.0	3.9-3.11	클랭 16.0.0	바젤 6.1.0	8.9	 12.2
 ```
+## CUDNN 설치
 [Cudnn download](https://developer.nvidia.com/rdp/cudnn-archive)     
 > cudnn-local-repo-ubuntu2204-8.9.7.29_1.0-1_amd64.deb
 
-# cudnn & tensorflow install (using conda)
+## tensorflow 설치
+```
+pip3 install tensorflow==2.12.0
+```
+
+# miniconda 사용해서 설치
+
+## cudnn & tensorflow install (using conda)
 
 ```
 >> Miniconda install <<
@@ -107,7 +116,7 @@ conda deactivate
 ```
 [ref link](https://www.cherryservers.com/blog/install-tensorflow-ubuntu)
 
-# conda 에서 CUDA 설치하기
+## conda 에서 CUDA 설치하기
 ```
 conda install cudatoolkit
 
@@ -115,7 +124,7 @@ conda install cudatoolkit
 conda list cudatoolkit
 
 ```
-# tensorflow version 확인
+## tensorflow version 확인
 ```
 python3 -c 'import tensorflow as tf; print(tf.__version__)'
 pip list | grep tensor
@@ -129,7 +138,7 @@ tensorflow-base           2.15.0          cuda120py310heceb7ac_3    conda-forge
 tensorflow-estimator      2.15.0          cuda120py310h549c77d_3    conda-forge
 
 ```
-# tensorflow vesrion 변경
+## tensorflow vesrion 변경
 ```
 # gpu 버전이 아닌 경우
 pip install --upgrade tensorflow==버전
