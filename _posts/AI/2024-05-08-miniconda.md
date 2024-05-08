@@ -1,60 +1,53 @@
-# miniconda 사용해서 설치
+---
+title: "miniconda "
+excerpt_separator: "<!--more-->"
+categories:
+  - AI
+tags:
+  - write here
 
-## cudnn & tensorflow install (using conda)
+toc : true
+toc_sticky : true
+---
 
+# miniconda란?
+가상환경 기능이 내제된 개발 환경 구축에 용이한것으로 보인다. 
+activate 하는 공간에 설치된 것들을 그대로 쓸수 있어서 python package나 개발 패키지 버젼이 다를때 사용이 용이함. 
+
+# miniconda 설치
 ```
 >> Miniconda install <<
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 conda config --set auto_activate_base false
 >>reboot
+
 conda create --name=tf python=3.10
 conda activate tf
->> conda install <<
+
+>> cudnn install <<
 conda install -c conda-forge cudnn
 mkdir -p $CONDA_PREFIX/etc/conda/activate.d
 echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/' > $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+
 >> tensorflow install <<
--- python3 -m pip install TensorFlow (안된다.)
 conda install tensorflow
 python -c "import TensorFlow as tf; print(tf.random.normal([5, 5]))"
 conda deactivate
 ```
 [ref link](https://www.cherryservers.com/blog/install-tensorflow-ubuntu)
 
-## conda 에서 CUDA 설치하기
+## conda에서 설치된 package 확인 하는 방법
 ```
-conda install cudatoolkit
-
-확인
-conda list cudatoolkit
-
+conda list | grep package 
 ```
-## tensorflow version 확인
+
+## conda에서 package 설치 하는 방법
 ```
-python3 -c 'import tensorflow as tf; print(tf.__version__)'
-pip list | grep tensor
-
-$ conda list | grep tensor
-tensorboard               2.15.2             pyhd8ed1ab_0    conda-forge
-tensorboard-data-server   0.7.0           py310h52d8a92_0
-tensorboard-plugin-wit    1.8.1           py310h06a4308_0
-tensorflow                2.15.0          cuda120py310h9360858_3    conda-forge
-tensorflow-base           2.15.0          cuda120py310heceb7ac_3    conda-forge
-tensorflow-estimator      2.15.0          cuda120py310h549c77d_3    conda-forge
-
+conda install pacage    
+ex : conda install cudatoolkit   
+ex : conda install tensorflow==2.15.0   
 ```
-## tensorflow vesrion 변경
-```
-# gpu 버전이 아닌 경우
-pip install --upgrade tensorflow==버전
-# gpu 버전인 경우
-pip install --upgrade tensorflow-gpu==버전
+## conda activate
 
-# 업그레이드 예시
-pip install --upgrade tensorflow==2.7.0
-# 다운그레이드 예시
-pip install --upgrade tensorflow==1.15.0
-
-# codna로 업글하니까된다. 
-conda install tensorflow==2.15.0
+## conda deactivate
