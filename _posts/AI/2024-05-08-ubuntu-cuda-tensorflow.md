@@ -29,6 +29,12 @@ sudo sh cuda_11.8.0_520.61.05_linux.run
 /usr/local/cuda-11.8 에 압축이 풀림
 /usr/local/cuda에 심볼릭 링킹됨. 
 
+vim ~/.bashrc 아래 추가
+>> export PATH="/usr/local/cuda-11.8/bin:$PATH"
+ export LD_LIBRARY_PATH="/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH"
+source ~/.bashrc
+
+
 nvcc -V로 버젼 확인 가능 함. 
 
 # CUDNN install
