@@ -107,6 +107,14 @@ conda deactivate
 ```
 [ref link](https://www.cherryservers.com/blog/install-tensorflow-ubuntu)
 
+# conda 에서 CUDA 설치하기
+```
+conda install cudatoolkit
+
+확인
+conda list cudatoolkit
+
+```
 # tensorflow version 확인
 ```
 python3 -c 'import tensorflow as tf; print(tf.__version__)'
