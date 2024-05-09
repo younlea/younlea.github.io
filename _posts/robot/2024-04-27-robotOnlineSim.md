@@ -14,3 +14,5 @@ toc_sticky : true
 [theconstruct.ai](https://www.theconstruct.ai/)      
 [online sim](https://app.theconstruct.ai/)     
 [online course](https://app.theconstruct.ai/courses)     
+
+https://www.youtube.com/watch?v=Ale55LcdZeE
