@@ -15,4 +15,4 @@ toc_sticky : true
 [online sim](https://app.theconstruct.ai/)     
 [online course](https://app.theconstruct.ai/courses)     
 
-https://www.youtube.com/watch?v=Ale55LcdZeE
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ale55LcdZeE" frameborder="0" allowfullscreen></iframe>
