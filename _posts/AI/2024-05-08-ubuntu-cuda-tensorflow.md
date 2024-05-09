@@ -1,5 +1,5 @@
 ---
-title: "write here "
+title: "ubuntu에서 cuda, cudnn, tensorflow 셋업하기 "
 excerpt_separator: "<!--more-->"
 categories:
   - AI
