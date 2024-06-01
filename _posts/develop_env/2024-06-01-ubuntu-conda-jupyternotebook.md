@@ -62,7 +62,7 @@ conda install scipy=1.5.2
 conda install statsmodels=0.11.1
 conda install -c conda-forge mlxtend
 conda install conda-forge::xgboost=0.80
-
+conda install anaconda::seaborn
 ```
 
 
