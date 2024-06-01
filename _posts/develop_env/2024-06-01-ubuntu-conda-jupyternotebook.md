@@ -54,7 +54,8 @@ statsmodels 0.11.1
 인스톨 
 conda install pandas=0.25.1
 conda install numpy=1.18.5
-conda install sklearn=0.21.3
+이거 아니다 ㅡ.,ㅡ; conda install sklearn=0.21.3
+conda install scikit-learn=0.21.3
 conda install scipy=1.5.2
 conda install statsmodels=0.11.1
 ```
