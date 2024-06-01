@@ -21,18 +21,33 @@ pip install conda
 ```
 sudo apt install jupyter-notebook
 ```
-# coda init
+# conda init
 ```
 # conda 명령어를 사용해 가상환경 만들기
 conda create -n 만들고자하는이름 python=자신이원하는버전(ex, 3) 
 ```
 
+# conda 만들어진지 확인
+```
+conda info --envs
+```
+
 # conda activate
 ```
-conda activate
+conda activate 만들고자하는이름
 ```
 
 # jupyter notebook 실행
 ```
 jupyter notebook
+```
+
+# conda 명령어를 사용해 가상환경 비활성화
+```
+conda deactivate
+```
+
+# conda 명령어를 사용해 가상환경 삭제하기
+```
+conda remove --name 지울가상환경이름 --all
 ```
