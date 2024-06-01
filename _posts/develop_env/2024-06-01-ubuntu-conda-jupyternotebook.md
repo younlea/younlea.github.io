@@ -41,6 +41,23 @@ conda activate 만들고자하는이름
 ```
 jupyter notebook
 ```
+# 가상환경에서 필요한 패키지 설치하기
+```
+필요한 패키지 
+3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 20:34:20) [MSC v.1916 64 bit (AMD64)]
+pandas 0.25.1
+numpy 1.18.5
+sklearn 0.21.3
+scipy 1.5.2
+statsmodels 0.11.1
+
+인스톨 
+conda install pandas=0.25.1
+conda install numpy=1.18.5
+conda install sklearn=0.21.3
+conda install scipy=1.5.2
+conda install statsmodels=0.11.1
+```
 
 # conda 명령어를 사용해 가상환경 비활성화
 ```
@@ -51,3 +68,5 @@ conda deactivate
 ```
 conda remove --name 지울가상환경이름 --all
 ```
+
+
