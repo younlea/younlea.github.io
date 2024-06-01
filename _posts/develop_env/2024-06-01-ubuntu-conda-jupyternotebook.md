@@ -49,16 +49,23 @@ pandas 0.25.1
 numpy 1.18.5
 sklearn 0.21.3
 scipy 1.5.2
+mlxtend	0.15.0.0
 statsmodels 0.11.1
+xgboost	0.80
 
 인스톨 
 conda install pandas=0.25.1
 conda install numpy=1.18.5
-이거 아니다 ㅡ.,ㅡ; conda install sklearn=0.21.3
+이거 아니다 ㅡ.,ㅡ; ///////conda install sklearn=0.21.3
 conda install scikit-learn=0.21.3
 conda install scipy=1.5.2
 conda install statsmodels=0.11.1
+conda install -c conda-forge mlxtend
+conda install conda-forge::xgboost=0.80
+
 ```
+
+
 
 # jupyter notebook  커널 연결
 ```
