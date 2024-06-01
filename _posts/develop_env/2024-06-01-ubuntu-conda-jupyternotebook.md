@@ -59,6 +59,14 @@ conda install scipy=1.5.2
 conda install statsmodels=0.11.1
 ```
 
+# jupyter notebook  커널 연결
+```
+conda install ipykernel
+
+현재 커널(jupyternotebook)으로 커널 연결
+python3 -m ipykernel install --user --name jupyternotebook --display-name ds3
+```
+
 # conda 명령어를 사용해 가상환경 비활성화
 ```
 conda deactivate
