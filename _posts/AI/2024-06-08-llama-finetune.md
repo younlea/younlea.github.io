@@ -35,7 +35,7 @@ https://github.com/meta-llama/PurpleLlama/tree/main/Llama-Guard2
 
 https://llama.meta.com/llama-downloads    
 
-![Alt text](image.png)
+<img width="1160" alt="image" src="https://github.com/younlea/younlea.github.io/assets/1435846/1e39f68b-b25b-4593-8237-db8d568e8ad7">
 
 https://llama.meta.com/docs/model-cards-and-prompt-formats/meta-llama-3    
 
