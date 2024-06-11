@@ -11,6 +11,7 @@ toc_sticky : true
 ---
 
 # github로 협업하기
+```
 1. fork
 2. git clone
 3. git remote add upstream [fork 한 github 주소]
@@ -19,8 +20,9 @@ toc_sticky : true
 6. git fetch upstream [작업 branch]
 7. git rebase upstream/[작업 branch]
 8. git push origin [작업 branch]
-
+```
 ## organization에서 작업할때
+```
 1. 각자 자신의 저장소로 fork를 한다.
 2. local에 clone해서 코드를 받는다.
 3. local에서 작업할 곳을 checkout을 이용해서 branch 생성해서 작업한다.
@@ -32,4 +34,5 @@ toc_sticky : true
 4-5. git push origin [작업 branch]
 5. git stash pop으로 backup한 코드를 다시 불러온다.
 6. git add. git commit, git push origin [작업 branch]를 사용해서 넣는다.
-7. github page에서 PR을 해서 upstream에 넣는다. 
+7. github page에서 PR을 해서 upstream에 넣는다.
+```
