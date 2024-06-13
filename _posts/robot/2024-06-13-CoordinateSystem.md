@@ -20,3 +20,6 @@ toc_sticky : true
 ## 오일러
 
 ## 쿼니터안
+
+## CLIK
+close loop inverse kinematics  
