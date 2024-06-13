@@ -20,7 +20,94 @@ toc_sticky : true
 ## 오일러
 
 ## 쿼니터안
+```
+쿼터니언(Quaternion)은 3차원 회전을 표현하는 수학적 도구로, 4개의 실수 성분으로 구성된 4차원 복소수입니다. 쿼터니언은 회전의 연산이 효율적이고, 각 변환 간의 계산이 수월하여 3D 그래픽스, 로봇 공학, 항공 우주 등 다양한 분야에서 널리 사용됩니다.
 
+쿼터니언의 정의
+
+쿼터니언  q 는 다음과 같이 표현됩니다:
+ q = w + xi + yj + zk 
+여기서  w, x, y, z 는 실수이고,  i, j, k 는 허수 단위입니다. 이는 다음과 같이 벡터와 스칼라 부분으로 나눌 수 있습니다:
+ q = (w, \mathbf{v}) 
+여기서  \mathbf{v} = (x, y, z) 는 벡터 부분,  w 는 스칼라 부분입니다.
+
+쿼터니언의 기본 연산
+
+	1.	덧셈:
+두 쿼터니언  q_1 = (w_1, \mathbf{v}_1) 와  q_2 = (w_2, \mathbf{v}_2) 의 덧셈은 성분별로 수행됩니다:
+ q_1 + q_2 = (w_1 + w_2, \mathbf{v}_1 + \mathbf{v}_2) 
+	2.	곱셈:
+두 쿼터니언  q_1 과  q_2 의 곱셈은 다음과 같이 정의됩니다:
+ q_1 q_2 = (w_1 w_2 - \mathbf{v}_1 \cdot \mathbf{v}_2, w_1 \mathbf{v}_2 + w_2 \mathbf{v}_1 + \mathbf{v}_1 \times \mathbf{v}_2) 
+여기서  \mathbf{v}_1 \cdot \mathbf{v}_2 는 벡터의 내적,  \mathbf{v}_1 \times \mathbf{v}_2 는 벡터의 외적입니다.
+	3.	켤레:
+쿼터니언  q 의 켤레는 다음과 같이 정의됩니다:
+ q^* = (w, -\mathbf{v}) 
+	4.	노름(Norm):
+쿼터니언  q 의 노름은 다음과 같이 계산됩니다:
+ \|q\| = \sqrt{w^2 + x^2 + y^2 + z^2} 
+	5.	역수:
+쿼터니언  q 의 역수는 다음과 같이 계산됩니다:
+ q^{-1} = \frac{q^*}{\|q\|^2} 
+
+3D 회전을 위한 쿼터니언
+
+쿼터니언을 사용하여 3D 공간에서의 회전을 표현할 수 있습니다. 회전을 표현하는 단위 쿼터니언  q 는 노름이 1인 쿼터니언으로, 다음과 같이 정의됩니다:
+ q = \cos\left(\frac{\theta}{2}\right) + \sin\left(\frac{\theta}{2}\right) (xi + yj + zk) 
+여기서  \theta 는 회전 각도,  (x, y, z) 는 회전 축의 단위 벡터입니다.
+
+벡터 회전
+
+벡터  \mathbf{v} 를 쿼터니언  q 로 회전시키려면, 먼저 벡터를 순수 쿼터니언으로 변환한 후, 다음과 같은 쿼터니언 곱셈을 사용합니다:
+ \mathbf{v}{\prime} = q \mathbf{v} q^* 
+여기서  \mathbf{v} 는  (0, \mathbf{v}) 로 표현된 순수 쿼터니언입니다.
+
+쿼터니언의 장점
+
+	1.	간결성: 쿼터니언은 회전 행렬(9개의 요소)보다 적은 4개의 요소만으로 회전을 표현할 수 있습니다.
+	2.	누적 오류 감소: 쿼터니언을 사용하면 수치적 안정성이 높아지고, 연속된 회전 연산에서 누적 오류가 적습니다.
+	3.	슬러빅 현상 방지: 오일러 각을 사용할 때 발생할 수 있는 기하학적 특이점 문제(슬러빅 현상)을 피할 수 있습니다.
+```
+예시 코드 (Python)
+
+다음은 쿼터니언을 사용하여 벡터를 회전시키는 Python 예제입니다:
+```python
+import numpy as np
+
+def quaternion_multiply(q1, q2):
+    w1, x1, y1, z1 = q1
+    w2, x2, y2, z2 = q2
+    return np.array([
+        w1*w2 - x1*x2 - y1*y2 - z1*z2,
+        w1*x2 + x1*w2 + y1*z2 - z1*y2,
+        w1*y2 - x1*z2 + y1*w2 + z1*x2,
+        w1*z2 + x1*y2 - y1*x2 + z1*w2
+    ])
+
+def quaternion_conjugate(q):
+    w, x, y, z = q
+    return np.array([w, -x, -y, -z])
+
+def rotate_vector(v, q):
+    q_v = np.concatenate(([0], v))
+    q_conj = quaternion_conjugate(q)
+    q_v_rotated = quaternion_multiply(quaternion_multiply(q, q_v), q_conj)
+    return q_v_rotated[1:]
+
+# 예시 회전: 90도 (π/2 라디안) 회전 축 (0, 0, 1)
+theta = np.pi / 2
+axis = np.array([0, 0, 1])
+q = np.concatenate(([np.cos(theta / 2)], np.sin(theta / 2) * axis))
+
+# 회전할 벡터
+v = np.array([1, 0, 0])
+
+# 벡터 회전
+v_rotated = rotate_vector(v, q)
+
+print("Original vector:", v)
+print("Rotated vector:", v_rotated)
+```
 ## CLIK
 close loop inverse kinematics  
 ```
