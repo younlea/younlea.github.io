@@ -23,7 +23,7 @@ toc_sticky : true
 
 ## CLIK
 close loop inverse kinematics  
-
+```
 *Close Loop Inverse Kinematics (CLIK)**는 로봇공학에서 로봇의 말단 효과기(end-effector)가 목표 위치와 자세에 도달하도록 관절 각도를 계산하는 알고리즘입니다. 일반적인 Inverse Kinematics와 다르게, CLIK는 피드백 제어를 통해 목표에 도달할 때까지 반복적으로 관절 각도를 조정합니다.
 
 주요 특징과 원리
@@ -74,8 +74,9 @@ close loop inverse kinematics
 
 	•	계산 비용: 반복적인 계산이 필요하여 실시간 응용에서는 계산 비용이 높을 수 있습니다.
 	•	수렴 문제: 오차가 줄어들지 않거나 목표에 도달하지 못하는 경우가 발생할 수 있습니다.
-
+```
 예시 코드 (Python)
+```python
 import numpy as np
 
 def jacobian_matrix(theta):
@@ -111,4 +112,5 @@ theta_init = np.array([0.5])
 theta_solution = inverse_kinematics(x_d, theta_init)
 
 print("Solution: ", theta_solution)
+```
 
