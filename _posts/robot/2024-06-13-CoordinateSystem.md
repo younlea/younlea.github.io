@@ -201,3 +201,7 @@ theta_solution = inverse_kinematics(x_d, theta_init)
 print("Solution: ", theta_solution)
 ```
 
+# Rigid Body Dynamics Library
+[RBDL](https://rbdl.github.io/index.html)      
+  
+
