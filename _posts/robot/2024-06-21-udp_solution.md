@@ -699,7 +699,7 @@ clean:
 ```
 
 # python side
-## udp_client.py
+## udp_comm.py
 ```python
 import socket
 import threading
