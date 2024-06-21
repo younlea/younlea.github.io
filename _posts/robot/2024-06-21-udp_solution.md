@@ -895,7 +895,10 @@ class UDPClient:
                 self.receive_callback(command, data, addr)
 
     def send_message(self, command, data):
-        # Ensure command is 4 characters long
+        # Ensure command is exactly 4 characters long, trim if it's longer
+        if len(command) > 4:
+            print("Command is longer than 4 characters. Trimming to 4 characters.")
+            command = command[:4]
         command = command.ljust(4)
         message = command + data
         self.client_socket.sendto(message.encode(), (self.server_ip, self.send_port))
@@ -914,7 +917,7 @@ if __name__ == "__main__":
         print(f"Received message from {addr}: Command: {command}, Data: {data}")
 
     local_ip = '127.0.0.1'  # 수신할 IP
-    server_ip = '192.168.1.100'  # 보낼 IP
+    server_ip = '127.0.0.1'  # 보낼 IP
     receive_port = 5003  # 수신할 포트
     send_port = 5002  # 보낼 포트
 
@@ -922,7 +925,7 @@ if __name__ == "__main__":
     client.set_receive_callback(on_receive_callback)
 
     while True:
-        command = input("Enter command (4 characters): ")
+        command = input("Enter command (up to 4 characters): ")
         data = input("Enter data: ")
         client.send_message(command, data)
 ```
