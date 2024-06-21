@@ -710,16 +710,16 @@ all: udp_comm
 udp_comm: $(OBJ_DIR)/main.o $(OBJ_DIR)/UdpComm.o $(OBJ_DIR)/CustomUdpComm.o $(OBJ_DIR)/daemon.o
 	$(CXX) $(CXXFLAGS) -o udp_comm $(OBJ_DIR)/main.o $(OBJ_DIR)/UdpComm.o $(OBJ_DIR)/CustomUdpComm.o $(OBJ_DIR)/daemon.o
 
-$(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp $(INCLUDES)/CustomUdpComm.hpp $(INCLUDES)/UdpComm.hpp | $(OBJ_DIR)
+$(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp include/CustomUdpComm.hpp include/UdpComm.hpp | $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $(SRC_DIR)/main.cpp -o $(OBJ_DIR)/main.o
 
-$(OBJ_DIR)/UdpComm.o: $(SRC_DIR)/UdpComm.cpp $(INCLUDES)/UdpComm.hpp | $(OBJ_DIR)
+$(OBJ_DIR)/UdpComm.o: $(SRC_DIR)/UdpComm.cpp include/UdpComm.hpp | $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $(SRC_DIR)/UdpComm.cpp -o $(OBJ_DIR)/UdpComm.o
 
-$(OBJ_DIR)/CustomUdpComm.o: $(SRC_DIR)/CustomUdpComm.cpp $(INCLUDES)/CustomUdpComm.hpp $(INCLUDES)/UdpComm.hpp | $(OBJ_DIR)
+$(OBJ_DIR)/CustomUdpComm.o: $(SRC_DIR)/CustomUdpComm.cpp include/CustomUdpComm.hpp include/UdpComm.hpp | $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $(SRC_DIR)/CustomUdpComm.cpp -o $(OBJ_DIR)/CustomUdpComm.o
 
-$(OBJ_DIR)/daemon.o: $(DAEMON_DIR)/daemon.cpp $(INCLUDES)/CustomUdpComm.hpp $(INCLUDES)/UdpComm.hpp | $(OBJ_DIR)
+$(OBJ_DIR)/daemon.o: $(DAEMON_DIR)/daemon.cpp include/CustomUdpComm.hpp include/UdpComm.hpp | $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $(DAEMON_DIR)/daemon.cpp -o $(OBJ_DIR)/daemon.o
 
 $(OBJ_DIR):
