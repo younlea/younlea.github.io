@@ -771,3 +771,62 @@ while True:
 이렇게 하면 C++로 작성된 서버와 Python으로 작성된 클라이언트가 데이터를 주고받을 수 있습니다.
 ```
 
+# python call back 방식
+## main.py
+``` python
+from udp_client import UDPClient
+
+def on_receive_callback(message, addr):
+    print(f"Received message from {addr}: {message}")
+
+if __name__ == "__main__":
+    client = UDPClient('127.0.0.1', 5005)  # localhost 주소와 포트 번호
+    client.set_receive_callback(on_receive_callback)
+
+    while True:
+        message = input("Enter message to send: ")
+        client.send_message(message)
+```
+## udp_client.py
+``` python
+import socket
+import threading
+
+class UDPClient:
+    def __init__(self, server_ip, server_port):
+        self.server_ip = server_ip
+        self.server_port = server_port
+        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+        self.receive_callback = None
+        self.receive_thread = threading.Thread(target=self.receive_loop)
+        self.receive_thread.daemon = True
+        self.receive_thread.start()
+
+    def set_receive_callback(self, callback):
+        self.receive_callback = callback
+
+    def receive_loop(self):
+        while True:
+            data, addr = self.client_socket.recvfrom(1024)
+            if self.receive_callback:
+                self.receive_callback(data.decode(), addr)
+
+    def send_message(self, message):
+        self.client_socket.sendto(message.encode(), (self.server_ip, self.server_port))
+
+    def close(self):
+        self.client_socket.close()
+
+# 테스트용 예제
+if __name__ == "__main__":
+    def on_receive_callback(message, addr):
+        print(f"Received message from {addr}: {message}")
+
+    client = UDPClient('127.0.0.1', 5005)  # localhost 주소와 포트 번호
+    client.set_receive_callback(on_receive_callback)
+
+    while True:
+        message = input("Enter message to send: ")
+        client.send_message(message)
+```
