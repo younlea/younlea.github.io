@@ -860,8 +860,9 @@ if __name__ == "__main__":
     client.set_receive_callback(on_receive_callback)
 
     while True:
-        message = input("Enter message to send: ")
-        client.send_message(message)
+        command = input("Enter command (4 characters): ")
+        data = input("Enter data: ")
+        client.send_message(command, data)
 ```
 ## udp_client.py
 ``` python
@@ -892,7 +893,10 @@ class UDPClient:
             if self.receive_callback:
                 self.receive_callback(data.decode(), addr)
 
-    def send_message(self, message):
+    def send_message(self, command, data):
+        # Ensure command is 4 characters long
+        command = command.ljust(4)
+        message = command + data
         self.client_socket.sendto(message.encode(), (self.server_ip, self.send_port))
 
     def close(self):
@@ -904,7 +908,7 @@ if __name__ == "__main__":
         print(f"Received message from {addr}: {message}")
 
     local_ip = '127.0.0.1'  # 수신할 IP
-    server_ip = '127.0.0.1'  # 보낼 IP
+    server_ip = '192.168.1.100'  # 보낼 IP
     receive_port = 5003  # 수신할 포트
     send_port = 5002  # 보낼 포트
 
@@ -912,8 +916,9 @@ if __name__ == "__main__":
     client.set_receive_callback(on_receive_callback)
 
     while True:
-        message = input("Enter message to send: ")
-        client.send_message(message)
+        command = input("Enter command (4 characters): ")
+        data = input("Enter data: ")
+        client.send_message(command, data)
 ```
 
 
