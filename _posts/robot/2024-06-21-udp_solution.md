@@ -780,7 +780,11 @@ def on_receive_callback(message, addr):
     print(f"Received message from {addr}: {message}")
 
 if __name__ == "__main__":
-    client = UDPClient('127.0.0.1', 5005)  # localhost 주소와 포트 번호
+    server_ip = '127.0.0.1'
+    receive_port = 5003
+    send_port = 5002
+
+    client = UDPClient(server_ip, receive_port, send_port)
     client.set_receive_callback(on_receive_callback)
 
     while True:
@@ -793,15 +797,18 @@ import socket
 import threading
 
 class UDPClient:
-    def __init__(self, server_ip, server_port):
+    def __init__(self, server_ip, receive_port, send_port):
         self.server_ip = server_ip
-        self.server_port = server_port
+        self.receive_port = receive_port
+        self.send_port = send_port
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
         self.receive_callback = None
         self.receive_thread = threading.Thread(target=self.receive_loop)
         self.receive_thread.daemon = True
         self.receive_thread.start()
+
+        self.client_socket.bind(('0.0.0.0', self.receive_port))  # 수신할 포트 설정
 
     def set_receive_callback(self, callback):
         self.receive_callback = callback
@@ -813,7 +820,7 @@ class UDPClient:
                 self.receive_callback(data.decode(), addr)
 
     def send_message(self, message):
-        self.client_socket.sendto(message.encode(), (self.server_ip, self.server_port))
+        self.client_socket.sendto(message.encode(), (self.server_ip, self.send_port))
 
     def close(self):
         self.client_socket.close()
@@ -823,7 +830,11 @@ if __name__ == "__main__":
     def on_receive_callback(message, addr):
         print(f"Received message from {addr}: {message}")
 
-    client = UDPClient('127.0.0.1', 5005)  # localhost 주소와 포트 번호
+    server_ip = '127.0.0.1'
+    receive_port = 5003
+    send_port = 5002
+
+    client = UDPClient(server_ip, receive_port, send_port)
     client.set_receive_callback(on_receive_callback)
 
     while True:
