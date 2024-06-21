@@ -694,5 +694,32 @@ $(DAEMON_DIR)/daemon.o: $(DAEMON_DIR)/daemon.cpp $(INCLUDE)/CustomUdpComm.hpp $(
 clean:
 	rm -f udp_comm main.o $(OBJ_DIR)/*.o $(DAEMON_DIR)/*.o
 ```
+```
+CXX = g++
+CXXFLAGS = -std=c++11 -Wall
+INCLUDES = -I./include
+SRC_DIR = ./src
+OBJ_DIR = ./obj
+DAEMON_DIR = ./daemon
 
+all: udp_comm
+
+udp_comm: main.o $(OBJ_DIR)/UdpComm.o $(OBJ_DIR)/CustomUdpComm.o $(DAEMON_DIR)/daemon.o
+	$(CXX) $(CXXFLAGS) -o udp_comm main.o $(OBJ_DIR)/UdpComm.o $(OBJ_DIR)/CustomUdpComm.o $(DAEMON_DIR)/daemon.o
+
+main.o: $(SRC_DIR)/main.cpp $(INCLUDES)/CustomUdpComm.hpp $(INCLUDES)/UdpComm.hpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $(SRC_DIR)/main.cpp -o main.o
+
+$(OBJ_DIR)/UdpComm.o: $(SRC_DIR)/UdpComm.cpp $(INCLUDES)/UdpComm.hpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $(SRC_DIR)/UdpComm.cpp -o $(OBJ_DIR)/UdpComm.o
+
+$(OBJ_DIR)/CustomUdpComm.o: $(SRC_DIR)/CustomUdpComm.cpp $(INCLUDES)/CustomUdpComm.hpp $(INCLUDES)/UdpComm.hpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $(SRC_DIR)/CustomUdpComm.cpp -o $(OBJ_DIR)/CustomUdpComm.o
+
+$(DAEMON_DIR)/daemon.o: $(DAEMON_DIR)/daemon.cpp $(INCLUDES)/CustomUdpComm.hpp $(INCLUDES)/UdpComm.hpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $(DAEMON_DIR)/daemon.cpp -o $(DAEMON_DIR)/daemon.o
+
+clean:
+	rm -f udp_comm main.o $(OBJ_DIR)/*.o $(DAEMON_DIR)/*.o
+```
 
