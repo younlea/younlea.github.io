@@ -679,37 +679,6 @@ all: udp_comm
 udp_comm: $(OBJ_DIR)/main.o $(OBJ_DIR)/UdpComm.o $(OBJ_DIR)/CustomUdpComm.o $(OBJ_DIR)/daemon.o
 	$(CXX) $(CXXFLAGS) -o udp_comm $(OBJ_DIR)/main.o $(OBJ_DIR)/UdpComm.o $(OBJ_DIR)/CustomUdpComm.o $(OBJ_DIR)/daemon.o
 
-$(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp $(INCLUDES)/CustomUdpComm.hpp $(INCLUDES)/UdpComm.hpp | $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $(SRC_DIR)/main.cpp -o $(OBJ_DIR)/main.o
-
-$(OBJ_DIR)/UdpComm.o: $(SRC_DIR)/UdpComm.cpp $(INCLUDES)/UdpComm.hpp | $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $(SRC_DIR)/UdpComm.cpp -o $(OBJ_DIR)/UdpComm.o
-
-$(OBJ_DIR)/CustomUdpComm.o: $(SRC_DIR)/CustomUdpComm.cpp $(INCLUDES)/CustomUdpComm.hpp $(INCLUDES)/UdpComm.hpp | $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $(SRC_DIR)/CustomUdpComm.cpp -o $(OBJ_DIR)/CustomUdpComm.o
-
-$(OBJ_DIR)/daemon.o: $(DAEMON_DIR)/daemon.cpp $(INCLUDES)/CustomUdpComm.hpp $(INCLUDES)/UdpComm.hpp | $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $(DAEMON_DIR)/daemon.cpp -o $(OBJ_DIR)/daemon.o
-
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
-
-clean:
-	rm -f udp_comm $(OBJ_DIR)/*.o
-```
-```
-CXX = g++
-CXXFLAGS = -std=c++11 -Wall
-INCLUDES = -I./include
-SRC_DIR = ./src
-OBJ_DIR = ./obj
-DAEMON_DIR = ./daemon
-
-all: udp_comm
-
-udp_comm: $(OBJ_DIR)/main.o $(OBJ_DIR)/UdpComm.o $(OBJ_DIR)/CustomUdpComm.o $(OBJ_DIR)/daemon.o
-	$(CXX) $(CXXFLAGS) -o udp_comm $(OBJ_DIR)/main.o $(OBJ_DIR)/UdpComm.o $(OBJ_DIR)/CustomUdpComm.o $(OBJ_DIR)/daemon.o
-
 $(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp include/CustomUdpComm.hpp include/UdpComm.hpp | $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $(SRC_DIR)/main.cpp -o $(OBJ_DIR)/main.o
 
@@ -727,5 +696,58 @@ $(OBJ_DIR):
 
 clean:
 	rm -f udp_comm $(OBJ_DIR)/*.o
+```
+
+# python side
+## udp_client.py
+```python
+import socket
+
+class UDPClient:
+    def __init__(self, server_ip, server_port):
+        self.server_ip = server_ip
+        self.server_port = server_port
+        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+    def send_message(self, message):
+        self.client_socket.sendto(message.encode(), (self.server_ip, self.server_port))
+
+    def receive_message(self):
+        data, server_address = self.client_socket.recvfrom(1024)
+        return data.decode()
+
+    def close(self):
+        self.client_socket.close()
+
+if __name__ == "__main__":
+    # 테스트용 예제
+    client = UDPClient('A_PC_IP_ADDRESS', 5005)  # A PC의 IP 주소와 포트 번호
+    message = "Hello from Python"
+    
+    try:
+        client.send_message(message)
+        received_data = client.receive_message()
+        print(f"Received data from server: {received_data}")
+    finally:
+        client.close()
+```
+## main.py
+``` python
+from udp_client import UDPClient
+
+if __name__ == "__main__":
+    client = UDPClient('A_PC_IP_ADDRESS', 5005)  # A PC의 IP 주소와 포트 번호
+    message = "Hello from Python"
+    
+    try:
+        client.send_message(message)
+        received_data = client.receive_message()
+        print(f"Received data from server: {received_data}")
+    finally:
+        client.close()
+```
+
+``` python
+
 ```
 
