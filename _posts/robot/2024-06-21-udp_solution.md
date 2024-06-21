@@ -702,52 +702,72 @@ clean:
 ## udp_client.py
 ```python
 import socket
+import threading
 
-class UDPClient:
-    def __init__(self, server_ip, server_port):
-        self.server_ip = server_ip
-        self.server_port = server_port
-        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+class UdpComm:
+    def __init__(self, local_ip, local_port, remote_ip, remote_port):
+        self.local_ip = local_ip
+        self.local_port = local_port
+        self.remote_ip = remote_ip
+        self.remote_port = remote_port
+        
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        self.sock.bind((self.local_ip, self.local_port))
 
-    def send_message(self, message):
-        self.client_socket.sendto(message.encode(), (self.server_ip, self.server_port))
+        self.recv_thread = threading.Thread(target=self.receive_udp)
+        self.recv_thread.daemon = True
+        self.recv_thread.start()
 
-    def receive_message(self):
-        data, server_address = self.client_socket.recvfrom(1024)
-        return data.decode()
+    def receive_udp(self):
+        while True:
+            data, addr = self.sock.recvfrom(1024)  # 버퍼 크기 1024 바이트
+            self.on_receive(data.decode(), addr)
 
-    def close(self):
-        self.client_socket.close()
+    def send_data(self, command, data):
+        # Ensure command is 4 characters long
+        command = command.ljust(4)
+        message = command + data
+        self.sock.sendto(message.encode(), (self.remote_ip, self.remote_port))
 
-if __name__ == "__main__":
-    # 테스트용 예제
-    client = UDPClient('A_PC_IP_ADDRESS', 5005)  # A PC의 IP 주소와 포트 번호
-    message = "Hello from Python"
-    
-    try:
-        client.send_message(message)
-        received_data = client.receive_message()
-        print(f"Received data from server: {received_data}")
-    finally:
-        client.close()
+    def on_receive(self, message, addr):
+        command = message[:4]
+        data = message[4:]
+        print(f"Received message: Command: {command}, Data: {data} from {addr}")
+
+# 위 코드를 udp_comm.py 파일로 저장해야 합니다.
 ```
 ## main.py
 ``` python
-from udp_client import UDPClient
+from udp_comm import UdpComm  # UdpComm 클래스가 정의된 파일명에 맞게 수정해야 합니다.
 
-if __name__ == "__main__":
-    client = UDPClient('A_PC_IP_ADDRESS', 5005)  # A PC의 IP 주소와 포트 번호
-    message = "Hello from Python"
-    
-    try:
-        client.send_message(message)
-        received_data = client.receive_message()
-        print(f"Received data from server: {received_data}")
-    finally:
-        client.close()
+# IP 주소와 포트 설정
+local_ip = "127.0.0.1"  # 모든 인터페이스에서 수신
+local_port = 5003
+remote_ip = "127.0.0.1"  # B PC의 IP 주소 (자기 자신)
+remote_port = 5002
+
+# UdpComm 인스턴스 생성
+udp_comm = UdpComm(local_ip, local_port, remote_ip, remote_port)
+
+# 사용자 입력을 통한 데이터 송신
+while True:
+    command = input("Enter command: ")
+    data = input("Enter data: ")
+    udp_comm.send_data(command, data)
 ```
 
-``` python
+``` 
+	•	main.py: UdpComm 클래스를 import하여 인스턴스를 생성하고, 사용자 입력을 받아 send_data 메서드를 통해 데이터를 송신합니다.
+	•	udp_comm.py: UdpComm 클래스 정의 및 구현입니다. 생성자에서는 소켓을 바인딩하고, 별도의 쓰레드에서 데이터를 수신합니다. send_data 메서드는 입력받은 command와 data를 UDP로 전송하며, on_receive 메서드는 데이터를 수신하면서 콘솔에 출력합니다.
 
+실행 방법
+
+	1.	udp_comm.py 파일을 만들어 위의 코드를 저장합니다.
+	2.	main.py 파일을 만들어 위의 코드를 저장합니다.
+	3.	각 PC의 IP 주소와 포트 번호를 자신의 환경에 맞게 수정합니다.
+	4.	먼저 udp_comm.py를 실행하여 UDP 통신을 대기시킵니다.
+	5.	그 다음 main.py를 실행하여 데이터를 입력하고 전송해보세요.
+
+이렇게 하면 C++로 작성된 서버와 Python으로 작성된 클라이언트가 데이터를 주고받을 수 있습니다.
 ```
 
