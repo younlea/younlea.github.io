@@ -655,7 +655,7 @@ extern CustomUdpComm* udp_comm_ptr;
 void* rt_thread_func(void* arg) {
     while (true) {
         // Example of sending data periodically
-        udp_comm_ptr->send_data("PING", "Hello from RT thread");
+        //udp_comm_ptr->send_data("PING", "Hello from RT thread");
 
         // Sleep for 1 second
         sleep(1);
