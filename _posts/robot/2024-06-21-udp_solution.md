@@ -841,3 +841,79 @@ if __name__ == "__main__":
         message = input("Enter message to send: ")
         client.send_message(message)
 ```
+
+# python call back 방식(보낼ip와 받는 ip가 다를때)
+## main.py
+``` python
+from udp_client import UDPClient
+
+def on_receive_callback(message, addr):
+    print(f"Received message from {addr}: {message}")
+
+if __name__ == "__main__":
+    local_ip = '127.0.0.1'  # 수신할 IP
+    server_ip = '192.168.1.100'  # 보낼 IP
+    receive_port = 5003  # 수신할 포트
+    send_port = 5002  # 보낼 포트
+
+    client = UDPClient(local_ip, server_ip, receive_port, send_port)
+    client.set_receive_callback(on_receive_callback)
+
+    while True:
+        message = input("Enter message to send: ")
+        client.send_message(message)
+```
+## udp_client.py
+``` python
+import socket
+import threading
+
+class UDPClient:
+    def __init__(self, local_ip, server_ip, receive_port, send_port):
+        self.local_ip = local_ip
+        self.server_ip = server_ip
+        self.receive_port = receive_port
+        self.send_port = send_port
+        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+        self.receive_callback = None
+        self.receive_thread = threading.Thread(target=self.receive_loop)
+        self.receive_thread.daemon = True
+        self.receive_thread.start()
+
+        self.client_socket.bind((self.local_ip, self.receive_port))  # 수신할 포트 설정
+
+    def set_receive_callback(self, callback):
+        self.receive_callback = callback
+
+    def receive_loop(self):
+        while True:
+            data, addr = self.client_socket.recvfrom(1024)
+            if self.receive_callback:
+                self.receive_callback(data.decode(), addr)
+
+    def send_message(self, message):
+        self.client_socket.sendto(message.encode(), (self.server_ip, self.send_port))
+
+    def close(self):
+        self.client_socket.close()
+
+# 테스트용 예제
+if __name__ == "__main__":
+    def on_receive_callback(message, addr):
+        print(f"Received message from {addr}: {message}")
+
+    local_ip = '127.0.0.1'  # 수신할 IP
+    server_ip = '127.0.0.1'  # 보낼 IP
+    receive_port = 5003  # 수신할 포트
+    send_port = 5002  # 보낼 포트
+
+    client = UDPClient(local_ip, server_ip, receive_port, send_port)
+    client.set_receive_callback(on_receive_callback)
+
+    while True:
+        message = input("Enter message to send: ")
+        client.send_message(message)
+```
+
+
