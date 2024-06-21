@@ -847,8 +847,8 @@ if __name__ == "__main__":
 ``` python
 from udp_client import UDPClient
 
-def on_receive_callback(message, addr):
-    print(f"Received message from {addr}: {message}")
+def on_receive_callback(command, data, addr):
+    print(f"Received message from {addr}: Command: {command}, Data: {data}")
 
 if __name__ == "__main__":
     local_ip = '127.0.0.1'  # 수신할 IP
@@ -891,7 +891,8 @@ class UDPClient:
         while True:
             data, addr = self.client_socket.recvfrom(1024)
             if self.receive_callback:
-                self.receive_callback(data.decode(), addr)
+                command, data = self.parse_message(data.decode())
+                self.receive_callback(command, data, addr)
 
     def send_message(self, command, data):
         # Ensure command is 4 characters long
@@ -899,13 +900,18 @@ class UDPClient:
         message = command + data
         self.client_socket.sendto(message.encode(), (self.server_ip, self.send_port))
 
+    def parse_message(self, message):
+        command = message[:4]
+        data = message[4:]
+        return command, data
+
     def close(self):
         self.client_socket.close()
 
 # 테스트용 예제
 if __name__ == "__main__":
-    def on_receive_callback(message, addr):
-        print(f"Received message from {addr}: {message}")
+    def on_receive_callback(command, data, addr):
+        print(f"Received message from {addr}: Command: {command}, Data: {data}")
 
     local_ip = '127.0.0.1'  # 수신할 IP
     server_ip = '192.168.1.100'  # 보낼 IP
