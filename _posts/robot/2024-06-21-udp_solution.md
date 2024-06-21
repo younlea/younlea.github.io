@@ -412,3 +412,287 @@ CustomUdpComm.o: CustomUdpComm.cpp CustomUdpComm.hpp UdpComm.hpp
 clean:
 	rm -f udp_comm main.o UdpComm.o CustomUdpComm.o
 ```
+
+# 폴더 구조 변경 리펙토링
+```
+ main.cpp는 CustomUdpComm 객체를 생성하고, 이를 사용하여 데이터 송수신을 수행합니다. daemon.cpp는 RT 스레드에서 주기적으로
+데이터를 송신하는 함수를 포함하고 있습니다. main.cpp에서 pthread_create를 사용하여 RT 스레드를 생성하고,
+daemon.cpp의 rt_thread_func 함수를 호출합니다
+``` 
+```
+project/
+├── include/
+│   ├── UdpComm.hpp
+│   └── CustomUdpComm.hpp
+├── src/
+│   ├── UdpComm.cpp
+│   └── CustomUdpComm.cpp
+├── daemon/
+│   └── daemon.cpp
+├── main.cpp
+└── Makefile
+```
+## UdpComm.hpp
+``` cpp
+#ifndef UDPCOMM_HPP
+#define UDPCOMM_HPP
+
+#include <string>
+#include <thread>
+#include <arpa/inet.h>
+
+class UdpComm {
+public:
+    UdpComm(const std::string& local_ip, int local_port, const std::string& remote_ip, int remote_port);
+    virtual ~UdpComm();
+
+    void start();
+    void stop();
+    void send_data(const std::string& command, const std::string& data);
+
+protected:
+    virtual void on_receive(const std::string& command, const std::string& data, const std::string& sender_ip, int sender_port);
+
+private:
+    void receive_udp();
+    
+    int recv_sockfd;
+    int send_sockfd;
+    struct sockaddr_in servaddr;
+    std::thread recv_thread;
+    bool running;
+};
+
+#endif // UDPCOMM_HPP
+```
+## UdpComm.cpp
+``` cpp
+#include "UdpComm.hpp"
+#include <iostream>
+#include <cstring>
+#include <unistd.h>
+
+#define BUFFER_SIZE 1024
+
+UdpComm::UdpComm(const std::string& local_ip, int local_port, const std::string& remote_ip, int remote_port) {
+    running = false;
+
+    // 수신 소켓 생성 및 바인드
+    if ((recv_sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
+        std::cerr << "Receive socket creation failed" << std::endl;
+        throw std::runtime_error("Receive socket creation failed");
+    }
+
+    struct sockaddr_in recvaddr;
+    memset(&recvaddr, 0, sizeof(recvaddr));
+    recvaddr.sin_family = AF_INET;
+    recvaddr.sin_addr.s_addr = inet_addr(local_ip.c_str());
+    recvaddr.sin_port = htons(local_port);
+
+    if (bind(recv_sockfd, (const struct sockaddr*)&recvaddr, sizeof(recvaddr)) < 0) {
+        std::cerr << "Receive bind failed: " << strerror(errno) << std::endl;
+        close(recv_sockfd);
+        throw std::runtime_error("Receive bind failed");
+    }
+
+    // 송신 소켓 생성
+    if ((send_sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
+        std::cerr << "Send socket creation failed" << std::endl;
+        close(recv_sockfd);
+        throw std::runtime_error("Send socket creation failed");
+    }
+
+    memset(&servaddr, 0, sizeof(servaddr));
+    servaddr.sin_family = AF_INET;
+    servaddr.sin_port = htons(remote_port);
+    servaddr.sin_addr.s_addr = inet_addr(remote_ip.c_str());
+}
+
+UdpComm::~UdpComm() {
+    stop();
+    close(recv_sockfd);
+    close(send_sockfd);
+}
+
+void UdpComm::start() {
+    running = true;
+    recv_thread = std::thread(&UdpComm::receive_udp, this);
+}
+
+void UdpComm::stop() {
+    running = false;
+    if (recv_thread.joinable()) {
+        recv_thread.join();
+    }
+}
+
+void UdpComm::send_data(const std::string& command, const std::string& data) {
+    std::string cmd = command;
+    cmd.resize(4, ' ');  // Ensure command is 4 characters long
+    std::string message = cmd + data;
+
+    int n = sendto(send_sockfd, message.c_str(), message.size(), MSG_CONFIRM, (const struct sockaddr*)&servaddr, sizeof(servaddr));
+    if (n < 0) {
+        std::cerr << "sendto failed" << std::endl;
+    }
+}
+
+void UdpComm::receive_udp() {
+    char buffer[BUFFER_SIZE];
+    struct sockaddr_in cliaddr;
+    socklen_t len = sizeof(cliaddr);
+
+    while (running) {
+        int n = recvfrom(recv_sockfd, buffer, BUFFER_SIZE, MSG_WAITALL, (struct sockaddr*)&cliaddr, &len);
+        if (n < 0) {
+            if (running) {
+                std::cerr << "recvfrom failed" << std::endl;
+            }
+            continue;
+        }
+        buffer[n] = '\0';
+        std::string received(buffer);
+        std::string command = received.substr(0, 4);
+        std::string data = received.substr(4);
+
+        std::string sender_ip = inet_ntoa(cliaddr.sin_addr);
+        int sender_port = ntohs(cliaddr.sin_port);
+        
+        on_receive(command, data, sender_ip, sender_port);
+    }
+}
+
+void UdpComm::on_receive(const std::string& command, const std::string& data, const std::string& sender_ip, int sender_port) {
+    std::cout << "Received message: Command: " << command << ", Data: " << data << " from " << sender_ip << ":" << sender_port << std::endl;
+}
+```
+## CustomUdpComm.hpp
+``` cpp
+#ifndef CUSTOMUDPCOMM_HPP
+#define CUSTOMUDPCOMM_HPP
+
+#include "UdpComm.hpp"
+
+class CustomUdpComm : public UdpComm {
+public:
+    CustomUdpComm(const std::string& local_ip, int local_port, const std::string& remote_ip, int remote_port);
+    virtual ~CustomUdpComm();
+
+protected:
+    void on_receive(const std::string& command, const std::string& data, const std::string& sender_ip, int sender_port) override;
+};
+
+#endif // CUSTOMUDPCOMM_HPP
+```
+## CustomUdpComm.cpp
+``` cpp
+#include "CustomUdpComm.hpp"
+#include <iostream>
+
+CustomUdpComm::CustomUdpComm(const std::string& local_ip, int local_port, const std::string& remote_ip, int remote_port)
+    : UdpComm(local_ip, local_port, remote_ip, remote_port) {}
+
+CustomUdpComm::~CustomUdpComm() {}
+
+void CustomUdpComm::on_receive(const std::string& command, const std::string& data, const std::string& sender_ip, int sender_port) {
+    std::cout << "Custom handler - Received message: Command: " << command << ", Data: " << data << " from " << sender_ip << ":" << sender_port << std::endl;
+}
+```
+## main.cpp
+``` cpp
+#include "CustomUdpComm.hpp"
+#include <iostream>
+#include <pthread.h>
+
+CustomUdpComm* udp_comm_ptr = nullptr;
+
+void* rt_thread_func(void* arg);
+
+int main() {
+    std::string local_ip = "0.0.0.0";  // 모든 인터페이스에서 수신
+    int local_port = 5002;
+    std::string remote_ip = "C_PC_IP";  // C PC의 IP 주소로 설정
+    int remote_port = 5003;
+
+    try {
+        udp_comm_ptr = new CustomUdpComm(local_ip, local_port, remote_ip, remote_port);
+        udp_comm_ptr->start();
+
+        pthread_t rt_thread;
+        if (pthread_create(&rt_thread, NULL, rt_thread_func, NULL)) {
+            std::cerr << "Error creating RT thread" << std::endl;
+            return 1;
+        }
+
+        while (true) {
+            std::string command, data;
+            std::cout << "Enter command: ";
+            std::cin >> command;
+            std::cout << "Enter data: ";
+            std::cin >> data;
+
+            udp_comm_ptr->send_data(command, data);
+        }
+
+        udp_comm_ptr->stop();
+        delete udp_comm_ptr;
+    } catch (const std::exception& e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
+
+    return 0;
+}
+```
+## daemon.cpp
+``` cpp
+#include "../include/CustomUdpComm.hpp"
+#include <iostream>
+#include <unistd.h>
+#include <pthread.h>
+
+extern CustomUdpComm* udp_comm_ptr;
+
+void* rt_thread_func(void* arg) {
+    while (true) {
+        // Example of sending data periodically
+        udp_comm_ptr->send_data("PING", "Hello from RT thread");
+
+        // Sleep for 1 second
+        sleep(1);
+    }
+
+    return nullptr;
+}
+```
+
+## Makefile
+``` cpp
+CXX = g++
+CXXFLAGS = -std=c++11 -Wall
+INCLUDE = -I./include
+SRC_DIR = ./src
+OBJ_DIR = ./obj
+DAEMON_DIR = ./daemon
+
+all: udp_comm
+
+udp_comm: main.o $(OBJ_DIR)/UdpComm.o $(OBJ_DIR)/CustomUdpComm.o $(DAEMON_DIR)/daemon.o
+	$(CXX) $(CXXFLAGS) -o udp_comm main.o $(OBJ_DIR)/UdpComm.o $(OBJ_DIR)/CustomUdpComm.o $(DAEMON_DIR)/daemon.o
+
+main.o: main.cpp $(SRC_DIR)/CustomUdpComm.cpp $(INCLUDE)/CustomUdpComm.hpp $(INCLUDE)/UdpComm.hpp
+	$(CXX) $(CXXFLAGS) $(INCLUDE) -c main.cpp
+
+$(OBJ_DIR)/UdpComm.o: $(SRC_DIR)/UdpComm.cpp $(INCLUDE)/UdpComm.hpp
+	$(CXX) $(CXXFLAGS) $(INCLUDE) -c $(SRC_DIR)/UdpComm.cpp -o $(OBJ_DIR)/UdpComm.o
+
+$(OBJ_DIR)/CustomUdpComm.o: $(SRC_DIR)/CustomUdpComm.cpp $(INCLUDE)/CustomUdpComm.hpp $(INCLUDE)/UdpComm.hpp
+	$(CXX) $(CXXFLAGS) $(INCLUDE) -c $(SRC_DIR)/CustomUdpComm.cpp -o $(OBJ_DIR)/CustomUdpComm.o
+
+$(DAEMON_DIR)/daemon.o: $(DAEMON_DIR)/daemon.cpp $(INCLUDE)/CustomUdpComm.hpp $(INCLUDE)/UdpComm.hpp
+	$(CXX) $(CXXFLAGS) $(INCLUDE) -c $(DAEMON_DIR)/daemon.cpp -o $(DAEMON_DIR)/daemon.o
+
+clean:
+	rm -f udp_comm main.o $(OBJ_DIR)/*.o $(DAEMON_DIR)/*.o
+```
+
+
