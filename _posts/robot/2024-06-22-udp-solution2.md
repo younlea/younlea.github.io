@@ -186,6 +186,7 @@ void CustomUdpComm::on_receive(const std::string& command, const std::string& da
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include <arpa/inet.h>
 
 void handle_receive(const std::string& command, const std::string& data, const sockaddr_in& addr) {
     std::cout << "Received message: Command=" << command << ", Data=" << data
@@ -199,7 +200,7 @@ void daemon_thread(CustomUdpComm& udp_comm) {
 }
 
 int main() {
-    CustomUdpComm udp_comm("0.0.0.0", 5003, "127.0.0.1", 5002);
+    CustomUdpComm udp_comm("0.0.0.0", 5002, "127.0.0.1", 5003);
     udp_comm.set_receive_callback(handle_receive);
 
     std::thread daemon(daemon_thread, std::ref(udp_comm));
