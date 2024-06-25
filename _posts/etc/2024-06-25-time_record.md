@@ -20,7 +20,7 @@ toc_sticky : true
 [철인](https://www.triathlon.or.kr/results/results/record/?sPart=8589&mode=record&tourcd=481&page=1&sYear=2017&field=tour_title&keyword=%EC%84%A4%EC%95%85)  
 
 2015 설악 전국 트라이애슬론 대회(KTF시리즈)    
-                  영         싸이클       마라톤      총시간    
+                  수영         싸이클       마라톤      총시간    
 45	김윤래		서울	00:42:14		01:24:06		00:59:42	03:06:00    
 
 2017 Asian Cup 설악 국제 트라이애슬론 대회(KTF시리즈) 겸 제6회 한일교류전    
