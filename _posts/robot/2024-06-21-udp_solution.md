@@ -932,7 +932,7 @@ if __name__ == "__main__":
 
 ## windows에서 python error 발생 하는 이슈 대응 (option 추가해줘야 함)
 oserror (10022 error).   
-```
+```python
 import socket
 import threading
 
