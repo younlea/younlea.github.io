@@ -932,6 +932,8 @@ if __name__ == "__main__":
 
 ## windows에서 python error 발생 하는 이슈 대응 (option 추가해줘야 함)
 oserror (10022 error).   
+소켓 옵션 설정: 윈도우에서 소켓을 재사용할 수 있도록 SO_REUSEADDR 옵션을 설정합니다.     
+
 ```python
 import socket
 import threading
