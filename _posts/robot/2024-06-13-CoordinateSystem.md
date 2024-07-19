@@ -213,13 +213,24 @@ theta_solution = inverse_kinematics(x_d, theta_init)
 print("Solution: ", theta_solution)
 ```
 # solution 
-## Moveit
-## OpenLave
-## orocos KDL
-## RBDL(Rigid Body Dynamics Library)
-[RBDL](https://rbdl.github.io/index.html)      
-## drake  
+## Moveit   
+[moveit homepage](https://moveit.ros.org/)     
 
+## drake  
+[drake homepage](https://drake.mit.edu/)     
+[drake github](https://github.com/RobotLocomotion)   
+[drake movie guide](https://drake.mit.edu/gallery.html)     
+
+## orocos KDL   
+[orocos hompepage](https://www.orocos.org/index.html)    
+[orocos github](https://github.com/orocos)    
+
+## RBDL(Rigid Body Dynamics Library)   
+[RBDL](https://rbdl.github.io/index.html)      
+
+## OpenLave
+[openlave homepage](http://openrave.org/)    
+[openlave github](https://github.com/rdiankov/openrave/tree/master?tab=readme-ov-file)   
 # 경로 생성 방법
 
 # 충돌회피 경로 생성 방법 및 솔루션
