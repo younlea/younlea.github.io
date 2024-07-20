@@ -116,10 +116,23 @@ print("Rotated vector:", v_rotated)
 ```
 
 # 자코비안 행렬식 
+자코비안 행렬은 로봇의 관절 공간(joint space)와 작업공간(task space)사이의 속도 관계를 나타내는 행렬입니다.   
+일반적으로 6xn 행렬로 표시(3차원 위치 + 3차원 방향, n: 관절수) 
+자코비안은 어렸을적(?)에 배워서 로봇 포워드 키네메틱스를 풀어서 opengl로 시뮬레이터 만들때 썼던 녀석인것 같다. ^^;    
 
-# FK & IK
+# FK(forward kinematics) & IK(inverse kinematics)
 ## FK
+로봇의 각 관절 각도나 변위가 주어졌을때, 엔드 이펙터의 위치와 방향을 계산하는 과정    
+일대일 대응이 된다.   
+주로 시뮬레이터를 만들거나 로봇의 현재위치 추정, 작업공간 분석에서 쓰인다.    
+기억이 맞으면 자코비안 행렬식으로 풀었던것 같다. 한땀 한땀.. 라떼는 말이다..     
+
 ## IK
+원하는 엔드 이펙터의 위치와 방향이 주어졌을때, 이를 달성하기 위한 각 관절의 각도나 변위를 계산하는 과정. 
+일대 다.. 그러니까 해가 여러가 나올수 있다.    
+로봇의 경로 계획이나 목표 지점으로의 이동, 실시간 로봇 제어에 사용한다. 
+실제로 로봇을 제어 할때 쓰는 방법인데 한땀한땀 손으로 푸는건 이제 안하는것 같고 아래 솔루션들을 사용해서 많이들 쓰는것 같다.    
+
 ## CLIK
 close loop inverse kinematics  
 ```
@@ -215,22 +228,38 @@ print("Solution: ", theta_solution)
 # solution 
 ## Moveit   
 [moveit homepage](https://moveit.ros.org/)     
+주요 기능 : 모션 계획, 조작, 3D인식, 키네메틱스, 제어 및 네비게이션   
+IK 솔버 : KDL, SRVision, TRAC-IK등 옵션 제공   
 
 ## drake  
 [drake homepage](https://drake.mit.edu/)     
 [drake github](https://github.com/RobotLocomotion)   
 [drake movie guide](https://drake.mit.edu/gallery.html)     
+MIT 로봇 조작 연구실에서 개발한 고급 로보틱스 및 동적 시스템 시뮬레이션 툴킷   
+주요 기능 : 동영학 시뮬레이션, 모션 플레닝, 비선형 최적화, 제어 시스템 설계 및 분석, 포워드 및 인버스 키네메틱스    
 
 ## orocos KDL   
 [orocos hompepage](https://www.orocos.org/index.html)    
 [orocos github](https://github.com/orocos)    
+주요 기능 : FK, IK, 동역학 계산   
+솔버 : 수치적 IK(뉴턴-랩슨 방법)   
 
 ## RBDL(Rigid Body Dynamics Library)   
 [RBDL](https://rbdl.github.io/index.html)      
+주요 기능 : FK, IK, 동역학 계산   
+솔버 : 수치적 IK   
 
 ## OpenLave
 [openlave homepage](http://openrave.org/)    
 [openlave github](https://github.com/rdiankov/openrave/tree/master?tab=readme-ov-file)   
-# 경로 생성 방법
 
-# 충돌회피 경로 생성 방법 및 솔루션
+# 경로(trajectory) 생성 방법
+1. 선형 보간법 : 직선 경로 생성, (ROS : joint_trajectory_controller로 제공)   
+2. 다항식 트라젝토리(polynomial trajectory), 3차, 5차 다항식들을 사용한 부드러운 경로 생성    
+3. SLERP(spherical linear interpolation) 회전 보간에 사용, Eigen, Opencv등 다수의 수학라이브러리로 제공    
+4. RRT(rapidly-exploring random trees) 랜덤 샘플링 기반 경로 계획, (OMPL이나 Moveit 제공)    
+5. RRT*(최적화된 RRT)    
+6. PRM(probabilistic Roadmap) 사전 계산된 로드맵 기반 경로 계획(OMPL이나 Moveit제공)
+7. CHOMP(Covariant Hamiltonian Optimization for Motion Planning) 최적화 기반 경로 계획 (Moveit 제공)
+8. STOMP(Stochastic Trajectory Optimization for Motion Planning) 확률적 최적화 기반 경로 계획(Moveit 제공)
+
