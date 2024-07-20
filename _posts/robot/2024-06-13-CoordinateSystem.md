@@ -25,7 +25,10 @@ roll, pitch, yaw로 표현되고 회전에 특화된 좌표계, 짐벌락 이슈
 오일러 좌표계에 있는 짐벌락이슈가 없는 좌표계. (사람이 인지하기 쉽지 않다는 단점이 있지만 현재 나온 계산 솔루션들이 해결해 주니까 ㅡ.ㅡ; 이걸로 쓰는게 좋을듯)    
 
 -> 참고로 쿼터니안도 싱귤러리티 이슈는 가지고 있다고 한다. (짐벌락은 싱귤러리티에 포함이 되는 개념이다.)    
-
+<div onclick="toggleContent('section1Content')" style="cursor:pointer; color: blue; text-decoration: underline;">
+자세한 내용
+</div>
+<div id ="section1Content" style="display: none;">
 ```
 쿼터니언(Quaternion)은 3차원 회전을 표현하는 수학적 도구로, 4개의 실수 성분으로 구성된 4차원 복소수입니다. 쿼터니언은 회전의 연산이 효율적이고, 각 변환 간의 계산이 수월하여 3D 그래픽스, 로봇 공학, 항공 우주 등 다양한 분야에서 널리 사용됩니다.
 
@@ -113,7 +116,8 @@ v_rotated = rotate_vector(v, q)
 
 print("Original vector:", v)
 print("Rotated vector:", v_rotated)
-```
+```  
+</div>
 
 # 자코비안 행렬식 
 자코비안 행렬은 로봇의 관절 공간(joint space)와 작업공간(task space)사이의 속도 관계를 나타내는 행렬입니다.   
