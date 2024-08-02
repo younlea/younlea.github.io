@@ -15,6 +15,7 @@ toc_sticky : true
 # code실행 후 셋팅
 
 # 빌드 위해서 파일 생성
+terminal -> configure default build task -> other -> 아래 파일 생성. 
 ## tasks.json
 ```json
 {
