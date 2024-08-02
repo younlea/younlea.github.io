@@ -1,5 +1,5 @@
 ---
-title: "write here "
+title: "ubuntu에서 vscode로 visual studio처럼 개발하기 "
 excerpt_separator: "<!--more-->"
 categories:
   - develop_env
