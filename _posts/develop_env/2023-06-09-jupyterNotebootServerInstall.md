@@ -17,7 +17,7 @@ toc_sticky : true
 
 # 서버 접속시 동작안될때 재시작
 서버 접속후 아래 명령으로 실행     
-$jupyter notebook  
+$jupyter-notebook  
 
 # 서버 접속  
 URL:8888     
