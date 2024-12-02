@@ -47,6 +47,10 @@ vae 적용 전.
 
 ### GPU 4070 있는 경우
 ID 추가    
+```
 ./webui.sh --listen --enable-insecure-extension-access --gradio-auth kibwa:kibwa --port 7860   
+```
 특정 포트 열기   
+```
 ./webui.sh --listen --enable-insecure-extension-access --port 7865   
+```
