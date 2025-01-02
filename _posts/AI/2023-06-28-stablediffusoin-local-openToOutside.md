@@ -23,6 +23,12 @@ toc_sticky : true
 login mode : --gradio-auth username:password 추가
 ```
 
+conda에 torch랑 cuda 설치 하는 방법    
+```
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+```
+
+
 > --skip-torch-cuda-test : GPU가 1070정도라서 GPU 사용자하지 않게 설정   
 > --listen : 외부망에서 접근 가능하도록 셋팅    
 > --precision full --no-half : 어떤에러가 났었는데.. 그거 해결    
