@@ -1,4 +1,14 @@
+---
+title: "다이나믹셀 AX-12A 셋팅하기"
+excerpt_separator: "<!--more-->"
+categories:
+  - robot
+tags:
+  - robot
 
+toc : true
+toc_sticky : true
+---
 
 다이나믹셀 AX-12A를 초기 설정하고 통신을 시작하려면 아래 단계를 따라 진행하면 됩니다. 이 과정은 모터 ID 설정, 각도 조절, 현재 각도 확인 등의 기본적인 작업을 포함하며, 4족 보행 로봇 제작에 필요한 기초 작업입니다.
 
@@ -89,3 +99,4 @@ Citations:
 [7] https://dynamixel.com/service/forum_view.php?bbs_no=9761&page=649
 [8] https://blog.naver.com/nanotoly/221910252560
 [9] https://www.robotis.com/service/forum_view.php?bbs_no=662840&page=256
+
