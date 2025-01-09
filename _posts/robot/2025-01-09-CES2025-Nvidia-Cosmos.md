@@ -11,6 +11,8 @@ toc_sticky : true
 ---
 
 ```
+Nvidia Cosmos 요약
+
 1. World Foundation Models (WFMs)
    - WFMs는 물리 기반 시뮬레이션과 합성 데이터 생성을 통해 현실 세계를 정밀하게 모델링합니다.
    - 텍스트, 이미지, 비디오, 센서 데이터 등을 입력으로 받아 물리적 상호작용과 공간 관계를 반영한 가상 환경을 생성합니다.
