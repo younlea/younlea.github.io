@@ -29,7 +29,7 @@ toc_sticky : true
 ### **2. 초기 설정**
 #### **(1) ID 설정**
 모든 AX-12A는 출하시 기본 ID가 1로 설정되어 있습니다. 여러 모터를 사용할 경우 각 모터의 ID를 고유하게 변경해야 합니다.
-1. **Dynamixel Wizard 2.0** 프로그램 설치 및 실행.
+1. **Dynamixel Wizard 2.0** 프로그램 설치 및 실행. [Dynamixel wizard 2.0](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)   
 2. AX-12A를 제어기에 연결 후 PC와 연결.
 3. 프로그램에서 "Scan" 기능을 사용해 연결된 모터를 검색.
 4. 검색된 모터의 ID를 선택하고 원하는 ID로 변경.
