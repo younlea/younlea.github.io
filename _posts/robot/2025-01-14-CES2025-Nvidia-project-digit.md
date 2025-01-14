@@ -1,6 +1,6 @@
 
 ---
-title: "제목"
+title: "Nvidia-project-digit"
 excerpt_separator: "<!--more-->"
 categories:
   - robot
