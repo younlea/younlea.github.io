@@ -75,6 +75,8 @@ NVIDIA Cosmos는 Gazebo와 같은 기존 솔루션 대비 데이터 처리 속�
   </iframe>
 </div>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9Uch931cDx8" frameborder="0" allowfullscreen></iframe>
+
 ㅁ 원문 소스
 
 [1] [NVIDIA Launches Cosmos to advance the development of Robots ](https://www.youtube.com/watch?v=eNT7YNmHxF8)   
