@@ -85,6 +85,9 @@ AX-12A는 관절 모드(0~300°)와 바퀴 모드(무한 회전)를 지원합니
 ### **유튜브 추천**
 1. [Dynamixel AX-12A Servos for Beginners](https://www.youtube.com/watch?v=tkV9CPWjtgU): 초보자를 위한 AX-12A 사용법 강좌입니다[4].
 
+### **SDK**
+[SDK](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_sdk/overview/)    
+
 ---
 
 이 단계를 완료하면 AX-12A의 기본 셋업이 끝나며, 이를 바탕으로 로봇의 동작을 프로그래밍하고 제어할 수 있습니다. 추가적으로 궁금한 점이 있다면 로보티즈 포럼이나 e-Manual을 참고하세요!
