@@ -1,4 +1,3 @@
-
 ---
 title: "Nvidia-project-digit"
 excerpt_separator: "<!--more-->"
