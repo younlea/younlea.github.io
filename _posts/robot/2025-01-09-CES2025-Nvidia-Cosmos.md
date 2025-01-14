@@ -63,6 +63,8 @@ NVIDIA Cosmos는 Gazebo와 같은 기존 솔루션 대비 데이터 처리 속�
 
 기존 솔루션에 만족하지 못했다면, 이제는 NVIDIA Cosmos를 통해 더 빠르고 효율적인 로봇 개발 환경을 경험해 보세요!
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=_UcP17vPR-g" frameborder="0" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9Uch931cDx8" frameborder="0" allowfullscreen></iframe>
 
 ㅁ 원문 소스
