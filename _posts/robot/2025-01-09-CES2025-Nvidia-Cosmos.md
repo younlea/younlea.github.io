@@ -77,21 +77,12 @@ NVIDIA Cosmos는 Gazebo와 같은 기존 솔루션 대비 데이터 처리 속�
 
 ㅁ 원문 소스
 
-[1] NVIDIA Launches Cosmos to advance the development of Robots 
-https://www.youtube.com/watch?v=eNT7YNmHxF8
-[2] Advancing Physical AI with NVIDIA Cosmos World Foundation
-  https://developer.nvidia.com/blog/advancing-physical-ai-with-nvidia-cosmos-world-foundation-model-platform/
-[3] NVIDIA Launches Cosmos World Foundation Model Platform to ... 
-https://www.edge-ai-vision.com/2025/01/nvidia-launches-cosmos-world-foundation-model-platform-to-accelerate-physical-ai-development/
-[4] NVIDIA Unleashes Cosmos: Revolutionary AI Platform for ... 
-https://www.stocktitan.net/news/NVDA/nvidia-launches-cosmos-world-foundation-model-platform-to-accelerate-74st2annquyd.html
-[5] NVIDIA Cosmos for Developers 
-https://developer.nvidia.com/cosmos
-[6] NVIDIA launches Cosmos platform for AI & robotics - IT Brief Asia 
-https://itbrief.asia/story/nvidia-launches-cosmos-platform-for-ai-robotics
-[7] NVIDIA Announces Foundational World Model, Cosmos 
-https://radiancefields.com/nvidia-announces-foundational-world-model-cosmos
-[8] NVIDIA Launches Cosmos World Foundation Model Platform to ... 
-https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-world-foundation-model-platform-to-accelerate-physical-ai-development
-[9] NVIDIA unveils Omniverse upgrades, Cosmos foundation model ... 
-https://www.therobotreport.com/nvidia-unveils-omniverse-upgrades-launches-cosmos-foundation-model-ces-2025/
+[1] [NVIDIA Launches Cosmos to advance the development of Robots ](https://www.youtube.com/watch?v=eNT7YNmHxF8)   
+[2] [Advancing Physical AI with NVIDIA Cosmos World Foundation](https://developer.nvidia.com/blog/advancing-physical-ai-with-nvidia-cosmos-world-foundation-model-platform/)    
+[3] [NVIDIA Launches Cosmos World Foundation Model Platform to ... ](https://www.edge-ai-vision.com/2025/01/nvidia-launches-cosmos-world-foundation-model-platform-to-accelerate-physical-ai-development/)    
+[4] [NVIDIA Unleashes Cosmos: Revolutionary AI Platform for ... ](https://www.stocktitan.net/news/NVDA/nvidia-launches-cosmos-world-foundation-model-platform-to-accelerate-74st2annquyd.html)   
+[5] [NVIDIA Cosmos for Developers ](https://developer.nvidia.com/cosmos)    
+[6] [NVIDIA launches Cosmos platform for AI & robotics - IT Brief Asia ](https://itbrief.asia/story/nvidia-launches-cosmos-platform-for-ai-robotics)   
+[7] [NVIDIA Announces Foundational World Model, Cosmos ](https://radiancefields.com/nvidia-announces-foundational-world-model-cosmos)   
+[8] [NVIDIA Launches Cosmos World Foundation Model Platform to ... ](https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-world-foundation-model-platform-to-accelerate-physical-ai-development)   
+[9] [NVIDIA unveils Omniverse upgrades, Cosmos foundation model ... ](https://www.therobotreport.com/nvidia-unveils-omniverse-upgrades-launches-cosmos-foundation-model-ces-2025/)   
