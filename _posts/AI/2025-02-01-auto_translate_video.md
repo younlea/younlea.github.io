@@ -1,9 +1,13 @@
-```markdown
 ---
-layout: post
-title: "우분투 CLI에서 동영상 자동 번역 자막 생성 가이드"
-date: 2024-02-01
-categories: [AI, Ubuntu]
+title: "우분투 CLI에서 동영상 자동 번역 자막 생성 가이드""
+excerpt_separator: "<!--more-->"
+categories:
+  - AI
+tags:
+  - write here
+
+toc : true
+toc_sticky : true
 ---
 
 # OpenAI Whisper를 이용한 무료 자막 생성 & 번역
@@ -127,6 +131,4 @@ curl -X POST "http://localhost:5000/translate" \
 - [구글 번역 API 문서](https://py-googletrans.readthedocs.io/en/latest/)  
 
 {% include share.html %}
-```
 
-출처
