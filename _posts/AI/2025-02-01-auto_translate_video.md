@@ -282,3 +282,101 @@ A: 특정 오디오 트랙 선택:
 
 출처
 
+```
+# chatgpt 4o answer
+```
+우분투 CLI에서 동영상을 자동 번역하여 자막 파일을 생성하는 방법을 설명할게.
+
+1. 필요한 패키지 설치
+
+아래 패키지들이 필요해:
+	•	whisper (음성 인식)
+	•	ffmpeg (오디오 추출)
+	•	translate-shell 또는 argos-translate (번역)
+
+설치 방법:
+
+sudo apt update
+sudo apt install ffmpeg translate-shell
+pip install openai-whisper
+
+또는 argos-translate를 사용할 수도 있어:
+
+sudo apt install argos-translate
+
+언어 모델 설치:
+
+argos-translate-cli --install-model en ko  # 영어 -> 한국어
+argos-translate-cli --install-model ja ko  # 일본어 -> 한국어
+
+2. 오디오 추출
+
+동영상에서 오디오를 추출해야 해.
+
+ffmpeg -i input.mp4 -vn -acodec mp3 output.mp3
+
+3. 음성 인식 (자막 생성)
+
+Whisper를 이용해 오디오를 텍스트로 변환할 수 있어.
+
+whisper output.mp3 --model small --language en --output_format srt
+
+위 명령어는 영어 음성을 텍스트로 변환하여 .srt 파일을 생성해.
+일본어 음성일 경우:
+
+whisper output.mp3 --model small --language ja --output_format srt
+
+4. 자동 번역 (영어/일본어 → 한국어)
+
+Whisper가 생성한 .srt 파일을 번역해야 해.
+예를 들어, 영어 .srt 파일을 한국어로 번역하는 경우:
+
+cat output.srt | trans -b -s en -t ko > output_ko.srt
+
+일본어 .srt 파일이라면:
+
+cat output.srt | trans -b -s ja -t ko > output_ko.srt
+
+argos-translate를 이용하는 방법:
+
+cat output.srt | argos-translate-cli -f en -t ko > output_ko.srt
+
+5. 여러 동영상 자동 처리 (스크립트화)
+
+여러 개의 영상을 한 번에 처리하는 스크립트를 만들 수 있어.
+아래 스크립트는 videos/ 폴더에 있는 모든 동영상을 변환한 후 한국어 자막을 생성해.
+
+#!/bin/bash
+
+mkdir -p subtitles
+
+for file in videos/*.mp4; do
+    filename=$(basename -- "$file")
+    name="${filename%.*}"
+
+    echo "Processing: $file"
+
+    # 오디오 추출
+    ffmpeg -i "$file" -vn -acodec mp3 "subtitles/$name.mp3"
+
+    # 음성 인식 (Whisper)
+    whisper "subtitles/$name.mp3" --model small --language en --output_format srt
+
+    # 번역 (translate-shell)
+    cat "subtitles/$name.srt" | trans -b -s en -t ko > "subtitles/${name}_ko.srt"
+
+    echo "Completed: subtitles/${name}_ko.srt"
+done
+
+이제 videos/ 폴더에 동영상을 넣고 실행하면 자동으로 한국어 자막이 생성될 거야.
+
+chmod +x translate_subtitles.sh
+./translate_subtitles.sh
+
+추가 사항
+	•	whisper의 모델을 medium이나 large로 변경하면 더 정확한 자막을 생성할 수 있음.
+	•	GPU 사용을 원하면 whisper 실행 시 --device cuda 옵션 추가.
+	•	번역 품질을 높이고 싶다면 DeepL API 같은 유료 서비스를 사용할 수도 있음.
+
+이렇게 하면 여러 개의 영상을 자동으로 번역해서 자막을 만들 수 있어! 🚀
+```
