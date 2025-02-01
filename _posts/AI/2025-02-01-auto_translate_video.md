@@ -1,3 +1,4 @@
+
 ---
 title: "우분투 CLI에서 동영상 자동 번역 자막 생성 가이드""
 excerpt_separator: "<!--more-->"
