@@ -1,6 +1,5 @@
-
 ---
-title: "로봇 AI 이상감지 솔루션 "
+title: "제목"
 excerpt_separator: "<!--more-->"
 categories:
   - robot
