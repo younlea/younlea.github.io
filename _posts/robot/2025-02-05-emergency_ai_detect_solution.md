@@ -62,6 +62,10 @@ toc_sticky : true
 
 **소프트웨어**: 소프트웨어 업데이트를 통해 복수의 물체에 대한 '원-샷 감지' 기능과 특정 작업물 유형을 요청하는 그리퍼의 클리어런스 조건 설정 등 기능이 추가되었습니다. [oai_citation_attribution:2‡fajournal.com](https://www.fajournal.com/news/articleView.html?idxno=9321&utm_source=chatgpt.com)
 
+**동작 방식**: '아이즈'는 로봇 손목 또는 외부에 장착되어, 단일 이미지 캡처를 통해 물체의 위치와 방향을 인식합니다. 이를 통해 무작위로 배치된 물체를 감지하고, 다양한 높이의 물체나 스택된 물체를 위한 심도 인식 기능을 제공합니다. 또한, 부품 결함 및 품질 편차에 대한 검사를 통해 품질을 향상시킵니다. [oai_citation_attribution:1‡onrobot.com](https://onrobot.com/ko/jepum/onrobot-eyes?utm_source=chatgpt.com)
+
+**공식 페이지**: [OnRobot Eyes](https://onrobot.com/ko/jepum/onrobot-eyes)
+
 ## 2. ISRA VISION의 Q-GAGE3D
 
 **발표일**: 2025년 1월 22일
@@ -69,6 +73,10 @@ toc_sticky : true
 **하드웨어**: Q-GAGE3D는 초소형 3D 로봇 가이드 센서로, 루프, 도어, 후드 및 플랩에 대한 실링 공정을 로봇이 자동으로 정밀하게 가이드할 수 있도록 설계되었습니다. [oai_citation_attribution:1‡isravision.com](https://www.isravision.com/ko-kr/products/q-gage3d?utm_source=chatgpt.com)
 
 **소프트웨어**: 센서 시스템은 미세하고 눈에 보이는 심(seam)을 적용하기 위해 차체 부품의 위치와 방향을 결정하며, 센서가 감지한 위치 편차를 로봇에 제공하여 심을 정확하게 도포할 수 있도록 안내합니다.
+
+**동작 방식**: Q-GAGE3D는 초소형 3D 로봇 가이드 센서로, 로봇에 장착되어 루프, 도어, 후드 및 플랩 등의 부품을 따라 이동하며 여러 측정값을 캡처합니다. 센서 시스템은 차체 부품의 위치와 방향을 결정하여, 로봇이 미세하고 눈에 보이는 심(seam)을 정확하게 도포할 수 있도록 안내합니다. [oai_citation_attribution:1‡isravision.com](https://www.isravision.com/ko-kr/products/q-gage3d?utm_source=chatgpt.com)
+
+**공식 페이지**: [ISRA VISION Q-GAGE3D](https://www.isravision.com/ko-kr/products/q-gage3d)
 
 ## 3. ISRA VISION의 MiniPICK3D
 
@@ -78,3 +86,6 @@ toc_sticky : true
 
 **소프트웨어**: 센서 시스템은 로봇을 가이드하고 위치를 지정하기 위해 휠 허브의 위치를 3D로 측정하고 장착 지점의 정확한 위치를 계산합니다. 그런 다음 로봇은 이 데이터를 사용하여 툴로 휠을 장착합니다.
 
+**동작 방식**: MiniPICK3D는 자동화된 휠 장착 애플리케이션을 위한 3D 로봇 가이던스 시스템으로, 로봇에 장착된 센서를 통해 휠 허브의 위치를 3D로 측정합니다. 센서 시스템은 로봇을 가이드하고 위치를 지정하기 위해 휠 허브의 위치를 3D로 측정하고, 장착 지점의 정확한 위치를 계산하여 로봇이 휠을 정확하게 장착할 수 있도록 안내합니다. [oai_citation_attribution:0‡isravision.com](https://www.isravision.com/ko-kr/products/automotive?utm_source=chatgpt.com)
+
+**공식 페이지**: [ISRA VISION MiniPICK3D](https://www.isravision.com/ko-kr/products/minipick3d)
