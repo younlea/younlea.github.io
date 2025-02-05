@@ -1,4 +1,14 @@
+---
+title: "로봇 AI 이상감지 솔루션"
+excerpt_separator: "<!--more-->"
+categories:
+  - robot
+tags:
+  - robot
 
+toc : true
+toc_sticky : true
+---
 
 # AI 기반 로봇 이상 감지 및 충돌 제어 솔루션
 
