@@ -1,7 +1,15 @@
-
-아래는 스파티오-템포럴(spatiotemporal) 데이터 분석과 관련된 링크를 포함한 마크다운 형식의 블로그 포스팅입니다. 각 링크는 신뢰할 수 있는 출처로 연결되어 있으며, 관련 정보를 탐색하는 데 유용할 것입니다.
-
 ---
+title: "스파티오-템포럴(spatiotemporal) 데이터 분석"
+excerpt_separator: "<!--more-->"
+categories:
+  - robot
+tags:
+  - robot
+
+toc : true
+toc_sticky : true
+---
+
 
 # 스파티오-템포럴 데이터 분석: 최신 트렌드와 활용
 
