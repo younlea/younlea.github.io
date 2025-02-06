@@ -1,4 +1,14 @@
-아래는 요청하신 내용을 마크다운 형식으로 작성한 버전입니다. 링크는 제공된 정보에 따라 가상의 형태로 작성되었습니다. 실제 게시 시에는 적절한 링크로 교체하시길 바랍니다.
+---
+title: "로봇 동작 모니터링"
+excerpt_separator: "<!--more-->"
+categories:
+  - robot
+tags:
+  - robot
+
+toc : true
+toc_sticky : true
+---
 
 ---
 
