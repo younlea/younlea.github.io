@@ -33,7 +33,7 @@ toc_sticky : true
 ### **1-2. 스파티오-템포럴 데이터 분석**
 - 시간적 및 공간적 데이터를 동시에 분석하는 **스파티오-템포럴 모델**이 주목받고 있습니다.  
   이는 로봇의 움직임 패턴이나 환경 변화에 따른 이상 동작을 보다 정밀하게 감지할 수 있게 합니다.  
-  [스파티오-템포럴 모델 설명](https://www.analyticsvidhya.com/blog/2020/10/spatio-temporal-data-analysis/)
+  [스파티오-템포럴 모델 설명](https://younlea.github.io/robot/spatio-temparal/)
 
 ---
 
