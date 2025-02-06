@@ -1,3 +1,16 @@
+---
+title: "로봇비지도 이상감지"
+excerpt_separator: "<!--more-->"
+categories:
+  - robot
+tags:
+  - robot
+
+toc : true
+toc_sticky : true
+---
+
+
 최근 로봇 동작 이상을 영상으로 감지하는 솔루션 중에서 지도 학습이 아닌 **비지도 학습(unsupervised learning)** 또는 **자기 지도 학습(self-supervised learning)** 방식을 활용한 기술들이 주목받고 있습니다. 아래는 관련된 최신 연구와 기술적 접근법을 정리한 내용입니다.
 
 ---
