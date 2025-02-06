@@ -1,4 +1,14 @@
+---
+title: "프롬프트 기반 이상감지 솔루션셔"
+excerpt_separator: "<!--more-->"
+categories:
+  - AI
+tags:
+  - write here
 
+toc : true
+toc_sticky : true
+---
 
 작업 현장에서 하나의 카메라로 이상 상황을 자동으로 감지하는 솔루션은 이미 개발되고 있으며, 다양한 기술적 접근법과 사례가 존재합니다. 아래는 관련 기술과 연구를 요약한 내용입니다:
 
