@@ -25,7 +25,9 @@ toc_sticky : true
   - 예측 유지보수를 통해 다운타임을 줄이고 장비 수명을 연장.
 - **적용 분야**: 제조업 설비 및 산업용 로봇.
 [Levatas Thermal Anomaly Detection](https://www.levatas.com)
-https://youtu.be/zcg1GN_GyKE?si=eNni0AGQ2VKRG32q
+<iframe width="560" height="315" src="https://youtu.be/zcg1GN_GyKE?si=eNni0AGQ2VKRG32q" frameborder="0" allowfullscreen></iframe>   
+
+
 [![YouTube Video Title](https://img.youtube.com/vi/zcg1GN_GyKE/maxresdefault.jpg)](https://www.youtube.com/watch?v=zcg1GN_GyKE "Play Video")
 
 
@@ -45,7 +47,10 @@ https://youtu.be/zcg1GN_GyKE?si=eNni0AGQ2VKRG32q
 - **적용 사례**: 제조업 및 위험 환경 모니터링.
 
 [Boston Dynamics Spot](https://www.bostondynamics.com)
-https://youtu.be/-XUVulOQX9c?si=8BxkMgxYfSGGmxVH
+
+<iframe width="560" height="315" src="https://youtu.be/-XUVulOQX9c?si=8BxkMgxYfSGGmxVH" frameborder="0" allowfullscreen></iframe>   
+
+
 [![Boston Dynamics Spot - Predictive Maintenance](https://img.youtube.com/vi/-XUVulOQX9c/maxresdefault.jpg)](https://www.youtube.com/watch?v=-XUVulOQX9c "Play Video")
 ---
 
