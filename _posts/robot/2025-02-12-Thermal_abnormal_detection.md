@@ -24,8 +24,7 @@ toc_sticky : true
   - 학습된 데이터를 기반으로 유사한 이상 패턴이 감지되면 실시간 경고 제공.
   - 예측 유지보수를 통해 다운타임을 줄이고 장비 수명을 연장.
 - **적용 분야**: 제조업 설비 및 산업용 로봇.
-
-![Levatas Thermal Anomaly Detection](https://via.placeholder.com/800x400 "Levatas Thermal Anomaly Detection")
+1. [Levatas Thermal Anomaly Detection](https://www.levatas.com)
 
 #### 2. **MoviTHERM의 Machine Condition Monitoring (MCM)**
 - **특징**:
@@ -33,8 +32,7 @@ toc_sticky : true
   - "핫스팟"을 탐지해 초기 문제를 발견하고 유지보수를 계획적으로 진행.
   - 데이터 기록 및 보고서 생성 기능 포함.
 - **적용 사례**: 기계 설비 및 공장 자동화.
-
-![MoviTHERM MCM](https://via.placeholder.com/800x400 "MoviTHERM MCM")
+2. [MoviTHERM Machine Condition Monitoring](https://www.movitherm.com)
 
 #### 3. **Boston Dynamics Spot 로봇**
 - **특징**:
@@ -42,8 +40,7 @@ toc_sticky : true
   - 사전 설정된 경로를 따라 이동하며 데이터를 수집하고 분석.
   - 실시간 데이터 기반으로 이상 현상을 경고.
 - **적용 사례**: 제조업 및 위험 환경 모니터링.
-
-![Boston Dynamics Spot](https://via.placeholder.com/800x400 "Boston Dynamics Spot")
+3. [Boston Dynamics Spot](https://www.bostondynamics.com)
 
 ---
 
@@ -69,12 +66,6 @@ toc_sticky : true
 - **Boston Dynamics**: Spot 로봇과 열화상 기술 통합.
 
 ---
-
-### 참고 링크
-
-1. [Levatas Thermal Anomaly Detection](https://www.levatas.com)
-2. [MoviTHERM Machine Condition Monitoring](https://www.movitherm.com)
-3. [Boston Dynamics Spot](https://www.bostondynamics.com)
 
 더 많은 정보는 각 업체의 공식 웹사이트에서 확인할 수 있습니다.
 
