@@ -1,9 +1,13 @@
 ---
-layout: post
 title: "열화상 카메라와 AI를 활용한 로봇 이상 감지 솔루션"
-date: 2025-02-12
-categories: [AI, Robotics, Thermal Imaging]
-tags: [Thermal Imaging, AI, Robotics, Anomaly Detection]
+excerpt_separator: "<!--more-->"
+categories:
+  - robot
+tags:
+  - [Thermal Imaging, AI, Robotics, Anomaly Detection]
+
+toc : true
+toc_sticky : true
 ---
 
 ## 열화상 카메라와 AI를 활용한 로봇 이상 감지
