@@ -1,10 +1,15 @@
 ---
-layout: post
 title: "Gemini Robotics: AI를 물리적 세계로 연결하다"
-date: 2025-03-13 08:31:00 +0900
-author: "작성자 이름"
-categories: [Robotics, AI]
+excerpt_separator: "<!--more-->"
+categories:
+  - robot
+tags:
+  - robot
+
+toc : true
+toc_sticky : true
 ---
+
 
 # Gemini Robotics: AI를 물리적 세계로 연결하다
 
