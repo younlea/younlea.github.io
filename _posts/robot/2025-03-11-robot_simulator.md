@@ -1,5 +1,15 @@
 
+---
+title: "로봇 시뮬레이터"
+excerpt_separator: "<!--more-->"
+categories:
+  - robot
+tags:
+  - robot
 
+toc : true
+toc_sticky : true
+---
 
 상지형 휴머노이드 로봇 개발 시, 설계 오류와 파손 위험을 줄이기 위해 물리 엔진과 동작 테스트 시뮬레이션을 활용하는 것이 중요합니다. 최근 가장 많이 사용되고 주목받는 시뮬레이션 솔루션은 다음과 같습니다.
 
