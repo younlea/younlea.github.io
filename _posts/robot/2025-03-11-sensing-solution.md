@@ -1,3 +1,15 @@
+---
+title: "실제 환경 인식 솔루션 비교"
+excerpt_separator: "<!--more-->"
+categories:
+  - robot
+tags:
+  - robot
+
+toc : true
+toc_sticky : true
+---
+
 # 실제 환경 인식 솔루션 비교
 
 아래는 SAM2.1과 최근 발표된 주요 환경 인식 솔루션들의 특징과 공식 홈페이지 링크를 정리한 내용입니다.
