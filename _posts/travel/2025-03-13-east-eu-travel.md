@@ -20,3 +20,4 @@ toc_sticky : true
 
 # 3/24 ~ 3/26 로마 숙소
 <img width="668" alt="image" src="https://github.com/user-attachments/assets/a1d53f15-c860-4a9a-abe0-3a16672c82bf" />
+<img width="584" alt="image" src="https://github.com/user-attachments/assets/40f56103-420b-4aa4-a09d-893bd12bf0ed" />
