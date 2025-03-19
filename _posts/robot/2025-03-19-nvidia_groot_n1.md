@@ -14,6 +14,8 @@ toc_sticky : true
 
 이 문서는 NVIDIA의 [Isaac GR00T](https://developer.nvidia.com/isaac/gr00t?utm_source=chatgpt.com) 페이지를 기반으로 휴머노이드 로봇 연구 및 개발을 가속화하기 위한 플랫폼에 대해 정리한 내용입니다.
 
+[Isaac manuplator](https://developer.nvidia.com/isaac/manipulator)  공개  
+
 jetson thor 에 특화된 솔루션. 
 ---
 
