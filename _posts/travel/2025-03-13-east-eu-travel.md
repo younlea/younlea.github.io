@@ -24,3 +24,11 @@ toc_sticky : true
 
 
 크로아티아:두브로브니크  -> 헝거리:부다페스트 비행기 경유 스웨덴 스톡홀름알란다 ... 움 여기 잠깐 들러서 하루 놀고 헝거리로 가도 될듯      
+
+
+# 참고 영상
+## 로마  
+https://www.youtube.com/watch?v=gxznbqT0UOs    
+
+## 체크인 유럽 까페  
+https://cafe.naver.com/momsolleh/505427    
