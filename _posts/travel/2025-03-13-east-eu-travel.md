@@ -25,7 +25,8 @@ toc_sticky : true
 
 ![image](https://github.com/user-attachments/assets/2ef72d41-e1b6-42af-8730-7cc4d61907d4)
 
-# 통신 : [마이리얼트립 [유럽 42개국 eSIM] 1~30일 매일 0.5 / 1 /2GB QR코드 - ](https://experiences.myrealtrip.com/products/3443075) 28,800구매    
+# 통신 구매 
+[마이리얼트립 [유럽 42개국 eSIM] 1~30일 매일 0.5 / 1 /2GB QR코드 - ](https://experiences.myrealtrip.com/products/3443075) 28,800구매    
 
 
 # 참고 영상
