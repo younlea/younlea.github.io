@@ -28,6 +28,8 @@ toc_sticky : true
 # 통신 구매 
 [마이리얼트립 [유럽 42개국 eSIM] 1~30일 매일 1GB](https://experiences.myrealtrip.com/products/3443075) 28,800구매    
 
+# 사용 비용
+[구글 드라이브 링크](https://docs.google.com/spreadsheets/d/1KglIqFU6qk0DtPsfrqNnNrZKhSlVv1I6UYjAzOwse08/edit?gid=0#gid=0)   
 
 # 참고 영상
 ## 로마  
