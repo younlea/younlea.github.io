@@ -33,7 +33,7 @@ toc_sticky : true
 
 # 참고 영상
 ## 로마  
-https://www.youtube.com/watch?v=gxznbqT0UOs    
+[영상링크](https://www.youtube.com/watch?v=gxznbqT0UOs)    
 
 ## 체크인 유럽 까페  
-https://cafe.naver.com/momsolleh/505427    
+[체크인 유럽](https://cafe.naver.com/momsolleh/505427)    
