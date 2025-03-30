@@ -1,5 +1,5 @@
 ---
-title: "랜덤 여행에서 얻은 교훈"
+title: "[20250330]랜덤 여행에서 얻은 교훈"
 excerpt_separator: "<!--more-->"
 categories:
   - travel
