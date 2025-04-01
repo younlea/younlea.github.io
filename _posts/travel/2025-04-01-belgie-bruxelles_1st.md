@@ -10,7 +10,7 @@ toc : true
 toc_sticky : true
 ---
 
-# 산탄테르 -> 브뤼셀
+# 산탄데르 -> 브뤼셀
 <img width="431" alt="image" src="https://github.com/user-attachments/assets/ff28b000-02f8-4728-81b3-7b63f8313330" />
 
 # 공항 도착
