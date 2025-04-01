@@ -1,5 +1,5 @@
 ---
-title: "[20250401]벨기에_브뤼셀_오전저"
+title: "[20250401]벨기에_브뤼셀"
 excerpt_separator: "<!--more-->"
 categories:
   - travel
