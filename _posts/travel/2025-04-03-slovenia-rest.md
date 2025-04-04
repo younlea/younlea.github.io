@@ -1,5 +1,5 @@
 ---
-title: "슬로베나에서 방문했던곳들"
+title: "[20250403]슬로베나에서 방문했던곳들"
 excerpt_separator: "<!--more-->"
 categories:
   - travel
