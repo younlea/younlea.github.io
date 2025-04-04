@@ -60,6 +60,6 @@ boarder 지나면서 1유로.
 <img width="403" alt="image" src="https://github.com/user-attachments/assets/b987ffa6-a3f1-45b5-8e1a-c26adce3b999" />
 
 그리고 어이 없어서 경찰 아줌마랑 한컷...  허허허 그래도 잘 찍어 줌.. ^^;    
-![Uploading image.png…]()
+<img width="977" alt="image" src="https://github.com/user-attachments/assets/c9826948-165a-4796-8241-dccc9b00bb51" />
 
 
