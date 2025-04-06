@@ -1,4 +1,4 @@
-<img width="647" alt="image" src="https://github.com/user-attachments/assets/56444b25-57b9-495d-aed9-e09f4c98f7c3" />---
+---
 title: "[20250405]스플리트에서 두브로브니크 여행  "
 excerpt_separator: "<!--more-->"
 categories:
