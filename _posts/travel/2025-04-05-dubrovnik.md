@@ -43,5 +43,23 @@ toc_sticky : true
 
 # 두브로부니크로의 여행 by flixbus
 스플리트에서 두브로부니크 가는데 옆에 지중해가 어찌나 이쁜지.      
+<img width="986" alt="image" src="https://github.com/user-attachments/assets/a8d7e8db-122e-47d0-bbc5-37014fc2eda7" />
+<img width="986" alt="image" src="https://github.com/user-attachments/assets/766f903f-70da-41ae-89b3-66e6a9420228" />
+<img width="986" alt="image" src="https://github.com/user-attachments/assets/6bff6faa-850a-4078-a23f-6e90b82dd12e" />
+<img width="986" alt="image" src="https://github.com/user-attachments/assets/cf7fe5f3-2ac4-456c-82c6-0420ffba1c4c" />
+<img width="986" alt="image" src="https://github.com/user-attachments/assets/ee9db72b-5588-4246-9d3a-54ab2e78938b" />
+<img width="986" alt="image" src="https://github.com/user-attachments/assets/b1cabfa4-8d8a-4e9b-8bbd-891065c44596" />
+
+# 두브로브니크.  
+<img width="977" alt="image" src="https://github.com/user-attachments/assets/e1ee856e-2cee-4a58-bf37-880c09209dbe" />
+<img width="986" alt="image" src="https://github.com/user-attachments/assets/fc072eb3-cca8-4375-a875-c118d485276b" />
+<img width="485" alt="image" src="https://github.com/user-attachments/assets/56df589a-cec8-48b8-8c12-3338348a0b2e" />
+<img width="986" alt="image" src="https://github.com/user-attachments/assets/f2d002fb-36fc-40d8-86a5-328ce4fad2a2" />
+<img width="484" alt="image" src="https://github.com/user-attachments/assets/e74c48cc-9bfc-4582-be34-e4d3568a1c9f" />
+<img width="986" alt="image" src="https://github.com/user-attachments/assets/ccd5d267-8955-4482-9c94-79da4e957f1e" />
+<img width="986" alt="image" src="https://github.com/user-attachments/assets/e8e3effd-5fb0-4317-9fce-3246e7d7c677" />
+
 
 # 모래 마르세유로 떠난다.   
+<img width="391" alt="image" src="https://github.com/user-attachments/assets/9940247e-59cc-4959-861d-8c35f2b4f434" />
+
