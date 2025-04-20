@@ -43,6 +43,12 @@ toc_sticky : true
 [20250416 체코 프라하](https://younlea.github.io/travel/praha/).   
 [20250417 체코 프라하](https://younlea.github.io/travel/praha/).   
 
+# 총 도보 거리.    
+137km+ 137km + 163km +110 km = 547km.   
+<img width="343" alt="image" src="https://github.com/user-attachments/assets/14037849-b844-428a-984a-1839da05333c" />
+<img width="339" alt="image" src="https://github.com/user-attachments/assets/3c461ed7-da43-459c-a564-d79defdc7b29" />
+<img width="343" alt="image" src="https://github.com/user-attachments/assets/5b5c79e8-98ad-4ad1-ab78-400a3ccfcc5a" />
+<img width="346" alt="image" src="https://github.com/user-attachments/assets/7d3b259f-9bf0-457e-b8a4-fdc3e0022376" />
 
 # 여행 경비  
 총 사용 금액	3,628,397원    
@@ -51,3 +57,9 @@ toc_sticky : true
 숙박	  708,516원.   
 관광	   90,216원.   
 기타	  293,720원.   
+
+# 교통 예매   
+# 숙소 예매.  
+
+
+
