@@ -16,8 +16,7 @@ toc_sticky : true
 -> 크로아티아(두브로브니크) -> 프랑스(마르세유, 니스) -> 모나코 -> 스위스(바젤) -> 독일(프랑크프루트).   
 -> 오스트리아(인스부르크) -> 오스트리아(짤스부르크, 할슈타트, 비엔나) -> 슬로바키아 -> 헝거리(브다페스트)    
 -> 체코(프라하).   
-
-<img width="1366" alt="image" src="https://github.com/user-attachments/assets/7a23dbc5-9127-45e7-826e-569a3cb4a9ef" />
+<img width="1366" alt="image" src="https://github.com/user-attachments/assets/de10d6bb-8888-4118-aa4f-05f279c92d44" />
 
 
 # 여행 경비  
