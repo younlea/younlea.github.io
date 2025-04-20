@@ -4,7 +4,7 @@ excerpt_separator: "<!--more-->"
 categories:
   - travel
 tags:
-  - 나라, 도시, 
+  - 크로아티아, 플리트비체 국립공원, 
 
 toc : true
 toc_sticky : true
