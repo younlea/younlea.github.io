@@ -14,9 +14,9 @@ toc_sticky : true
 이태리(로마) -> 이태리(피렌체)(피사) -> 이태리(베네치아)-> 이태리(돌로미티) -> 스페인(산탄테르) -> 벨기에(브뤼셀) -> 크로아티아(자그레브 ) -> 슬로베니아 -> 크로아티아(플리트비체) -> 크로아티아(스플릿) -> 크로아티아(두브로브니크) -> 프랑스(마르세유, 니스) -> 모나코 -> 스위스(바젤) -> 독일(프랑크프루트) -> 오스트리아(인스부르크) -> 오스트리아(짤스부르크, 할슈타트, 비엔나) -> 슬로바키아 -> 헝거리(브다페스트) -> 체코(프라하).   
 <img width="1366" alt="image" src="https://github.com/user-attachments/assets/de10d6bb-8888-4118-aa4f-05f279c92d44" />
 
-[20250324 이태리 로마 도착](https://younlea.github.io/travel/roma_1st/).   
-[20250325 이태리 로마 낮](https://younlea.github.io/travel/roma_2nd_day/).    
-[20250325 이태리 로마 저녁](https://younlea.github.io/travel/roma_2nd_night/)    
+[20250324 이태리 로마 도착](https://younlea.github.io/travel/roma_1st/).     
+[20250325 이태리 로마 낮](https://younlea.github.io/travel/roma_2nd_day/).     
+[20250325 이태리 로마 저녁](https://younlea.github.io/travel/roma_2nd_night/)     
 [20250326 이태리 피렌체](https://younlea.github.io/travel/firenze/)    
 [20250327 이태리 피사, 피렌체](https://younlea.github.io/travel/pisa/).    
 [20250328 이태리 베네치아](https://younlea.github.io/travel/venezia/)    
@@ -44,25 +44,10 @@ toc_sticky : true
 [20250417 체코 프라하](https://younlea.github.io/travel/praha/).   
 
 
-
-
-
-
-
-
-
-[20250402 크로아티아 자그레브]().  
-
-
-
-
-
-
-
 # 여행 경비  
-총 사용 금액	3628397.984원   
-음식	  547,000원.  
-교통	1,988,238원.  
+총 사용 금액	3,628,397원    
+음식	  547,000원.   
+교통	1,988,238원.   
 숙박	  708,516원.   
 관광	   90,216원.   
 기타	  293,720원.   
