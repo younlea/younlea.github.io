@@ -40,8 +40,8 @@ toc_sticky : true
 [20250414 슬로바키아 브라티슬라바](https://younlea.github.io/travel/bratislava/).   
 [20250414 헝거리 부다페스트](https://younlea.github.io/travel/budapest/).   
 [20250415 헝거리 부다페스트, 체코 프라하](https://younlea.github.io/travel/buda-praha/).   
-[20250416 체코 프라하](https://younlea.github.io/travel/praha/).   
-[20250417 체코 프라하](https://younlea.github.io/travel/praha/).   
+[20250416 체코 프라하](https://younlea.github.io/travel/praha_20250416/).   
+[20250417 체코 프라하](https://younlea.github.io/travel/praha-20250417/).   
 
 # 총 도보 거리.    
 137km+ 137km + 163km +110 km = 547km.   
