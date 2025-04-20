@@ -15,22 +15,22 @@ toc_sticky : true
 <img width="1366" alt="image" src="https://github.com/user-attachments/assets/de10d6bb-8888-4118-aa4f-05f279c92d44" />
 
 [20250324 이태리 로마 도착](https://younlea.github.io/travel/roma_1st/).   
-[20250325 이태리 로마 낮](https://younlea.github.io/travel/roma_2nd_day/)
-[20250325 이태리 로마 저녁](https://younlea.github.io/travel/roma_2nd_night/)
-[20250326 이태리 피렌체](https://younlea.github.io/travel/firenze/)
-[20250327 이태리 피사, 피렌체](https://younlea.github.io/travel/pisa/).  
-[20250328 이태리 베네치아](https://younlea.github.io/travel/venezia/)
+[20250325 이태리 로마 낮](https://younlea.github.io/travel/roma_2nd_day/).    
+[20250325 이태리 로마 저녁](https://younlea.github.io/travel/roma_2nd_night/)    
+[20250326 이태리 피렌체](https://younlea.github.io/travel/firenze/)    
+[20250327 이태리 피사, 피렌체](https://younlea.github.io/travel/pisa/).    
+[20250328 이태리 베네치아](https://younlea.github.io/travel/venezia/)    
 [20250329 이태리 밑로미티](https://younlea.github.io/travel/dolomite/).  
 [20250330 스페인 산탄테르](https://younlea.github.io/travel/santander/).  
-[20250331 스페인 산탄테르](https://younlea.github.io/travel/santander/).  
+[20250331 스페인 산탄테르](https://younlea.github.io/travel/santander/).    
 [20250401 벨기에 브뤼셀](https://younlea.github.io/travel/belgie-bruxelles_1st/).  
-[20250402 크로아티아 자그레브](https://younlea.github.io/travel/zagreb/).  
+[20250402 크로아티아 자그레브](https://younlea.github.io/travel/zagreb/).   
 [20250403 슬로베니아 블레드레이크](https://younlea.github.io/travel/slovenia-rest/).  
-[20250404 크로아티아 플리트비체 공원, 스플릿트]().   
-[20250405 크로아티아 두브로브니크](https://younlea.github.io/travel/dubrovnik/).
-[20250406 크로아티아 두브로브니크](https://younlea.github.io/travel/cablecar/).
-[20250407 크로아티아 두브로브니크, 공항](https://younlea.github.io/travel/old-town-2nd/).
-[20250408 프랑스 마르세유, 니스](https://younlea.github.io/travel/marseille-nice/).   
+[20250404 크로아티아 플리트비체 공원, 스플릿트](https://younlea.github.io/travel/plitvicka-national-park/).   
+[20250405 크로아티아 두브로브니크](https://younlea.github.io/travel/dubrovnik/).    
+[20250406 크로아티아 두브로브니크](https://younlea.github.io/travel/cablecar/).    
+[20250407 크로아티아 두브로브니크, 공항](https://younlea.github.io/travel/old-town-2nd/).    
+[20250408 프랑스 마르세유, 니스](https://younlea.github.io/travel/marseille-nice/).    
 [20250409 프랑스 니스, 모나코](https://younlea.github.io/travel/monaco/).   
 [20250410 프랑스 니스, 스위스 바젤, 독일 프랑크프루트](https://younlea.github.io/travel/nice-basel-ff-inssb/).   
 [20250411 오스트리아 인스부르크](https://younlea.github.io/travel/innsbruck/).   
