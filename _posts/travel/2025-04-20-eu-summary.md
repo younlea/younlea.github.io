@@ -20,8 +20,8 @@ toc_sticky : true
 [20250326 이태리 피렌체](https://younlea.github.io/travel/firenze/)    
 [20250327 이태리 피사, 피렌체](https://younlea.github.io/travel/pisa/).    
 [20250328 이태리 베네치아](https://younlea.github.io/travel/venezia/)    
-[20250329 이태리 밑로미티](https://younlea.github.io/travel/dolomite/).  
-[20250330 스페인 산탄테르](https://younlea.github.io/travel/santander/).  
+[20250329 이태리 밑로미티](https://younlea.github.io/travel/dolomite/).    
+[20250330 스페인 산탄테르](https://younlea.github.io/travel/santander/).    
 [20250331 스페인 산탄테르](https://younlea.github.io/travel/santander/).    
 [20250401 벨기에 브뤼셀](https://younlea.github.io/travel/belgie-bruxelles_1st/).  
 [20250402 크로아티아 자그레브](https://younlea.github.io/travel/zagreb/).   
