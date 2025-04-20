@@ -59,7 +59,15 @@ toc_sticky : true
 기타	  293,720원.   
 
 # 교통 예매   
+기차 버스 검색 : Omio.   
+버스 예약 : Omio, FlixBus(Flixbus는 자사 앱이 더 싸다).   
+기차 예약 : Omio, Trainline.   
+비행기 예약 : Skyscanner (15euo짜리 비행기 찾아서 랜덤 여행).     
+
 # 숙소 예매.  
+두개 앱으로 거의 예매 했고 도미토리 위주로 예약.    
+Booking.com,     
+Hostelworld
 
 
 
