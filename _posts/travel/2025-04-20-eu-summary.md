@@ -11,7 +11,7 @@ toc_sticky : true
 ---
 
 # 여행 계획과 다른 여행 일정
-이태리(로마) -> 이태리(피렌체)(피사) -> 이태리(베네치아)-> 이태리(돌로미티) -> 스페인(산탄테르) -> 벨기에(브뤼셀) -> 크로아티아(자그레브 ) -> 슬로베니아 -> 크로아티아(플리트비체) -> 크로아티아(스플릿) -> 크로아티아(두브로브니크) -> 프랑스(마르세유, 니스) -> 모나코 -> 스위스(바젤) -> 독일(프랑크프루트) -> 오스트리아(인스부르크) -> 오스트리아(짤스부르크, 할슈타트, 비엔나) -> 슬로바키아 -> 헝거리(브다페스트) -> 체코(프라하).   
+이태리(로마) -> 이태리(피렌체)(피사) -> 이태리(베네치아)-> 이태리(돌로미티) -> 스페인(산탄테르) -> 벨기에(브뤼셀) -> 크로아티아(자그레브 ) -> 슬로베니아 -> 크로아티아(플리트비체) -> 크로아티아(스플릿) -> 크로아티아(두브로브니크) -> 프랑스(마르세유, 니스) -> 모나코 -> 스위스(바젤) -> 독일(프랑크프루트) -> 오스트리아(인스부르크) -> 오스트리아(짤스부르크, 할슈타트, 비엔나) -> 슬로바키아 -> 헝거리(부다페스트) -> 체코(프라하).   
 <img width="1366" alt="image" src="https://github.com/user-attachments/assets/de10d6bb-8888-4118-aa4f-05f279c92d44" />
 
 [20250324 이태리 로마 도착](https://younlea.github.io/travel/roma_1st/).     
@@ -20,7 +20,7 @@ toc_sticky : true
 [20250326 이태리 피렌체](https://younlea.github.io/travel/firenze/)    
 [20250327 이태리 피사, 피렌체](https://younlea.github.io/travel/pisa/).    
 [20250328 이태리 베네치아](https://younlea.github.io/travel/venezia/)    
-[20250329 이태리 밑로미티](https://younlea.github.io/travel/dolomite/).    
+[20250329 이태리 돌로미티](https://younlea.github.io/travel/dolomite/).    
 [20250330 스페인 산탄테르](https://younlea.github.io/travel/santander/).    
 [20250331 스페인 산탄테르](https://younlea.github.io/travel/santander/).    
 [20250401 벨기에 브뤼셀](https://younlea.github.io/travel/belgie-bruxelles_1st/).  
