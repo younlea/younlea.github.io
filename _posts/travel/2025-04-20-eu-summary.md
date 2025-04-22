@@ -1,5 +1,5 @@
 ---
-title: "25간의 유럽 13개국 여행 정리"
+title: "25일간의 유럽 13개국 여행 정리"
 excerpt_separator: "<!--more-->"
 categories:
   - travel
