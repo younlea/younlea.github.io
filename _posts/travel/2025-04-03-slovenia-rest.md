@@ -19,6 +19,7 @@ toc_sticky : true
 ## 국경 통과 ( border  crossing)
 
 ## 경찰이슈
+[고속도로 비용](https://younlea.github.io/travel/slovenia-police/).   
 
 ## 산위 교회
 같이 간 중국 친구 라일라가 알려주서 간 곳인데.. 블레드 호수보다 백배 나은듯. 6^^.   
