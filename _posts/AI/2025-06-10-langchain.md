@@ -133,3 +133,5 @@ Document loader로 불려진 내용을 임베딩 하기 전에 작게 쪼개는 
 [Colab 예제](https://colab.research.google.com/drive/1y8qqpiAux0dIdicMVd1HTql2h3SGEOdx)  
 [llama.cpp](https://python.langchain.com/docs/integrations/llms/llamacpp/)    
 
+[llama model](https://huggingface.co/TheBloke/CodeLlama-13B-Instruct-GGUF)    
+
