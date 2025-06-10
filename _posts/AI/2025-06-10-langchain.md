@@ -115,5 +115,21 @@ Document loader로 불려진 내용을 임베딩 하기 전에 작게 쪼개는 
 
 ## 예제 (판사GPT만들기)
 [Colab 예제](https://colab.research.google.com/drive/1GrGMHo2Le5DRcMRI5yXz1HjpeUSnyXVk)    
+[Colab 예제](https://colab.research.google.com/drive/1op-I0PcmOROCWZy7tiIdhbUZ87ZT_RLt)    
 
+## 예제 (특허 GPT 만들기)   
+[Colab 예제](https://colab.research.google.com/drive/18xN1z2aiDaWD6vM5epqTh0Nbc130cXTS)    
+[Colab 예제](https://colab.research.google.com/drive/1QSRc2gWiNxwOMMyYC4dD08jEkM0D6TM1)    
+
+## Langchain으로 엔티티 추출
+[Colab 예제](https://colab.research.google.com/drive/1S8JdDU3moHAtNiADbcsDN_VcO6z7GAjo)    
+[langchain entity extration](https://python.langchain.com/docs/tutorials/extraction/)     
+<img width="1024" alt="image" src="https://github.com/user-attachments/assets/91df03a8-d71b-4e1e-841d-7643749b2817" />
+
+## 예제 (리뷰감정분석 GPT)
+[Colab 예제](https://colab.research.google.com/drive/1cdbGYY9WKxlw7sPrhyxnALey1AQAo9d8)    
+
+## 랭체인에 llama모델 연동하기
+[Colab 예제](https://colab.research.google.com/drive/1y8qqpiAux0dIdicMVd1HTql2h3SGEOdx)  
+[llama.cpp](https://python.langchain.com/docs/integrations/llms/llamacpp/)    
 
