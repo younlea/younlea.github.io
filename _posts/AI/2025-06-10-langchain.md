@@ -67,6 +67,30 @@ toc_sticky : true
 
 ## Document Transformers
 Document loader로 불려진 내용을 임베딩 하기 전에 작게 쪼개는 역할   
+> from langchain.text_splitter import RecursiveCharacterTextSplitter
+
 [colab 예제](https://colab.research.google.com/drive/1WmZDQA50xX-MKz59XMZO6nO83Vsf0slb)    
 [Documnet Transformers](https://python.langchain.com/docs/integrations/document_transformers/)
+
+## Vector Embedding and Vector Store
+### 임베딩 개념과 장점
+<img width="811" alt="image" src="https://github.com/user-attachments/assets/fd033bc4-ec94-47ef-9e24-9ccd566220b5" />    
+<img width="811" alt="image" src="https://github.com/user-attachments/assets/728b44ab-b53c-4ebe-8253-5d933f417260" />    
+<img width="811" alt="image" src="https://github.com/user-attachments/assets/2a21f07b-c149-4b70-ae14-756c1fcce5b9" />    
+<img width="811" alt="image" src="https://github.com/user-attachments/assets/d891ca75-9a98-4816-8fcf-d16c154fb77c" />    
+<img width="811" alt="image" src="https://github.com/user-attachments/assets/e6762a60-c861-4425-8f50-9b85daae9dd9" />    
+<img width="811" alt="image" src="https://github.com/user-attachments/assets/d6aa3239-6fb2-4aba-8b70-bc1e047cb721" />    
+
+## 임베딩 테스트 (임베딩 벡터 사칙연산)   
+[Korea Word2Vector](https://word2vec.kr/search/)     
+<img width="811" alt="image" src="https://github.com/user-attachments/assets/08850f08-729a-42f6-9ef0-6c63aa60d637" />
+
+### 임베딩과 백터 스토어
+[Colab 예제](https://colab.research.google.com/drive/1sNFXTg6TrIm8szg5VtwIrfSs6FdklBxu)    
+[text embedding](https://python.langchain.com/docs/integrations/text_embedding/)    
+[text embedding models](https://python.langchain.com/docs/how_to/embed_text/)     
+
+<img width="996" alt="image" src="https://github.com/user-attachments/assets/9ceaddad-1142-410e-87b8-a3b8dbf160d1" />   
+<img width="994" alt="image" src="https://github.com/user-attachments/assets/c43155fe-1250-456b-ac38-d596c05692d9" />    
+백터스토어 (예로 cromadb로 테스트 해봄)    
 
