@@ -65,3 +65,8 @@ toc_sticky : true
 ### PDFLoader
 <img width="796" alt="image" src="https://github.com/user-attachments/assets/f9cc4dc4-c654-4c7a-8162-84750613480e" />
 
+## Document Transformers
+Document loader로 불려진 내용을 임베딩 하기 전에 작게 쪼개는 역할   
+[colab 예제](https://colab.research.google.com/drive/1WmZDQA50xX-MKz59XMZO6nO83Vsf0slb)    
+[Documnet Transformers](https://python.langchain.com/docs/integrations/document_transformers/)
+
