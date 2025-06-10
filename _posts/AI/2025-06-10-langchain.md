@@ -113,6 +113,7 @@ Document loader로 불려진 내용을 임베딩 하기 전에 작게 쪼개는 
 <img width="1002" alt="image" src="https://github.com/user-attachments/assets/e1d07d4e-31dc-4e8e-a0cd-38d911bd9a0c" />
 <img width="1002" alt="image" src="https://github.com/user-attachments/assets/353d927b-ef51-4541-8261-37e803d7b874" />
 
-
+## 예제 (판사GPT만들기)
+[Colab 예제](https://colab.research.google.com/drive/1GrGMHo2Le5DRcMRI5yXz1HjpeUSnyXVk)    
 
 
