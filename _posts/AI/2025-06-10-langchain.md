@@ -94,3 +94,25 @@ Document loader로 불려진 내용을 임베딩 하기 전에 작게 쪼개는 
 <img width="994" alt="image" src="https://github.com/user-attachments/assets/c43155fe-1250-456b-ac38-d596c05692d9" />    
 백터스토어 (예로 cromadb로 테스트 해봄)    
 
+## Retriever 
+<img width="823" alt="image" src="https://github.com/user-attachments/assets/0d664560-1c3c-49ae-a05f-3acc0fafeadb" />
+[Colab 예제](https://colab.research.google.com/drive/13yxs8cRNxDEjr8YbpWbANRqE4HJII23Y)    
+[retriever](https://python.langchain.com/docs/how_to/#retrievers)   
+
+## huggingface embedding
+무료 임베딩 모델 테스트     
+[colab 예제](https://colab.research.google.com/drive/1NNCIDGHPB_U32iMqKEyRkqqS2LJkc7lt)    
+[임베딩 모델 비교](https://huggingface.co/spaces/mteb/leaderboard)    
+<img width="826" alt="image" src="https://github.com/user-attachments/assets/00dd0a34-c26a-4266-926e-d92ea0eb2c9a" />
+
+## 이전 내용 기억(메모리)   
+[colab 예제](https://colab.research.google.com/drive/15Xz086eK4xMzSpnxsfqdINB7qfaQJnEv)    
+[langchain chatbot](https://python.langchain.com/docs/tutorials/chatbot/)
+<img width="1001" alt="image" src="https://github.com/user-attachments/assets/ff087891-8c48-4926-9c23-3347e8da5aa3" />
+<img width="1000" alt="image" src="https://github.com/user-attachments/assets/ac2c891a-d06f-48f8-81f5-dfd9a2122b22" />
+<img width="1002" alt="image" src="https://github.com/user-attachments/assets/e1d07d4e-31dc-4e8e-a0cd-38d911bd9a0c" />
+<img width="1002" alt="image" src="https://github.com/user-attachments/assets/353d927b-ef51-4541-8261-37e803d7b874" />
+
+
+
+
