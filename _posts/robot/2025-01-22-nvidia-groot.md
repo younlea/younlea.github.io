@@ -63,7 +63,8 @@ Jetson Thor와 Project GR00T의 결합은 로봇 공학의 새로운 장을 열�
 
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PDLtHorh4VQ" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PDLtHorh4VQ" frameborder="0" allowfullscreen></iframe>    
+
 ## 참고 자료
 - [NVIDIA 블로그: Project GR00T 및 Jetson Thor 소개](https://blogs.nvidia.co.kr/blog/foundation-model-isaac-robotics-platform/)
 - [아이로봇뉴스: 프로젝트 GR00T와 Jetson Thor 발표](http://m.irobotnews.com/news/articleView.html?idxno=34337)
