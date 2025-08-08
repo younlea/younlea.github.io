@@ -12,17 +12,26 @@ toc_sticky : true
 
 # 바이브 코딩
 
+# 1. 대중적 개발 툴
 ## 1. 커서 활용
+[커서 ai](https://cursor.com/).    
+[커서 위키독스](https://wikidocs.net/278669).    
 
-## 2. continue + LLM
+## 2. 클러드 코드
+[클러드 코드](https://www.anthropic.com/claude-code).   
+[클러드 코드 사용법1](https://www.magicaiprompts.com/docs/claude/claude-code/).    
+[클러드 코드 사용법2](https://tech.hyperithm.com/claude_code_guides).   
+
+# 2. open llm model 사용 가능 솔루션.
+## 1. continue + LLM
 [continue](https://www.continue.dev/).   
 [continue github](https://github.com/continuedev/continue).    
 
-## 3. cline + LLM
+## 2. cline + LLM
 [cline](https://cline.bot/).    
 [cline github](https://github.com/cline/cline).    
 
-## 4. Local LLM model
+## 3. Local LLM model
 ### ollama
 [ollama](https://ollama.com/).   
 
