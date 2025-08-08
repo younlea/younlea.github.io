@@ -13,7 +13,7 @@ toc_sticky : true
 # 바이브 코딩
 
 # 1. 대중적 개발 툴
-## 1. 커서 활용
+## 1. 커서
 [커서 ai](https://cursor.com/).    
 [커서 위키독스](https://wikidocs.net/278669).    
 
