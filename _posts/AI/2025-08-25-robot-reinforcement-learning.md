@@ -45,7 +45,7 @@ a walk in the park learning to walk in 20 minutes with model-free reinforcement 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gM_EjJTq2F8?si=Gpntv4L61HtY5mAU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>      
 
 ## 강화 학습을 이용한 로봇 보행 (PPO를 사용)
-### 논문   엄청 많은 디바이스로 학습
+### 논문 - 엄청 많은 디바이스로 학습
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8sO7VS3q8d0" frameborder="0" allowfullscreen></iframe>.   
 
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/65e42e6e-91fa-4346-9eb3-c9908f347c75" />    
@@ -58,6 +58,8 @@ reward
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/347a86db-00da-426b-a0f1-f0e929707b9d" />
 
 ### 논문 (RMA) - 어려운 환경에서 실시간으로 동작    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tpFQR_HUYss" frameborder="0" allowfullscreen></iframe>.   
+
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/051d3b51-0808-44a0-a707-7944dc39e5b4" />
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/31923e5c-9c45-45c8-93de-415880cbe535" />
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/8ff4c013-98c9-4c64-a8ac-1f7841ef50be" />
