@@ -89,7 +89,9 @@ reward
 <img width="889" height="503" alt="image" src="https://github.com/user-attachments/assets/f532177d-394c-4b1f-b2d7-e8aeed286ba0" />
 <img width="889" height="503" alt="image" src="https://github.com/user-attachments/assets/7ff0d2a1-dc1f-4fe2-9728-1688ae32e0f0" />
 
-### 논문 (transformer)   
+### 논문 (transformer)  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Y8URcPDbPhg" frameborder="0" allowfullscreen></iframe>.   
+
 <img width="889" height="503" alt="image" src="https://github.com/user-attachments/assets/16e3291c-1036-4d1a-a599-032e94799ac1" />
 <img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/6f994f6a-2676-410d-bf01-6ff81da161dc" />
 <img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/8f0daf1e-0b51-437e-812c-15cb47bc2a47" />
