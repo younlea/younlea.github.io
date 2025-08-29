@@ -95,11 +95,24 @@ reward
 <img width="889" height="503" alt="image" src="https://github.com/user-attachments/assets/16e3291c-1036-4d1a-a599-032e94799ac1" />
 <img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/6f994f6a-2676-410d-bf01-6ff81da161dc" />
 <img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/8f0daf1e-0b51-437e-812c-15cb47bc2a47" />
-<img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/a3f7dfb3-7c8a-4910-a550-20892538ab69" />
+<img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/a3f7dfb3-7c8a-4910-a550-20892538ab69" />.    
+
+#### tesla optimus.   
+[https://x.com/tesla_optimus/status/1922456791549427867](https://x.com/tesla_optimus/status/1922456791549427867).   
 <img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/bfe2262b-9583-4cf7-971d-d4becf48acd6" />
+
+#### unitree.  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Nkh6RUocD8c" frameborder="0" allowfullscreen></iframe>.   
 <img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/cf788a88-82b1-447c-abf8-78759c7de38c" />
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p0xFou30hWI" frameborder="0" allowfullscreen></iframe>.   
 <img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/b79313a9-eac2-4f47-ac8c-831348b00326" />
+
+#### boston Dynamics
+<iframe width="560" height="315" src="https://www.youtube.com/embed/I44_zbEwz_w" frameborder="0" allowfullscreen></iframe>.   
 <img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/64a0e503-3779-45c0-8dc4-2844cd81055c" />
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dFObux6mfTc" frameborder="0" allowfullscreen></iframe>.   
 <img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/df43ffcd-9802-44be-ab24-8e606fad131b" />
 
 
