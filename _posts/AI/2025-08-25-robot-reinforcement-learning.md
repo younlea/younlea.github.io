@@ -45,7 +45,7 @@ a walk in the park learning to walk in 20 minutes with model-free reinforcement 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gM_EjJTq2F8?si=Gpntv4L61HtY5mAU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>      
 
 ## 강화 학습을 이용한 로봇 보행 (PPO를 사용)
-### Learning to walk in minutes using Massively Parallel Deep RL - 엄청 많은 디바이스로 학습
+### 논문- (Learning to walk in minutes using Massively Parallel Deep RL) - 엄청 많은 디바이스로 학습
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8sO7VS3q8d0" frameborder="0" allowfullscreen></iframe>.   
 
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/65e42e6e-91fa-4346-9eb3-c9908f347c75" />    
@@ -81,6 +81,9 @@ reward
 <img width="889" height="503" alt="image" src="https://github.com/user-attachments/assets/24f7f1a6-5258-41ff-8833-9298e0d19b74" />
 
 ### 논문 (휴머노이드) robot parkour 
+[https://humanoid4parkour.github.io/](https://humanoid4parkour.github.io/).   
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9ilYqoQEQeg" frameborder="0" allowfullscreen></iframe>.   
+
 <img width="889" height="503" alt="image" src="https://github.com/user-attachments/assets/2468fe75-8633-4256-b06c-c982f164e237" />
 <img width="889" height="503" alt="image" src="https://github.com/user-attachments/assets/0feea12d-d079-4a6b-b5c7-5114476a71bf" />
 <img width="889" height="503" alt="image" src="https://github.com/user-attachments/assets/f532177d-394c-4b1f-b2d7-e8aeed286ba0" />
