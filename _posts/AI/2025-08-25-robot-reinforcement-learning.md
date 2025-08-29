@@ -66,6 +66,9 @@ reward
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/94472a42-1990-426a-b0bd-f1a8a98e6663" />
 
 ### 논문 - robot parkour
+[robot-parkour.github.io](robot-parkour.github.io).    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M7lDCSF0KP0" frameborder="0" allowfullscreen></iframe>.   
+
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/5f12c344-3e09-4e6b-80e7-b9ee41ab74a5" />
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/20c9b2a1-77f0-4b92-a6ca-ca1a8badbb43" />
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/c552c6a2-4f6c-4eeb-869c-9592d2c62fe7" />
