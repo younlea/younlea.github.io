@@ -37,10 +37,10 @@ state, action, reward
 
 ### robust rocomotion    
 rl in the world :daydreamer    
-https://www.youtube.com/watch?v=xAXvfVTgqr0    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xAXvfVTgqr0" frameborder="0" allowfullscreen></iframe>
 
 a walk in the park learning to walk in 20 minutes with model-free reinforcement learning    
-https://www.youtube.com/watch?v=YO1USfn6sHY    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YO1USfn6sHY" frameborder="0" allowfullscreen></iframe>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gM_EjJTq2F8?si=Gpntv4L61HtY5mAU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
