@@ -27,9 +27,9 @@ state, action, reward
 
 ## SIM to REAL
 강화 학습을 실제 로봇으로 하게 되면 비용, 위헙도 측면에서 적합하지 않다. 그래서 SIM을 사용하는게 더 유용합니다.    
-<img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/756a0388-b7ee-4b8f-805b-b6e4320fedca" />
-다만 SIM과 실제 환경의 차이가 있어서 이를 위해 보상해줘야 하는 이슈가 있다.     
+<img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/756a0388-b7ee-4b8f-805b-b6e4320fedca" />     
 
+다만 SIM과 실제 환경의 차이가 있어서 이를 위해 보상해줘야 하는 이슈가 있다.     
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/d08f93bf-df0e-43a9-9a6e-42ac8b815b49" />   
 
 ### FurnitureBench    
