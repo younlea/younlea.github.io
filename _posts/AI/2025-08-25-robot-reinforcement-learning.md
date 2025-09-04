@@ -35,8 +35,10 @@ state, action, reward
 ### FurnitureBench    
 [https://github.com/clvrai/furniture-bench?tab=readme-ov-file](https://github.com/clvrai/furniture-bench?tab=readme-ov-file)    
 [https://clvrai.github.io/furniture-bench/](https://clvrai.github.io/furniture-bench/)     
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qfJEivnHVuE?si=jLRwZgiy_7L_7khj&amp;start=33" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/b250c3ac-8a2e-4ea5-8664-e45e016b83df" />    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qfJEivnHVuE?si=jLRwZgiy_7L_7khj&amp;start=33" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>     
+
+
 
 
 
