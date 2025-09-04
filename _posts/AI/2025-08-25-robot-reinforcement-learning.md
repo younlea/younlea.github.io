@@ -177,7 +177,7 @@ ACT : imitation learning algorithm
 ### mobile aloha
 <img width="888" height="500" alt="image" src="https://github.com/user-attachments/assets/2277028f-e613-49f2-87c7-1a68ddd0bea8" />    
 <img width="888" height="500" alt="image" src="https://github.com/user-attachments/assets/f274043b-4e52-4951-a16d-178a648d9438" />    
-<iframe width="560" height="315" src="https://www.youtube.com/embed/X_Ch-4WmiUg?si=CFfMfK703onsoZ4O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/X_Ch-4WmiUg?si=CFfMfK703onsoZ4O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>     
 [https://mobile-aloha.github.io/](https://mobile-aloha.github.io/)     
 
 ### diffusion policy (2023)    
@@ -185,12 +185,20 @@ ACT : imitation learning algorithm
 <img width="885" height="218" alt="image" src="https://github.com/user-attachments/assets/e3f6df52-7c46-47f7-be0b-0c259550a64f" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/8dceff0d-4378-407a-acac-8d578034a818" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/59cc82ea-1b26-4414-bc6a-4f308a573d25" />    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CtJDROYBmSs?si=X3yhUhhG9VFkt6k8&amp;start=1427" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+[https://diffusion-policy.cs.columbia.edu/](https://diffusion-policy.cs.columbia.edu/)     
+[https://github.com/real-stanford/diffusion_policy](https://github.com/real-stanford/diffusion_policy)     
 
 ### scaling robotic datasets       
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/1c4798af-b1fa-4779-b53f-94c4c2ed3f77" />    
+[논문](chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://www.roboticsproceedings.org/rss20/p120.pdf)    
+[https://droid-dataset.github.io/](https://droid-dataset.github.io/)      
+
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/56ced518-e421-48cc-8e4f-87bb7f029292" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/91c23287-262c-4afe-bed3-fe8ebe0b4544" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/21d74dd8-db1a-4d8c-ba8f-4e7ff6bf3365" />    
+[https://github.com/google-deepmind/open_x_embodiment](https://github.com/google-deepmind/open_x_embodiment)   
+[https://robotics-transformer-x.github.io/](https://robotics-transformer-x.github.io/)     
 
 ### RT-X model
 RT-1, RT-2, OpenX 
@@ -201,31 +209,46 @@ RT-1, RT-2, OpenX
 transformer + diffusion    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/46de2f34-881b-46e8-b853-df4681db0633" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/b4971be3-03f7-44c6-a6ed-ab6e6786dcf1" />    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/99667VDGWMg?si=-imQp_mfZx9xQVLg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+[https://octo-models.github.io/](https://octo-models.github.io/)     
 
-### OpenVLA (open source, llama 사용)    
+### OpenVLA [An Open-Source Vision-Language-Action Model]  (open source, llama 사용)    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/670d53ab-d876-4163-b3aa-222a1753e12f" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/0c41ac26-0f21-47de-8cac-ea2fc707ae17" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/fa8fa14c-f9a0-4222-8899-e0bbe6c6270c" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/20834071-3606-4a4c-871b-f270ef362d7e" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/ef0b617f-2ee0-465f-8b11-5a5bbcfcb40f" />    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ozhQLNprW2A?si=Ulc8HLYNGQP7_wi6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[https://openvla.github.io/](https://openvla.github.io/)    
+[https://github.com/openvla/openvla](https://github.com/openvla/openvla)    
 
 ### OpenVLA-OFT
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/307b88db-0f00-4371-8c51-b75c32340e13" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/2a14d929-f705-4f79-ae1a-bb29a391abc0" />    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/T3Zkkr_NTSA?si=jENhhtEcqoEURb_e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[https://github.com/moojink/openvla-oft](https://github.com/moojink/openvla-oft)    
+[https://openvla-oft.github.io/](https://openvla-oft.github.io/)      
 
 ### SOTA VLA - open model
-10000 시간의 데이터     
+[https://www.physicalintelligence.company/](https://www.physicalintelligence.company/)     
+10000 시간의 데이터  
+#### pyzero
+[https://www.physicalintelligence.company/blog/pi0](https://www.physicalintelligence.company/blog/pi0)    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/712ddbcb-40d7-46aa-a830-d62b2ac145ef" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/a2bb5952-80ff-4e6d-ba96-f5d49f9f83be" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/24213960-c28d-4428-a8e3-0df9c5cc83ba" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/f1e56676-4f7a-4119-b71c-723b5319351a" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/eabcced4-044e-4901-9496-68efb8a96d3c" />    
-py fast     
-<img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/386a4df5-be6f-4053-bb16-a153b3bd88bc" />    
-py zero    
+#### py fast     
+<img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/386a4df5-be6f-4053-bb16-a153b3bd88bc" />   
+[https://www.physicalintelligence.company/research/fast](https://www.physicalintelligence.company/research/fast)    
+#### py zero    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/8efcaa48-5dd1-422e-83b7-a3b1db8d69bb" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/c6b29159-c3ba-4815-b33e-42172c1e7825" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/f1c7f154-00ed-4536-b649-acc29eed7283" />    
+[https://www.physicalintelligence.company/blog/pi05](https://www.physicalintelligence.company/blog/pi05)     
+#### Real-Time Action Chunking with Large Models    
+[https://www.physicalintelligence.company/research/real_time_chunking](https://www.physicalintelligence.company/research/real_time_chunking)    
 
 <img width="885" height="270" alt="image" src="https://github.com/user-attachments/assets/a412e792-2568-47e5-b74c-3edbc1ea571e" />    
 
