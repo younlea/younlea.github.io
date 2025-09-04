@@ -53,8 +53,6 @@ a walk in the park learning to walk in 20 minutes with model-free reinforcement 
 
 ## 강화 학습을 이용한 로봇 보행 (PPO를 사용)
 ### 논문- (Learning to walk in minutes using Massively Parallel Deep RL) - 엄청 많은 디바이스로 학습
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8sO7VS3q8d0" frameborder="0" allowfullscreen></iframe>.   
-
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/65e42e6e-91fa-4346-9eb3-c9908f347c75" />    
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/a7cb0b7e-78bf-4dbc-84c0-74de9a364dc9" />    
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/586e4ed5-623d-4232-842f-f28afe316992" />    
@@ -62,7 +60,9 @@ reward
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/b49c80b8-703b-4f1f-aa96-ceb054bba4a3" />
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/786417ed-9b78-4599-b729-68816e94af07" />
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/e1f1b863-ab74-4590-8ed0-73a042beb2e9" />    
-<img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/347a86db-00da-426b-a0f1-f0e929707b9d" />
+<img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/347a86db-00da-426b-a0f1-f0e929707b9d" />    
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8sO7VS3q8d0" frameborder="0" allowfullscreen></iframe>.   
 
 ### 논문 (RMA) - 어려운 환경에서 실시간으로 동작    
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/051d3b51-0808-44a0-a707-7944dc39e5b4" />   
@@ -82,16 +82,17 @@ reward
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/8fb9b309-d124-4bb2-83eb-f162e40b95bf" />   
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/78787e8c-a989-4ab2-9c35-ce3751f125be" />   
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/ff22e757-5074-46a2-ab94-3e7107ccb9ee" />   
-<img width="889" height="503" alt="image" src="https://github.com/user-attachments/assets/24f7f1a6-5258-41ff-8833-9298e0d19b74" />   
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/M7lDCSF0KP0" frameborder="0" allowfullscreen></iframe>.   
 
-### 논문 (휴머노이드) robot parkour 
+### 논문 (휴머노이드) robot parkour   
+[https://humanoid4parkour.github.io/](https://humanoid4parkour.github.io/).   
 <img width="889" height="503" alt="image" src="https://github.com/user-attachments/assets/2468fe75-8633-4256-b06c-c982f164e237" />
 <img width="889" height="503" alt="image" src="https://github.com/user-attachments/assets/0feea12d-d079-4a6b-b5c7-5114476a71bf" />
 <img width="889" height="503" alt="image" src="https://github.com/user-attachments/assets/f532177d-394c-4b1f-b2d7-e8aeed286ba0" />
 <img width="889" height="503" alt="image" src="https://github.com/user-attachments/assets/7ff0d2a1-dc1f-4fe2-9728-1688ae32e0f0" />   
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9ilYqoQEQeg" frameborder="0" allowfullscreen></iframe>.   
-[https://humanoid4parkour.github.io/](https://humanoid4parkour.github.io/).   
+
 
 ### 논문 (transformer)  
 <img width="889" height="503" alt="image" src="https://github.com/user-attachments/assets/16e3291c-1036-4d1a-a599-032e94799ac1" />
@@ -128,26 +129,38 @@ RFM (robot foundation model)
 <img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/90c3e129-ae6b-4609-9d29-4338383aa2d9" />   
 
 ### 2016 google foundation model
-<img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/fa8cbbcd-b80a-4970-b14a-ef9845065dad" />   
-<img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/bf387b08-688f-4a1c-83f7-58ac27aead8c" />   
+<img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/fa8cbbcd-b80a-4970-b14a-ef9845065dad" />    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/V05SuCSRAtg?si=dTTICLA8mFnZtpG7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>     
 
 ### QT-Opt
 <img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/e3f90f53-1296-4e37-9b8b-420604d54507" />   
+<iframe width="560" height="315" src="https://www.youtube.com/embed/W4joe3zzglU?si=9GiJfqOi-gRk0g1a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>     
+[논문](https://www.semanticscholar.org/paper/QT-Opt%3A-Scalable-Deep-Reinforcement-Learning-for-Kalashnikov-Irpan/eb37e7b76d26b75463df22b2a3aa32b6a765c672)    
 
 ### MT-Opt
 task 나눠서, 잡을 물체를 정해서 잡는 훈련        
-<img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/6db71e79-b82a-42c5-adc7-b33c58497d78" />   
+<img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/6db71e79-b82a-42c5-adc7-b33c58497d78" />     
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i3uUGSko2zY?si=gWvedTTP7qHISfv6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>     
+[논문](https://www.semanticscholar.org/paper/MT-Opt%3A-Continuous-Multi-Task-Robotic-Reinforcement-Kalashnikov-Varley/3e85d208b1b927fdb69ecf8336c70995818aaebd)     
 
 ### BC-Z
 <img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/3b584699-4b75-4a49-a750-fa8350595317" />    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/f-9Jw3KvPJo?si=wSj8P7w67Qu-W3UI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+[논문](https://arxiv.org/abs/2202.02005)    
 
 ### RT-1 (robotics transformer)
 <img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/11ac737a-7e4c-48c7-9ecc-3684f0f32f4a" />    
 <img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/8f6ea23c-74e9-4c85-b5a8-f590d01cb1e3" />    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UuKAp9a6wMs?si=DaoM7FMJTygO6ZD9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>     
+[https://robotics-transformer1.github.io/](https://robotics-transformer1.github.io/)     
+[논문](https://arxiv.org/abs/2212.06817)     
 
 ### RT-2
 pretrain-vlm 을 가져다가 학습 (vision language action)    
 <img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/0bb04e4d-9816-4147-acb8-b327ec436870" />    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gXgmqjthrPw?si=i8xhxXUdyBZFs9ne" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>     
+[https://robotics-transformer2.github.io/](https://robotics-transformer2.github.io/)    
+[논문](https://arxiv.org/abs/2307.15818)    
 
 ### ALOHA and ACT   
 <img width="882" height="500" alt="image" src="https://github.com/user-attachments/assets/c54382fe-d5a0-43ea-be0e-e7dbc8367dc0" />     
@@ -158,10 +171,14 @@ ACT : imitation learning algorithm
 <img width="888" height="500" alt="image" src="https://github.com/user-attachments/assets/277f808e-f6c3-4889-af27-54cc005f4e22" />
 <img width="888" height="500" alt="image" src="https://github.com/user-attachments/assets/fee8f51c-3618-43c2-84ed-1ca3bffb1756" />
 <img width="888" height="500" alt="image" src="https://github.com/user-attachments/assets/c7bb3090-a09c-43a5-90e6-7dd7d97d2387" />
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pN4Ig_aTSUo?si=6yrb45hw3vm6mDnl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>     
+[https://tonyzhaozh.github.io/aloha/](https://tonyzhaozh.github.io/aloha/)     
 
 ### mobile aloha
 <img width="888" height="500" alt="image" src="https://github.com/user-attachments/assets/2277028f-e613-49f2-87c7-1a68ddd0bea8" />    
 <img width="888" height="500" alt="image" src="https://github.com/user-attachments/assets/f274043b-4e52-4951-a16d-178a648d9438" />    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/X_Ch-4WmiUg?si=CFfMfK703onsoZ4O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+[https://mobile-aloha.github.io/](https://mobile-aloha.github.io/)     
 
 ### diffusion policy (2023)    
 <img width="888" height="500" alt="image" src="https://github.com/user-attachments/assets/74ab48a2-d43e-4019-baee-c30a98fe3f99" />    
