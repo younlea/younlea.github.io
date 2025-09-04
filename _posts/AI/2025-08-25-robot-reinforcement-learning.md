@@ -233,20 +233,24 @@ transformer + diffusion
 [https://www.physicalintelligence.company/](https://www.physicalintelligence.company/)     
 10000 시간의 데이터  
 #### pyzero
-[https://www.physicalintelligence.company/blog/pi0](https://www.physicalintelligence.company/blog/pi0)    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/712ddbcb-40d7-46aa-a830-d62b2ac145ef" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/a2bb5952-80ff-4e6d-ba96-f5d49f9f83be" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/24213960-c28d-4428-a8e3-0df9c5cc83ba" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/f1e56676-4f7a-4119-b71c-723b5319351a" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/eabcced4-044e-4901-9496-68efb8a96d3c" />    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/J-UTyb7lOEw?si=MdJ5K0HlVIrPlV3L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+[https://www.physicalintelligence.company/blog/pi0](https://www.physicalintelligence.company/blog/pi0)    
+
 #### py fast     
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/386a4df5-be6f-4053-bb16-a153b3bd88bc" />   
 [https://www.physicalintelligence.company/research/fast](https://www.physicalintelligence.company/research/fast)    
+
 #### py zero    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/8efcaa48-5dd1-422e-83b7-a3b1db8d69bb" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/c6b29159-c3ba-4815-b33e-42172c1e7825" />    
 <img width="885" height="499" alt="image" src="https://github.com/user-attachments/assets/f1c7f154-00ed-4536-b649-acc29eed7283" />    
 [https://www.physicalintelligence.company/blog/pi05](https://www.physicalintelligence.company/blog/pi05)     
+
 #### Real-Time Action Chunking with Large Models    
 [https://www.physicalintelligence.company/research/real_time_chunking](https://www.physicalintelligence.company/research/real_time_chunking)    
 
