@@ -30,7 +30,11 @@ state, action, reward
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/756a0388-b7ee-4b8f-805b-b6e4320fedca" />
 다만 SIM과 실제 환경의 차이가 있어서 이를 위해 보상해줘야 하는 이슈가 있다.     
 
-<img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/d08f93bf-df0e-43a9-9a6e-42ac8b815b49" />     
+<img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/d08f93bf-df0e-43a9-9a6e-42ac8b815b49" />   
+
+[https://github.com/clvrai/furniture-bench?tab=readme-ov-file](https://github.com/clvrai/furniture-bench?tab=readme-ov-file)    
+[https://clvrai.github.io/furniture-bench/](https://clvrai.github.io/furniture-bench/)     
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qfJEivnHVuE?si=jLRwZgiy_7L_7khj&amp;start=33" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/b250c3ac-8a2e-4ea5-8664-e45e016b83df" />    
 
 
