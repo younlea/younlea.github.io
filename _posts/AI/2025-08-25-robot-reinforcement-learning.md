@@ -24,7 +24,6 @@ state, action, reward
 ### PPO  
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/ce71bf6c-0d46-44c5-ae48-3b5cb11e498e" />    
 
-<details>
 <summary>1. PPO가 뭘까?</summary>
 
 강화학습에서 **에이전트(agent)**는 환경에서 행동을 하면서 보상(reward)을 얻고,  
@@ -35,21 +34,17 @@ state, action, reward
 
 그래서 나온 방법이 **PPO(Proximal Policy Optimization, 근접 정책 최적화)**입니다.  
 이름 그대로 “정책을 너무 멀리 바꾸지 말고, **가까운(proximal)** 범위 안에서만 최적화하자”라는 아이디어예요.  
-</details>
-
 ---
 
-<details>
+
 <summary>2. 기존 문제점</summary>
 
 - **Policy Gradient**: 정책을 gradient로 업데이트하는데, 한 번에 너무 크게 바뀔 수 있음 → 불안정.  
 - **TRPO(Trust Region Policy Optimization)**: 정책 변화가 너무 크지 않도록 제약을 줌(Trust Region).  
   하지만 수학이 복잡하고 구현이 어렵고 계산량이 큼.  
-</details>
 
 ---
 
-<details>
 <summary>3. PPO의 핵심 아이디어</summary>
 
 PPO는 TRPO를 단순하게 만든 버전이에요.  
@@ -76,11 +71,9 @@ $$
 - $\epsilon$ = 허용 오차 (예: 0.1 ~ 0.2)  
 
 👉 결국, 정책이 너무 급격히 바뀌지 않게 하면서도, 좋은 방향으로 조금씩 개선하도록 함.  
-</details>
 
 ---
 
-<details>
 <summary>4. 비유로 이해하기</summary>
 
 PPO를 **아이의 학습**에 비유해볼게요.  
@@ -90,21 +83,17 @@ PPO를 **아이의 학습**에 비유해볼게요.
 - 대신 “자전거에서 손을 한쪽만 떼고 가보자”처럼 **조금만 변화**를 주면, 안정적으로 늘어남.  
 
 👉 PPO는 이런 식으로 학습을 제한해서 안정성을 확보하는 방법이에요.  
-</details>
 
 ---
 
-<details>
 <summary>5. PPO의 장점</summary>
 
 - 구현이 비교적 간단하다 (TRPO보다 훨씬 쉬움).  
 - 안정적이다 (정책이 폭주하지 않음).  
 - 성능도 좋은 편이라, 현재 **강화학습에서 가장 널리 쓰이는 방법 중 하나**.  
-</details>
 
 ---
 
-<details>
 <summary>6. PPO 코드 예시 (PyTorch 스타일)</summary>
 
 ```python
@@ -142,7 +131,6 @@ def ppo_update(old_log_probs, states, actions, advantages, epsilon=0.2):
     loss.backward()
     optimizer.step()
 ```
-</details>
 
 ## SIM to REAL
 강화 학습을 실제 로봇으로 하게 되면 비용, 위헙도 측면에서 적합하지 않다. 그래서 SIM을 사용하는게 더 유용합니다.    
