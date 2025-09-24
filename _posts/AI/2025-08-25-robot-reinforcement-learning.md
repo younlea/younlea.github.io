@@ -24,8 +24,7 @@ state, action, reward
 ### PPO  
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/ce71bf6c-0d46-44c5-ae48-3b5cb11e498e" />    
 
-<summary>1. PPO가 뭘까?</summary>
-
+#### 1. PPO가 뭘까?    
 강화학습에서 **에이전트(agent)**는 환경에서 행동을 하면서 보상(reward)을 얻고,  
 그 경험을 통해 **정책(policy, 행동을 선택하는 규칙)**을 점점 더 좋게 만들어 갑니다.  
 
@@ -37,16 +36,14 @@ state, action, reward
 ---
 
 
-<summary>2. 기존 문제점</summary>
-
+#### 2. 기존 문제점.  
 - **Policy Gradient**: 정책을 gradient로 업데이트하는데, 한 번에 너무 크게 바뀔 수 있음 → 불안정.  
 - **TRPO(Trust Region Policy Optimization)**: 정책 변화가 너무 크지 않도록 제약을 줌(Trust Region).  
   하지만 수학이 복잡하고 구현이 어렵고 계산량이 큼.  
 
 ---
 
-<summary>3. PPO의 핵심 아이디어</summary>
-
+#### 3. PPO의 핵심 아이디어.   
 PPO는 TRPO를 단순하게 만든 버전이에요.  
 
 - 새로운 정책과 옛날 정책의 비율  
@@ -74,8 +71,7 @@ $$
 
 ---
 
-<summary>4. 비유로 이해하기</summary>
-
+#### 4. 비유로 이해하기.   
 PPO를 **아이의 학습**에 비유해볼게요.  
 
 - 아이가 자전거를 타는 걸 배우고 있음.  
@@ -86,16 +82,14 @@ PPO를 **아이의 학습**에 비유해볼게요.
 
 ---
 
-<summary>5. PPO의 장점</summary>
-
+#### 5. PPO의 장점.   
 - 구현이 비교적 간단하다 (TRPO보다 훨씬 쉬움).  
 - 안정적이다 (정책이 폭주하지 않음).  
 - 성능도 좋은 편이라, 현재 **강화학습에서 가장 널리 쓰이는 방법 중 하나**.  
 
 ---
 
-<summary>6. PPO 코드 예시 (PyTorch 스타일)</summary>
-
+#### 6. PPO 코드 예시 (PyTorch 스타일).   
 ```python
 import torch
 import torch.nn as nn
