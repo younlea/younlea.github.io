@@ -12,7 +12,7 @@ toc_sticky : true
 
 # robot reinforcement learning
 
-## PPO
+## PPO(Proximal Policy Optimization)
 강화 학습이란 모든 트로젝토리에서 리워드의 합이 최대가 되게 하는 방식을 찾아 내는것    
 ### policy gradient 
 <img width="886" height="494" alt="image" src="https://github.com/user-attachments/assets/df9b3e2a-bf90-4773-ae6e-0ee4ebc4423d" />    
@@ -24,8 +24,6 @@ state, action, reward
 ### PPO  
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/ce71bf6c-0d46-44c5-ae48-3b5cb11e498e" />    
 
-## PPO(Proximal Policy Optimization)
-
 <details>
 <summary>1. PPO가 뭘까?</summary>
 
@@ -33,10 +31,10 @@ state, action, reward
 그 경험을 통해 **정책(policy, 행동을 선택하는 규칙)**을 점점 더 좋게 만들어 갑니다.  
 
 문제는, 정책을 조금씩 업데이트해야 하는데, **너무 크게 바꾸면 성능이 떨어질 수 있다는 점**입니다.  
-👉 예: 원래 잘하던 동작을 완전히 잊어버리거나, 랜덤하게 행동하게 됨.
+👉 예: 원래 잘하던 동작을 완전히 잊어버리거나, 랜덤하게 행동하게 됨.  
 
 그래서 나온 방법이 **PPO(Proximal Policy Optimization, 근접 정책 최적화)**입니다.  
-이름 그대로 “정책을 너무 멀리 바꾸지 말고, **가까운(proximal)** 범위 안에서만 최적화하자”라는 아이디어예요.
+이름 그대로 “정책을 너무 멀리 바꾸지 말고, **가까운(proximal)** 범위 안에서만 최적화하자”라는 아이디어예요.  
 </details>
 
 ---
@@ -46,7 +44,7 @@ state, action, reward
 
 - **Policy Gradient**: 정책을 gradient로 업데이트하는데, 한 번에 너무 크게 바뀔 수 있음 → 불안정.  
 - **TRPO(Trust Region Policy Optimization)**: 정책 변화가 너무 크지 않도록 제약을 줌(Trust Region).  
-  하지만 수학이 복잡하고 구현이 어렵고 계산량이 큼.
+  하지만 수학이 복잡하고 구현이 어렵고 계산량이 큼.  
 </details>
 
 ---
@@ -54,30 +52,30 @@ state, action, reward
 <details>
 <summary>3. PPO의 핵심 아이디어</summary>
 
-PPO는 TRPO를 단순하게 만든 버전이에요.
+PPO는 TRPO를 단순하게 만든 버전이에요.  
 
 - 새로운 정책과 옛날 정책의 비율  
 
-\[
+$$
 r(\theta) = \frac{\pi_\theta(a|s)}{\pi_{\theta_{\text{old}}}(a|s)}
-\]
+$$  
 
 을 계산함.  
 
 - 이 비율이 **1에 가까우면** (= 행동 확률이 많이 안 바뀌었으면) 괜찮음.  
-- 그런데 너무 멀어지면(예: 2배 이상 바뀌면) 업데이트를 강제로 **클리핑(clipping)** 해서 제한을 둠.
+- 그런데 너무 멀어지면(예: 2배 이상 바뀌면) 업데이트를 강제로 **클리핑(clipping)** 해서 제한을 둠.  
 
-즉,
+즉,  
 
-\[
-L^{CLIP}(\theta) = \min\Big(r(\theta) \hat{A}, \, \text{clip}(r(\theta), 1-\epsilon, 1+\epsilon) \hat{A}\Big)
-\]
+$$
+L^{CLIP}(\theta) = \min \Big( r(\theta) \hat{A}, \; \text{clip}(r(\theta), 1-\epsilon, 1+\epsilon) \hat{A} \Big)
+$$  
 
 여기서  
-- \(\hat{A}\) = advantage (이 행동이 평균보다 얼마나 좋은지)  
-- \(\epsilon\) = 허용 오차 (예: 0.1 ~ 0.2)  
+- $\hat{A}$ = advantage (이 행동이 평균보다 얼마나 좋은지)  
+- $\epsilon$ = 허용 오차 (예: 0.1 ~ 0.2)  
 
-👉 결국, 정책이 너무 급격히 바뀌지 않게 하면서도, 좋은 방향으로 조금씩 개선하도록 함.
+👉 결국, 정책이 너무 급격히 바뀌지 않게 하면서도, 좋은 방향으로 조금씩 개선하도록 함.  
 </details>
 
 ---
@@ -91,7 +89,7 @@ PPO를 **아이의 학습**에 비유해볼게요.
 - 갑자기 “오늘은 외발자전거 타!” 라고 하면 너무 어려워서 못 배움 (정책 급격 변화).  
 - 대신 “자전거에서 손을 한쪽만 떼고 가보자”처럼 **조금만 변화**를 주면, 안정적으로 늘어남.  
 
-👉 PPO는 이런 식으로 학습을 제한해서 안정성을 확보하는 방법이에요.
+👉 PPO는 이런 식으로 학습을 제한해서 안정성을 확보하는 방법이에요.  
 </details>
 
 ---
@@ -101,7 +99,7 @@ PPO를 **아이의 학습**에 비유해볼게요.
 
 - 구현이 비교적 간단하다 (TRPO보다 훨씬 쉬움).  
 - 안정적이다 (정책이 폭주하지 않음).  
-- 성능도 좋은 편이라, 현재 **강화학습에서 가장 널리 쓰이는 방법 중 하나**.
+- 성능도 좋은 편이라, 현재 **강화학습에서 가장 널리 쓰이는 방법 중 하나**.  
 </details>
 
 ---
