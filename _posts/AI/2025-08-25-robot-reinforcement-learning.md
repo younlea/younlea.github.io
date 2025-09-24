@@ -142,6 +142,7 @@ def ppo_update(old_log_probs, states, actions, advantages, epsilon=0.2):
     loss.backward()
     optimizer.step()
 ```
+</details>
 
 ## SIM to REAL
 강화 학습을 실제 로봇으로 하게 되면 비용, 위헙도 측면에서 적합하지 않다. 그래서 SIM을 사용하는게 더 유용합니다.    
