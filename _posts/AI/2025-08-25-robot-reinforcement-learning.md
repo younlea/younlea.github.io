@@ -14,82 +14,74 @@ toc_sticky : true
 
 ## PPO(Proximal Policy Optimization)
 강화 학습이란 모든 트로젝토리에서 리워드의 합이 최대가 되게 하는 방식을 찾아 내는것    
-### policy gradient 
+### policy gradient   
 <img width="886" height="494" alt="image" src="https://github.com/user-attachments/assets/df9b3e2a-bf90-4773-ae6e-0ee4ebc4423d" />    
 샘플이 많아야 함.   
 <img width="886" height="494" alt="image" src="https://github.com/user-attachments/assets/9cc1ccc9-d326-4614-a87a-c1af78faec67" />    
 많은 데이터가 필요한 방식을 해결하기 위해 actor critic 방식으로 접근      
 state, action, reward     
 <img width="886" height="494" alt="image" src="https://github.com/user-attachments/assets/14f13398-5b4b-4b22-a2c9-b24ee1d1c58f" />    
-### PPO  
+### PPO    
 <img width="889" height="495" alt="image" src="https://github.com/user-attachments/assets/ce71bf6c-0d46-44c5-ae48-3b5cb11e498e" />    
 
-#### 1. PPO가 뭘까?    
-강화학습에서 **에이전트(agent)**는 환경에서 행동을 하면서 보상(reward)을 얻고,  
-그 경험을 통해 **정책(policy, 행동을 선택하는 규칙)**을 점점 더 좋게 만들어 갑니다.  
+## PPO(Proximal Policy Optimization)
 
-문제는, 정책을 조금씩 업데이트해야 하는데, **너무 크게 바꾸면 성능이 떨어질 수 있다는 점**입니다.  
-👉 예: 원래 잘하던 동작을 완전히 잊어버리거나, 랜덤하게 행동하게 됨.  
+#### 1. PPO가 뭘까?
+강화학습에서 에이전트(agent)는 환경에서 행동을 하면서 보상(reward)을 얻고,  
+그 경험을 통해 정책(policy, 행동을 선택하는 규칙)을 점점 더 좋게 만들어 갑니다.  
+
+문제는, 정책을 조금씩 업데이트해야 하는데, 너무 크게 바꾸면 성능이 오히려 떨어질 수 있다는 점입니다.  
+예를 들어 원래 잘하던 동작을 완전히 잊어버리거나, 랜덤하게 행동하게 될 수 있습니다.  
 
 그래서 나온 방법이 **PPO(Proximal Policy Optimization, 근접 정책 최적화)**입니다.  
-이름 그대로 “정책을 너무 멀리 바꾸지 말고, **가까운(proximal)** 범위 안에서만 최적화하자”라는 아이디어예요.  
----
-
-
-#### 2. 기존 문제점.  
-- **Policy Gradient**: 정책을 gradient로 업데이트하는데, 한 번에 너무 크게 바뀔 수 있음 → 불안정.  
-- **TRPO(Trust Region Policy Optimization)**: 정책 변화가 너무 크지 않도록 제약을 줌(Trust Region).  
-  하지만 수학이 복잡하고 구현이 어렵고 계산량이 큼.  
+이름 그대로 "정책을 너무 멀리 바꾸지 말고, 가까운(proximal) 범위 안에서만 최적화하자"라는 아이디어예요.  
 
 ---
 
-#### 3. PPO의 핵심 아이디어.   
-PPO는 TRPO를 단순하게 만든 버전이에요.  
-
-- 새로운 정책과 옛날 정책의 비율  
-
-$$
-r(\theta) = \frac{\pi_\theta(a|s)}{\pi_{\theta_{\text{old}}}(a|s)}
-$$  
-
-을 계산함.  
-
-- 이 비율이 **1에 가까우면** (= 행동 확률이 많이 안 바뀌었으면) 괜찮음.  
-- 그런데 너무 멀어지면(예: 2배 이상 바뀌면) 업데이트를 강제로 **클리핑(clipping)** 해서 제한을 둠.  
-
-즉,  
-
-$$
-L^{CLIP}(\theta) = \min \Big( r(\theta) \hat{A}, \; \text{clip}(r(\theta), 1-\epsilon, 1+\epsilon) \hat{A} \Big)
-$$  
-
-여기서  
-- $\hat{A}$ = advantage (이 행동이 평균보다 얼마나 좋은지)  
-- $\epsilon$ = 허용 오차 (예: 0.1 ~ 0.2)  
-
-👉 결국, 정책이 너무 급격히 바뀌지 않게 하면서도, 좋은 방향으로 조금씩 개선하도록 함.  
+#### 2. 기존 문제점
+- **Policy Gradient**: 정책을 gradient로 업데이트하는데, 한 번에 너무 크게 바뀔 수 있어 불안정함.  
+- **TRPO(Trust Region Policy Optimization)**: 정책 변화가 너무 크지 않도록 제한을 두지만, 수학이 복잡하고 구현이 어렵고 계산량이 많음.  
 
 ---
 
-#### 4. 비유로 이해하기.   
-PPO를 **아이의 학습**에 비유해볼게요.  
+#### 3. PPO의 핵심 아이디어
+PPO는 TRPO를 단순하게 만든 버전입니다.  
+
+핵심은 "새로운 정책과 옛날 정책의 확률 비율"을 계산하고, 이 비율이 일정 범위를 벗어나면 업데이트를 제한하는 것입니다.  
+
+- 비율이 1에 가까우면 → 행동 확률이 많이 안 바뀐 것 → 괜찮음  
+- 비율이 크게 벗어나면 → 업데이트를 강제로 클리핑(clipping) 해서 제한  
+
+수식으로는 "새로운 정책 확률 ÷ 옛날 정책 확률" 형태인데, github.io에서는 깨질 수 있어서 말로 풀면:  
+
+> 새로운 정책과 예전 정책의 비율 × Advantage 값,  
+> 그리고 그 비율을 일정 범위 안으로 강제로 자른(clipping) 값 × Advantage 값,  
+> 두 개 중에서 작은 쪽을 선택해서 손실(loss)을 계산한다.  
+
+이 방식 덕분에 정책이 폭주하지 않고, 조금씩 안정적으로 학습할 수 있다.  
+
+---
+
+#### 4. 비유로 이해하기
+PPO를 아이의 학습에 비유해보겠습니다.  
 
 - 아이가 자전거를 타는 걸 배우고 있음.  
-- 갑자기 “오늘은 외발자전거 타!” 라고 하면 너무 어려워서 못 배움 (정책 급격 변화).  
-- 대신 “자전거에서 손을 한쪽만 떼고 가보자”처럼 **조금만 변화**를 주면, 안정적으로 늘어남.  
+- 갑자기 "오늘은 외발자전거 타!" 라고 하면 너무 어려워서 못 배움 → 정책 급격 변화.  
+- 대신 "자전거에서 손을 한쪽만 떼고 가보자"처럼 조금만 변화 주면 안정적으로 늘어남.  
 
 👉 PPO는 이런 식으로 학습을 제한해서 안정성을 확보하는 방법이에요.  
 
 ---
 
-#### 5. PPO의 장점.   
+#### 5. PPO의 장점
 - 구현이 비교적 간단하다 (TRPO보다 훨씬 쉬움).  
 - 안정적이다 (정책이 폭주하지 않음).  
-- 성능도 좋은 편이라, 현재 **강화학습에서 가장 널리 쓰이는 방법 중 하나**.  
+- 성능도 좋은 편이라, 현재 강화학습에서 가장 널리 쓰이는 방법 중 하나.  
 
 ---
 
-#### 6. PPO 코드 예시 (PyTorch 스타일).   
+#### 6. PPO 코드 예시 (PyTorch 스타일)
+
 ```python
 import torch
 import torch.nn as nn
