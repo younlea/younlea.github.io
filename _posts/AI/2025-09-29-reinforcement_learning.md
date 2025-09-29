@@ -60,9 +60,10 @@ chip design
 <img width="679" height="491" alt="image" src="https://github.com/user-attachments/assets/0aa636b8-b290-4655-a05b-519758e200de" />     
 <img width="887" height="491" alt="image" src="https://github.com/user-attachments/assets/8891446f-a842-49bd-8c1a-2a8dbf077f1c" />    
 <img width="887" height="491" alt="image" src="https://github.com/user-attachments/assets/e3f04dfb-95f2-4238-a222-29a9f9fc0fe7" />    
-<img width="887" height="491" alt="image" src="https://github.com/user-attachments/assets/5997f519-f097-4133-9810-3a6b5bf5330f" />
+<img width="887" height="491" alt="image" src="https://github.com/user-attachments/assets/5997f519-f097-4133-9810-3a6b5bf5330f" />    
+
 ## 강화 학습 용어    
-<img width="887" height="491" alt="image" src="https://github.com/user-attachments/assets/ba73f532-ea35-49d4-9f26-dc392866f77a" />
+<img width="887" height="491" alt="image" src="https://github.com/user-attachments/assets/ba73f532-ea35-49d4-9f26-dc392866f77a" />    
 
 # 강화 학습 문제를 해결하는 방법(모방 학습)
 <img width="887" height="496" alt="image" src="https://github.com/user-attachments/assets/6b7f3500-0ec3-4e62-b520-7c56cc664140" />
