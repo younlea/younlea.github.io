@@ -38,9 +38,15 @@ chip design
 <img width="899" height="499" alt="image" src="https://github.com/user-attachments/assets/551ed34e-8caf-42ff-bd66-9f7696646a4b" />
 
 <img width="900" height="298" alt="image" src="https://github.com/user-attachments/assets/36a79152-a812-43c7-afb5-899ba7e13d39" />
-- input : state S
-- solution : action A
-- Model : policy
+- input : state S     
+- solution : action A     
+- Model : policy    
+
+## 지도학습 vs 강화학습    
+<img width="883" height="502" alt="image" src="https://github.com/user-attachments/assets/af10e6b2-783c-4efa-a461-251d5fcc69d5" />   
+<img width="883" height="502" alt="image" src="https://github.com/user-attachments/assets/b5506850-b9d2-4488-ba19-bfe4b1e43937" />    
+
+
 
 
 # 참고자료
