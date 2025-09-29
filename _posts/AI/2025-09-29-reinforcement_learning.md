@@ -46,6 +46,10 @@ chip design
 <img width="883" height="502" alt="image" src="https://github.com/user-attachments/assets/af10e6b2-783c-4efa-a461-251d5fcc69d5" />   
 <img width="883" height="502" alt="image" src="https://github.com/user-attachments/assets/b5506850-b9d2-4488-ba19-bfe4b1e43937" />    
 
+<img width="1334" height="753" alt="image" src="https://github.com/user-attachments/assets/6607a67d-49fa-4323-9db4-61f15e8b9075" />    
+### 강화 학습 예   
+<img width="1092" height="618" alt="image" src="https://github.com/user-attachments/assets/bed0b095-3dde-4bb9-992b-434704766364" />
+
 
 
 
