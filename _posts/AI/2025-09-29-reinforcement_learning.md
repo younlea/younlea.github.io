@@ -50,9 +50,26 @@ chip design
 ### 강화 학습 예   
 <img width="1092" height="618" alt="image" src="https://github.com/user-attachments/assets/bed0b095-3dde-4bb9-992b-434704766364" />
 
+<img width="883" height="491" alt="image" src="https://github.com/user-attachments/assets/86526500-14a4-4899-a018-41c9a05f001a" />
+
+## Markov reward process   
+
+## Markov decision process 
+<img width="671" height="491" alt="image" src="https://github.com/user-attachments/assets/45142af1-07f8-4326-9835-0ede35a88522" />     
+<img width="888" height="491" alt="image" src="https://github.com/user-attachments/assets/ef043c26-9fcd-46a3-9e24-fe11ddf49482" />     
+<img width="679" height="491" alt="image" src="https://github.com/user-attachments/assets/0aa636b8-b290-4655-a05b-519758e200de" />     
+<img width="887" height="491" alt="image" src="https://github.com/user-attachments/assets/8891446f-a842-49bd-8c1a-2a8dbf077f1c" />    
+<img width="887" height="491" alt="image" src="https://github.com/user-attachments/assets/e3f04dfb-95f2-4238-a222-29a9f9fc0fe7" />    
+<img width="887" height="491" alt="image" src="https://github.com/user-attachments/assets/5997f519-f097-4133-9810-3a6b5bf5330f" />
+## 강화 학습 용어    
+<img width="887" height="491" alt="image" src="https://github.com/user-attachments/assets/ba73f532-ea35-49d4-9f26-dc392866f77a" />
+
+# 강화 학습 문제를 해결하는 방법(모방 학습)
+<img width="887" height="496" alt="image" src="https://github.com/user-attachments/assets/6b7f3500-0ec3-4e62-b520-7c56cc664140" />
+<img width="887" height="496" alt="image" src="https://github.com/user-attachments/assets/3fcae466-62ab-4f4c-9d98-cf9a091b3cd5" />
 
 
-
+ 
 # 참고자료
 <img width="797" height="232" alt="image" src="https://github.com/user-attachments/assets/cd75cfea-75c9-4102-83fa-7e9788667476" />    
 [https://rail.eecs.berkeley.edu/deeprlcourse/](https://rail.eecs.berkeley.edu/deeprlcourse/)     
