@@ -17,3 +17,4 @@ toc_sticky : true
 <img width="1653" height="1221" alt="image" src="https://github.com/user-attachments/assets/8ad3c8ad-85f3-49d4-982c-0cdba1c63cdf" />
 
 [설명](https://www.toolify.ai/ko/ai-news-kr/deepfacelive-3767160).    
+[참고](https://m.blog.naver.com/PostView.naver?blogId=sshzz0518&logNo=223436536677&proxyReferer=https://www.google.com/&trackingCode=external).   
