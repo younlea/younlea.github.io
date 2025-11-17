@@ -75,5 +75,9 @@ toc_sticky : true
 3.  **MuJoCo 변환:** URDF 파일은 MuJoCo에서 직접 로드하거나 XML 형식으로 변환하여 사용할 수 있습니다.
 
 
-https://youtu.be/ZUz2HDuI77E
+[link](https://youtu.be/ZUz2HDuI77E)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZUz2HDuI77E" frameborder="0" allowfullscreen></iframe>
+
+
+
 
