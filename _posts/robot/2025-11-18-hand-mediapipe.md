@@ -1,4 +1,14 @@
+---
+title: "Google Mediapipe model"
+excerpt_separator: "<!--more-->"
+categories:
+  - robot
+tags:
+  - robot
 
+toc : true
+toc_sticky : true
+---
 
 
 # media pipe hand 사용 모션 캡쳐
