@@ -124,3 +124,91 @@ int setServoAngle(int index, int angle) {
 
 
 ```
+
+```c++
+#include <Servo.h>
+
+// ================= [설정 영역] =================
+const int SERVO_COUNT = 20;       
+const float US_PER_DEGREE = 10.3; // 1도당 펄스 변화량
+
+// [안전 범위] 500 ~ 2500 (모터 4번 등 2400us 모터를 위해 필수)
+const int MIN_SAFE_PWM = 500;     
+const int MAX_SAFE_PWM = 2500;    
+
+Servo myServos[SERVO_COUNT];
+
+// 핀 번호 (32 ~ 51)
+const int servoPins[SERVO_COUNT] = {
+  32, 33, 34, 35, 36, 37, 38, 39, 40, 41,
+  42, 43, 44, 45, 46, 47, 48, 49, 50, 51
+};
+
+// 0도(손을 편 상태)일 때의 PWM 값 (캘리브레이션 데이터)
+int zeroOffsets[SERVO_COUNT] = {
+  1700, 1000, 1600, 2400, 1000, 
+  1600, 1990, 2140, 900,  1800, 
+  1900, 2000, 1800, 1000, 2150, 
+  2150, 960,  1000, 1800, 2120  
+};
+
+void setup() {
+  Serial.begin(9600);
+  
+  // [핵심 수정] 초기화 루프
+  for (int i = 0; i < SERVO_COUNT; i++) {
+    
+    // 1. attach 하기 "전"에 초기값(0점)을 먼저 입력합니다.
+    // 이렇게 하면 전원이 들어올 때 1500(중간)을 거치지 않고 바로 제자리를 잡습니다.
+    myServos[i].writeMicroseconds(zeroOffsets[i]);
+    
+    // 2. 그 다음 핀을 연결합니다. (범위는 500~2500으로 확장)
+    // 이제 연결되는 순간 바로 위에서 설정한 zeroOffsets 값으로 힘을 줍니다.
+    myServos[i].attach(servoPins[i], 500, 2500);
+  }
+
+  Serial.println("=== Robot Hand Ready (No Initial Jerk) ===");
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    char c = Serial.read(); 
+    if (c == 'M') {
+      int inputId = Serial.parseInt(); 
+      int angle = Serial.parseInt(); // 음수(-90)도 그대로 받음
+      char endChar = Serial.read(); 
+      
+      if (endChar == 'E') {
+        executeCommand(inputId - 1, angle);
+      }
+    }
+  }
+}
+
+void executeCommand(int index, int angle) {
+  if (index < 0 || index >= SERVO_COUNT) return;
+  
+  int appliedPwm = setServoAngle(index, angle);
+  
+  Serial.print("M"); Serial.print(index + 1); 
+  Serial.print(" Angle:"); Serial.print(angle);
+  Serial.print(" -> PWM:"); Serial.println(appliedPwm);
+}
+
+int setServoAngle(int index, int angle) {
+  int centerPwm = zeroOffsets[index];
+  
+  // [방향 배열 제거] 
+  // 입력된 angle의 부호(+/-)에 따라 그대로 더하거나 뺍니다.
+  // 예: 2400인 모터에 -90도가 들어오면 2400 + (-927) = 1473 (정상)
+  int pwmDelta = (int)(angle * US_PER_DEGREE);
+  int targetPwm = centerPwm + pwmDelta;
+
+  // 안전 범위 적용 (500 ~ 2500)
+  int safePwm = constrain(targetPwm, MIN_SAFE_PWM, MAX_SAFE_PWM);
+
+  myServos[index].writeMicroseconds(safePwm);
+  
+  return safePwm;
+}
+```
