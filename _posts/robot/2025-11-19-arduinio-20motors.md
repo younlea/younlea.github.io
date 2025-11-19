@@ -1,4 +1,14 @@
+---
+title: "meag2560으로 20개 서보모터제어하기(with pwm)"
+excerpt_separator: "<!--more-->"
+categories:
+  - robot
+tags:
+  - robot
 
+toc : true
+toc_sticky : true
+---
 
 
 ```c
