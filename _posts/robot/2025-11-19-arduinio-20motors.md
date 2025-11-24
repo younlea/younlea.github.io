@@ -232,3 +232,119 @@ int setServoAngle(int index, int angle) {
   return safePwm;
 }
 ```
+```c
+#include <Servo.h>
+
+const int SERVO_COUNT = 20;
+Servo myServos[SERVO_COUNT];
+
+// 핀 번호 (32 ~ 51)
+const int servoPins[SERVO_COUNT] = {
+  32, 33, 34, 35, 36, 37, 38, 39, 40, 41,
+  42, 43, 44, 45, 46, 47, 48, 49, 50, 51
+};
+
+// [변수 관리]
+float currentPwm[SERVO_COUNT]; // 현재 위치 (정밀 제어를 위해 float 사용)
+int targetPwm[SERVO_COUNT];    // 목표 위치
+bool isMoving = false;         // 움직임 상태 플래그
+
+// [속도 조절]
+// 이 값이 클수록 모터가 빨리 움직이지만, 전력을 많이 먹습니다.
+// 0.5 ~ 2.0 사이에서 전원 상태에 맞춰 조절하세요.
+float speedFactor = 0.8; 
+
+// 초기 0점 데이터 (사용자 데이터)
+int zeroOffsets[SERVO_COUNT] = {
+  1700, 1000, 1000, 1600, 900,  1800, 1800, 1000, 960,  1000,
+  1600, 2400, 1990, 2140, 1900, 2000, 2150, 2150, 1800, 2120  
+};
+
+void setup() {
+  Serial.begin(9600);
+
+  for (int i = 0; i < SERVO_COUNT; i++) {
+    // 1. 초기 위치 설정 (한 번에 확 튀지 않게 현재 위치를 0점으로 잡음)
+    currentPwm[i] = zeroOffsets[i];
+    targetPwm[i] = zeroOffsets[i];
+    
+    // 2. 초기화 (순서: write -> attach)
+    myServos[i].writeMicroseconds((int)currentPwm[i]);
+    myServos[i].attach(servoPins[i], 500, 2500);
+  }
+  Serial.println("=== Synchronized Control Ready ===");
+}
+
+void loop() {
+  // 1. 명령 수신 (여기서는 테스트용으로 시리얼 입력을 가정)
+  // 실제로는 통신으로 20개 데이터를 한 번에 받아 targetPwm 배열을 갱신하면 됩니다.
+  if (Serial.available()) {
+    parseCommand(); // 하단 함수 참조
+  }
+
+  // 2. [핵심] 모든 서보 동시 이동 처리
+  updateServos();
+}
+
+// ========================================================
+// [마법의 함수] 모든 모터를 1/1000초 단위로 쪼개서 동시 제어
+// ========================================================
+void updateServos() {
+  isMoving = false;
+
+  for (int i = 0; i < SERVO_COUNT; i++) {
+    // 목표값과 현재값에 차이가 있다면
+    if (abs(currentPwm[i] - targetPwm[i]) > 1.0) {
+      isMoving = true;
+      
+      // [부드러운 이동 로직]
+      // 현재 위치에서 목표 위치 방향으로 'speedFactor' 만큼만 이동
+      if (currentPwm[i] < targetPwm[i]) {
+        currentPwm[i] += speedFactor;
+        if (currentPwm[i] > targetPwm[i]) currentPwm[i] = targetPwm[i]; // 오버슈트 방지
+      } else {
+        currentPwm[i] -= speedFactor;
+        if (currentPwm[i] < targetPwm[i]) currentPwm[i] = targetPwm[i];
+      }
+
+      // 실제 모터에 반영 (소수점 버림)
+      myServos[i].writeMicroseconds((int)currentPwm[i]);
+    }
+  }
+  
+  // 너무 빠른 루프 회전으로 인한 CPU/전력 부하 방지 (매우 짧은 텀)
+  if (isMoving) {
+    delayMicroseconds(100); 
+  }
+}
+
+// [명령 처리 예시] M1, 90도 이동 -> 목표값(Target)만 바꿈 (즉시 이동 X)
+void parseCommand() {
+  char c = Serial.read();
+  if (c == 'M') {
+    int id = Serial.parseInt();
+    int angle = Serial.parseInt();
+    
+    if (Serial.read() == 'E') { // End char Check
+      int index = id - 1;
+      if (index >= 0 && index < SERVO_COUNT) {
+        
+        // 각도 -> PWM 변환 (10.3 계수 적용)
+        int pwmDelta = (int)(angle * 10.3);
+        int newPwm = zeroOffsets[index] + pwmDelta;
+        
+        // 안전 범위 제한
+        targetPwm[index] = constrain(newPwm, 500, 2500);
+        
+        // *중요*: 여기서 writeMicroseconds를 호출하지 않습니다!
+        // targetPwm만 바꿔두면 loop()의 updateServos()가 알아서 움직입니다.
+      }
+    }
+  }
+}
+
+```
+
+
+
+
