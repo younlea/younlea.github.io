@@ -345,6 +345,113 @@ void parseCommand() {
 
 ```
 
+```c
+#include <Servo.h>
 
+const int SERVO_COUNT = 20;
+Servo myServos[SERVO_COUNT];
+
+const int servoPins[SERVO_COUNT] = {
+  32, 33, 34, 35, 36, 37, 38, 39, 40, 41,
+  42, 43, 44, 45, 46, 47, 48, 49, 50, 51
+};
+
+float currentPwm[SERVO_COUNT]; 
+int targetPwm[SERVO_COUNT];    
+bool isMoving = false;
+
+// [핵심 튜닝 1] 업데이트 주기를 20ms로 고정 (서보 모터 주기와 동기화)
+// 8ms로 하면 데이터 씹힘 현상이 발생하므로 20ms가 가장 빠르고 안전한 물리적 한계입니다.
+const unsigned long UPDATE_INTERVAL = 20; 
+unsigned long lastUpdateTime = 0;
+
+// [핵심 튜닝 2] 고정 속도 대신 '반응성(Gain)'을 사용
+// 0.1 ~ 1.0 사이 값. 클수록 빠릅니다.
+// 0.4 정도면 기존 5.0 팩터보다 4~5배 빠른 체감 속도가 납니다.
+float motionGain = 0.4; 
+
+// [최소 속도 보장] 목표에 가까워져도 너무 느려지지 않게 최소 이동량 설정
+float minStep = 2.0;
+
+int zeroOffsets[SERVO_COUNT] = {
+  1700, 1000, 1000, 1600, 900,  1800, 1800, 1000, 960,  1000,
+  1600, 2400, 1990, 2140, 1900, 2000, 2150, 2150, 1800, 2120  
+};
+
+void setup() {
+  Serial.begin(9600);
+  for (int i = 0; i < SERVO_COUNT; i++) {
+    currentPwm[i] = zeroOffsets[i];
+    targetPwm[i] = zeroOffsets[i];
+    myServos[i].writeMicroseconds((int)currentPwm[i]);
+    myServos[i].attach(servoPins[i], 500, 2500);
+  }
+}
+
+void loop() {
+  if (Serial.available()) {
+    parseCommand(); 
+  }
+
+  unsigned long currentMillis = millis();
+  
+  // 20ms마다 정확하게 업데이트 (데이터 충돌 방지)
+  if (currentMillis - lastUpdateTime >= UPDATE_INTERVAL) {
+    lastUpdateTime = currentMillis;
+    updateServosProportional();
+  }
+}
+
+// ========================================================
+// [P-제어 함수] 거리가 멀면 빠르고, 가까우면 부드럽게
+// ========================================================
+void updateServosProportional() {
+  isMoving = false;
+
+  for (int i = 0; i < SERVO_COUNT; i++) {
+    float diff = targetPwm[i] - currentPwm[i];
+    
+    // 오차 범위(Deadband) 1.0 이내면 정지
+    if (abs(diff) > 1.0) {
+      isMoving = true;
+      
+      // [알고리즘 핵심] 남은 거리에 비례해서 이동 (P-Control)
+      // 많이 남았으면 왕창(Speed 50~100효과), 조금 남았으면 살짝 이동
+      float step = diff * motionGain;
+
+      // 하지만 너무 느리면 답답하니까 '최소 속도'는 보장
+      if (abs(step) < minStep) {
+        step = (diff > 0) ? minStep : -minStep;
+      }
+
+      // 바로 목표에 도달할 거리면 한 번에 이동 (오버슈트 방지)
+      if (abs(step) > abs(diff)) {
+        currentPwm[i] = targetPwm[i];
+      } else {
+        currentPwm[i] += step;
+      }
+
+      myServos[i].writeMicroseconds((int)currentPwm[i]);
+    }
+  }
+}
+
+void parseCommand() {
+  char c = Serial.read();
+  if (c == 'M') {
+    int id = Serial.parseInt();
+    int angle = Serial.parseInt();
+    if (Serial.read() == 'E') {
+      int index = id - 1;
+      if (index >= 0 && index < SERVO_COUNT) {
+        int pwmDelta = (int)(angle * 10.3);
+        int newPwm = zeroOffsets[index] + pwmDelta;
+        targetPwm[index] = constrain(newPwm, 500, 2500);
+      }
+    }
+  }
+}
+
+```
 
 
