@@ -454,4 +454,121 @@ void parseCommand() {
 
 ```
 
+```c
+#include <Servo.h>
 
+const int SERVO_COUNT = 20;
+Servo myServos[SERVO_COUNT];
+
+const int servoPins[SERVO_COUNT] = {
+  32, 33, 34, 35, 36, 37, 38, 39, 40, 41,
+  42, 43, 44, 45, 46, 47, 48, 49, 50, 51
+};
+
+float currentPwm[SERVO_COUNT]; 
+int targetPwm[SERVO_COUNT];    
+
+// [튜닝 포인트 1] 업데이트 주기 (20ms 고정 권장)
+const unsigned long UPDATE_INTERVAL = 20; 
+unsigned long lastUpdateTime = 0;
+
+// [튜닝 포인트 2] 기준 속도 (최고 속도)
+// 소수만 움직일 때 사용할 아주 빠른 속도입니다.
+float maxGain = 0.6; 
+
+int zeroOffsets[SERVO_COUNT] = {
+  1700, 1000, 1000, 1600, 900,  1800, 1800, 1000, 960,  1000,
+  1600, 2400, 1990, 2140, 1900, 2000, 2150, 2150, 1800, 2120  
+};
+
+void setup() {
+  Serial.begin(9600);
+  for (int i = 0; i < SERVO_COUNT; i++) {
+    currentPwm[i] = zeroOffsets[i];
+    targetPwm[i] = zeroOffsets[i];
+    myServos[i].writeMicroseconds((int)currentPwm[i]);
+    myServos[i].attach(servoPins[i], 500, 2500);
+  }
+}
+
+void loop() {
+  if (Serial.available()) {
+    parseCommand(); 
+  }
+
+  unsigned long currentMillis = millis();
+  
+  if (currentMillis - lastUpdateTime >= UPDATE_INTERVAL) {
+    lastUpdateTime = currentMillis;
+    updateServosDynamic();
+  }
+}
+
+// ========================================================
+// [핵심 함수] 움직이는 모터 수에 따라 속도를 자동 조절
+// ========================================================
+void updateServosDynamic() {
+  
+  // 1. 현재 움직여야 하는 모터가 몇 개인지 먼저 셉니다.
+  int activeCount = 0;
+  for (int i = 0; i < SERVO_COUNT; i++) {
+    if (abs(targetPwm[i] - currentPwm[i]) > 1.0) {
+      activeCount++;
+    }
+  }
+
+  // 2. 움직이는 모터 수에 따라 '이번 턴의 속도(currentGain)'를 결정합니다.
+  float currentGain = maxGain;
+
+  // [핵심 로직]
+  // 5개 이상 동시에 움직이면 -> 속도를 70%로 줄임
+  // 10개 이상 동시에 움직이면 (주먹 쥐기) -> 속도를 40%로 줄임
+  // 이렇게 하면 전압 강하를 막아 '뭉그러짐' 없이 확실하게 움직입니다.
+  if (activeCount > 10) {
+    currentGain = maxGain * 0.4; // 20개 다 움직일 땐 천천히 (안전 제일)
+  } else if (activeCount > 5) {
+    currentGain = maxGain * 0.7; // 적당히 많을 땐 약간 감속
+  }
+  // 그 외(1~5개)일 때는 maxGain 그대로 사용하여 임팩트 있게!
+
+  
+  // 3. 결정된 속도로 이동
+  for (int i = 0; i < SERVO_COUNT; i++) {
+    float diff = targetPwm[i] - currentPwm[i];
+    
+    if (abs(diff) > 1.0) {
+      // P-Control 이동량 계산
+      float step = diff * currentGain;
+
+      // 최소 이동량 보정 (너무 느려지지 않게)
+      float minStep = 2.0;
+      if (abs(step) < minStep) step = (diff > 0) ? minStep : -minStep;
+
+      // 오버슈트 방지 및 값 적용
+      if (abs(step) > abs(diff)) currentPwm[i] = targetPwm[i];
+      else currentPwm[i] += step;
+
+      myServos[i].writeMicroseconds((int)currentPwm[i]);
+    }
+  }
+}
+
+void parseCommand() {
+  char c = Serial.read();
+  if (c == 'M') {
+    int id = Serial.parseInt();
+    int angle = Serial.parseInt();
+    if (Serial.read() == 'E') {
+      int index = id - 1;
+      if (index >= 0 && index < SERVO_COUNT) {
+        int pwmDelta = (int)(angle * 10.3);
+        int newPwm = zeroOffsets[index] + pwmDelta;
+        targetPwm[index] = constrain(newPwm, 500, 2500);
+      }
+    }
+  }
+}
+
+
+
+```
