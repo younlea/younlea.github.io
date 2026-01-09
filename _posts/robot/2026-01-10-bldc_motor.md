@@ -1,9 +1,14 @@
 ---
-layout: post
 title: "BLDC 모터 제어의 정석: FOC(자계 지향 제어)의 원리와 역사"
-date: 2026-01-10
-categories: [Engineering, Motor Control, Robotics]
-tags: [FOC, BLDC, Control Theory, Algorithm, Sensorless]
+date: 2026-01-09
+excerpt_separator: "<!--more-->"
+categories:
+  - robot
+tags:
+  - robot
+
+toc : true
+toc_sticky : true
 ---
 
 로봇 개발을 진행하며 모터 드라이버와 제어 알고리즘을 공부하다가 알게 된 **FOC(Field Oriented Control)**와 하드웨어 제어 구조에 대해 정리해 본다. 처음에는 전류 센서가 전압을 승압해 주는 것 아닌가 하는 오해에서 시작했지만, 공부를 거듭하며 전류와 전압의 관계, 그리고 제어의 깊은 역사까지 파고들게 되었다.
