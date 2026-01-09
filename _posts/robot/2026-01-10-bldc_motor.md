@@ -11,6 +11,7 @@ toc : true
 toc_sticky : true
 ---
 
+
 로봇 개발을 진행하며 모터 드라이버와 제어 알고리즘을 공부하다가 알게 된 **FOC(Field Oriented Control)**와 하드웨어 제어 구조에 대해 정리해 본다. 처음에는 전류 센서가 전압을 승압해 주는 것 아닌가 하는 오해에서 시작했지만, 공부를 거듭하며 전류와 전압의 관계, 그리고 제어의 깊은 역사까지 파고들게 되었다.
 
 ## 1. 하드웨어의 오해와 진실: 센서 vs 드라이버
@@ -30,11 +31,11 @@ BLDC 모터 회로를 처음 분석할 때 가장 헷갈렸던 부분은 **전�
 
 <div class="mermaid">
 graph LR
-    MCU[MCU (Brain)] -->|PWM Signal| GD[Gate Driver]
-    GD -->|High Voltage| FET[MOSFET Bridge]
-    FET -->|High Current| CS[Current Sensor]
-    CS -->|Feedback Signal| MCU
-    CS -->|Drive Current| Motor((BLDC Motor))
+    MCU["MCU (Brain)"] -->|"PWM Signal"| GD["Gate Driver"]
+    GD -->|"High Voltage"| FET["MOSFET Bridge"]
+    FET -->|"High Current"| CS["Current Sensor"]
+    CS -->|"Feedback Signal"| MCU
+    CS -->|"Drive Current"| Motor(("BLDC Motor"))
     
     style MCU fill:#f9f,stroke:#333,stroke-width:2px
     style Motor fill:#ff9,stroke:#333,stroke-width:2px
@@ -93,14 +94,14 @@ $$
 
 <div class="mermaid">
 flowchart LR
-    Target[목표 위치] --> P_Control[위치 제어기]
-    P_Control -->|목표 속도| V_Control[속도 제어기]
-    V_Control -->|목표 전류 Iq| C_Control[전류 제어기(FOC)]
-    C_Control -->|전압 PWM| Motor
+    Target["목표 위치"] --> P_Control["위치 제어기"]
+    P_Control -->|"목표 속도"| V_Control["속도 제어기"]
+    V_Control -->|"목표 전류 Iq"| C_Control["전류 제어기(FOC)"]
+    C_Control -->|"전압 PWM"| Motor
     
-    subgraph Feedback Loop
-    Motor -.->|현재 위치/속도| P_Control
-    Motor -.->|현재 전류| C_Control
+    subgraph FeedbackLoop ["Feedback Loop"]
+    Motor -.->|"현재 위치/속도"| P_Control
+    Motor -.->|"현재 전류"| C_Control
     end
 </div>
 
