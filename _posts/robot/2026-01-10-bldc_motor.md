@@ -12,13 +12,6 @@ toc_sticky : true
 ---
 
 
----
-layout: post
-title: "BLDC 모터 제어의 정석: 하드웨어부터 FOC, 캐스케이드 제어까지"
-date: 2026-01-10
-categories: [Engineering, Motor Control, Robotics]
-tags: [FOC, BLDC, Control Theory, Algorithm, Cascade Control, Sensorless]
----
 
 로봇 개발을 진행하며 모터 드라이버와 제어 알고리즘을 깊이 있게 공부하게 되었다. 단순한 회전이 아니라 정교한 힘 조절과 위치 제어를 위해 필수적인 **FOC(Field Oriented Control)**와 **캐스케이드 제어(Cascade Control)** 시스템에 대해 정리해 본다.
 
