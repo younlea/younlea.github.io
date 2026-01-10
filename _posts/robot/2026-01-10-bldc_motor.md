@@ -181,6 +181,7 @@ BLDC 모터 제어를 공부하다 보면 "엔코더(위치 센서) 없이도 �
 ---
 
 <script>
+  // MathJax 설정 (수식 렌더링)
   MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']]
@@ -192,4 +193,25 @@ BLDC 모터 제어를 공부하다 보면 "엔코더(위치 센서) 없이도 �
 </script>
 <script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+<script type="module">
+  // Mermaid 설정 (다이어그램 렌더링)
+  // GitHub에서 소스 코드로 보이는 문제를 해결하기 위해,
+  // 브라우저 로딩 시 'language-mermaid' 클래스를 가진 요소를 찾아 그림으로 변환합니다.
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: false });
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+    for (const block of mermaidBlocks) {
+      const graphDefinition = block.textContent;
+      const newDiv = document.createElement('div');
+      newDiv.className = 'mermaid';
+      newDiv.textContent = graphDefinition;
+      const preElement = block.parentElement;
+      preElement.parentNode.replaceChild(newDiv, preElement);
+    }
+    await mermaid.run({ querySelector: '.mermaid' });
+  });
 </script>
