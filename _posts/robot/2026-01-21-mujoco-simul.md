@@ -1,6 +1,7 @@
 ---
 title: "mujoco simul을 이용한 모터 선정"
 excerpt_separator: "<!--more-->"
+date: 2026-01-20
 categories:
   - robot
 tags:
