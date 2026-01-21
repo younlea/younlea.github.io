@@ -1,3 +1,15 @@
+---
+title: "mujoco simul을 이용한 모터 선정"
+excerpt_separator: "<!--more-->"
+categories:
+  - robot
+tags:
+  - robot
+
+toc : true
+toc_sticky : true
+---
+
 # [MuJoCo] 시뮬레이션으로 로봇 모터 선정 검증하기 (Motor Sizing)
 
 로봇을 설계할 때 가장 고민되는 부분 중 하나는 **"이 모터가 과연 내가 원하는 동작을 버틸 수 있을까?"** 입니다. 너무 약한 모터를 쓰면 움직이지 않고, 너무 강한 모터를 쓰면 무겁고 비싸집니다.
