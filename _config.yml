@@ -73,9 +73,9 @@ google:
   search_engine_id       : # YOUR_SEARCH_ENGINE_ID
   instant_search         : # false (default), true
 # SEO Related
-google_site_verification : # Google Search Console에서 발급받은 코드 입력
+google_site_verification : "FGsMFFpvZFxPwV0XwsAn5jOWoUiJkx3Hu5c8jOEHpe8"
 bing_site_verification   :
-naver_site_verification  : # Naver Search Advisor에서 발급받은 코드 입력
+naver_site_verification  : "82745bfe5945ba217c9460479f02fa8346706d8e"
 yandex_site_verification :
 baidu_site_verification  :
 
