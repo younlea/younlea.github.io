@@ -2,7 +2,7 @@
 title: "[20250410]니스 공항 노숙이후 스위스 바젤 이동후 산책, 프랑크프루트거쳐 인스부르크로"
 excerpt_separator: "<!--more-->"
 categories:
-  - etc
+  - travel
 tags:
   - 나라, 도시, 
 

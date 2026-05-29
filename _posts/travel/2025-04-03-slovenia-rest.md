@@ -2,7 +2,7 @@
 title: "[20250403]슬로베나에서 방문했던곳들"
 excerpt_separator: "<!--more-->"
 categories:
-  - robot
+  - travel
 tags:
   - 슬로베니아, 블렌드호수, 
 

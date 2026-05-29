@@ -2,7 +2,7 @@
 title: "[20250414]슬로바키아 브라티슬로바 아침 산책"
 excerpt_separator: "<!--more-->"
 categories:
-  - etc
+  - travel
 tags:
   - 나라, 도시, 
 

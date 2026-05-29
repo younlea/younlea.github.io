@@ -2,7 +2,7 @@
 title: "[20250330]조용한 휴양지 스페인 산탄데르  "
 excerpt_separator: "<!--more-->"
 categories:
-  - etc
+  - travel
 tags:
   - 나라, 도시, 
 

@@ -2,7 +2,7 @@
 title: "[20250331]산탄데르 어슬렁 대기"
 excerpt_separator: "<!--more-->"
 categories:
-  - etc
+  - travel
 tags:
   - 스페인, 산탄데르, 
 

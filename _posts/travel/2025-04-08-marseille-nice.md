@@ -2,7 +2,7 @@
 title: "[20250408]마르세유 한바퀴 후에 니스로"
 excerpt_separator: "<!--more-->"
 categories:
-  - blog
+  - travel
 tags:
   - 나라, 도시, 
 

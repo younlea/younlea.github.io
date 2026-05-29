@@ -2,7 +2,7 @@
 title: "[20250412]할슈타트 구경 및 빈으로 이동"
 excerpt_separator: "<!--more-->"
 categories:
-  - etc
+  - travel
 tags:
   - 오스트리아, 할슈타트, 
 

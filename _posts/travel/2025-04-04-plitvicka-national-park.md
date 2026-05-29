@@ -2,7 +2,7 @@
 title: "[20250404]플리트비체 국립공원 "
 excerpt_separator: "<!--more-->"
 categories:
-  - etc
+  - travel
 tags:
   - 크로아티아, 플리트비체 국립공원, 
 

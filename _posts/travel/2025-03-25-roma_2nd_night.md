@@ -2,7 +2,7 @@
 title: "[20250325] 로마 저녁투어  "
 excerpt_separator: "<!--more-->"
 categories:
-  - etc
+  - travel
 tags:
   - 나라, 도시, 
 
