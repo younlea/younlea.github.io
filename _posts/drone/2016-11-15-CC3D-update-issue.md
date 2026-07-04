@@ -1,5 +1,5 @@
 ---
-title: "CC3D update issue\"
+title: "CC3D update issue"
 excerpt_separator: "<!--more-->"
 date: 2016-11-15 00:24:37 +0900
 categories:
