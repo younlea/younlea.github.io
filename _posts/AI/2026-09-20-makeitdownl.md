@@ -1,10 +1,17 @@
 
 ---
 title: "Claude Code에서 PDF 분석 시 토큰 아끼는 방법 (feat. MarkItDown)"
+excerpt_separator: "<!--more-->"
 date: 2026-09-20
-categories: [AI, Claude]
-tags: [Claude, Claude Code, MarkItDown, MCP, PDF, Markdown]
+categories:
+  - AI
+tags:
+  - Claude, Claude Code, MarkItDown, MCP, PDF, Markdown]
+
+toc : true
+toc_sticky : true
 ---
+
 
 Claude나 ChatGPT 같은 AI 모델에게 PDF 문서를 분석시킬 때, 파일을 그대로 업로드하면 토큰(Token) 소모가 매우 심합니다. 이때 마이크로소프트가 공개한 **MarkItDown**을 활용하여 PDF를 마크다운(Markdown)으로 변환한 뒤 입력하면 토큰을 획기적으로 절약할 수 있습니다. 
 
