@@ -1,9 +1,16 @@
 ---
 title: "[Claude Code] AI 개발팀을 구성하는 멀티 에이전트 프레임워크, Ruflo 설치 및 활용 가이드"
-date: 2026-03-20
-categories: [AI, Development Tools]
-tags: [Claude, ClaudeCode, Ruflo, ClaudeFlow, MultiAgent, MCP]
+excerpt_separator: "<!--more-->"
+date: 2026-09-20
+categories:
+  - AI
+tags:
+  - [Claude, ClaudeCode, Ruflo, ClaudeFlow, MultiAgent, MCP]
+
+toc : true
+toc_sticky : true
 ---
+
 
 AI 코딩 보조 도구를 사용할 때 단일 AI 모델의 맥락(Context) 한계나 일회성 답변에 아쉬움을 느낀 적이 있으신가요? 
 
