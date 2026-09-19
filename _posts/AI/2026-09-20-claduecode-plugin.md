@@ -104,10 +104,42 @@ npm install -g @agent-skills/mcp-server
 
 *(설치 후 설정 파일의 `mcpServers` 항목에 추가해 줍니다.)*
 
+## 5. ECC (Everything Claude Code / ecc-universal) 🧠
+
+Anthropic 해커톤 우승자가 개발한, 단순한 코딩 어시스턴트를 '고급 자율 엔지니어링 팀'처럼 작동하게 만들어주는 강력한 **AI 하네스(Agent Harness) 통합 시스템**입니다.
+
+### 💡 유용한 점
+- **체계적인 워크플로우 강제:** AI가 무턱대고 코드를 짜는 것을 막고 `요구사항 분석 ➡️ 구현 계획 승인 대기 ➡️ TDD(테스트 주도 개발) 기반 작성 ➡️ 코드 리뷰`라는 정해진 절차를 따르도록 유도합니다.
+- **역할 분담 (Agent Roles):** 코드 작성, 보안 감사(AgentShield), 리팩토링 등 각 작업에 특화된 에이전트와 스킬을 부여해 결과물의 품질을 극대화합니다.
+- **컨텍스트 최적화 (Codemap):** 프로젝트 구조를 AI가 효율적으로 탐색하게 만들어 불필요한 토큰 낭비(컨텍스트 소모)를 방지합니다.
+
+### 🛠️ 설치 방법
+터미널에서 Node.js 환경의 `npx`를 사용하거나, Claude Code 내부의 마켓플레이스 명령어를 통해 설치할 수 있습니다. 
+
+**방법 A. Claude Code 내부 플러그인으로 설치 (권장)**
+Claude Code를 실행한 상태에서 아래 명령어를 순서대로 입력합니다.
+```bash
+/plugin marketplace add affaan-m/everything-claude-code
+/plugin install ecc@ecc
+
+```
+
+**방법 B. NPM을 통한 전역 설치**
+터미널에서 npm 패키지(`ecc-universal`)를 이용해 설치합니다.
+
+```bash
+npm install -g ecc-universal
+# 특정 언어(예: typescript) 환경에 맞게 초기화
+npx ecc typescript /plan
+
+```
+
+*(설치 후에는 프롬프트에 "현재 설치된 ECC 기능을 사용해 계획부터 세워줘"라고 요청하면 ECC의 강력한 워크플로우를 바로 체감할 수 있습니다.)*
+
 ---
 
 > **💡 마무리 팁:**
-> 이 4가지 플러그인은 기능이 겹치지 않아 함께 사용할 때 엄청난 시너지를 냅니다. `OmniRoute`로 비용을 낮추고, `Graphify`로 맥락을 잡은 뒤, `Ponytail`과 `Agent Skills`로 코드를 작성하면 완벽한 바이브 코딩 환경을 구축할 수 있습니다.
+> 이 5가지 플러그인은 기능이 겹치지 않아 함께 사용할 때 엄청난 시너지를 냅니다. `OmniRoute`로 비용을 낮추고, `Graphify`로 맥락을 잡은 뒤, `Ponytail`과 `Agent Skills`로 코드를 작성하면 완벽한 바이브 코딩 환경을 구축할 수 있습니다.
 
 ```
 
