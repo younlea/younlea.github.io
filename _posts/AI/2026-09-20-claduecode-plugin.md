@@ -1,10 +1,14 @@
-
 ---
-layout: post
 title: "Claude Code 바이브 코딩 최적화: 필수 플러그인 4종 완벽 가이드"
+excerpt_separator: "<!--more-->"
 date: 2026-09-20
-categories: [AI, Development]
-tags: [Claude, VibeCoding, Ponytail, OmniRoute, Graphify, AgentSkills]
+categories:
+  - AI
+tags:
+  - [Claude, VibeCoding, Ponytail, OmniRoute, Graphify, AgentSkills]
+
+toc : true
+toc_sticky : true
 ---
 
 최근 Claude Code를 활용한 '바이브 코딩(Vibe Coding)'이 대세로 떠오르고 있습니다. 하지만 무턱대고 사용하다 보면 API 토큰 비용이 폭탄처럼 발생하거나, AI가 코드의 전체 맥락을 놓쳐 비효율적인 코드를 생성하는 경우가 많습니다.
