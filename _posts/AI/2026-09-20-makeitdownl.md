@@ -1,4 +1,3 @@
-
 ---
 title: "Claude Code에서 PDF 분석 시 토큰 아끼는 방법 (feat. MarkItDown)"
 excerpt_separator: "<!--more-->"
@@ -6,7 +5,7 @@ date: 2026-09-20
 categories:
   - AI
 tags:
-  - Claude, Claude Code, MarkItDown, MCP, PDF, Markdown]
+  - [Claude, ClaudeCode, MarkItDown, MCP, PDF, Markdown]
 
 toc : true
 toc_sticky : true
