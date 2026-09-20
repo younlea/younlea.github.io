@@ -315,8 +315,8 @@ npx skills add sanjay3290/ai-skills --all     # 전부 설치
 > 봤다면 잘못된 정보입니다. 둘은 다른 메커니즘이고, Claude Code에
 > `clauderc.json`이라는 설정 파일은 존재하지 않습니다.
 
-👉 **자세한 내용**: [Claude Code 에이전트 스킬 완전 정리](/ai/claude-code-agent-skills/)
-
+👉 **이 팩 자세히**: [Addy Osmani의 Agent Skills 완전 정리](/ai/addy-osmani-agent-skills/)
+👉 **스킬 메커니즘**: [Claude Code 에이전트 스킬 완전 정리](/ai/claude-code-agent-skills/)
 ---
 
 ## 5. ECC (Everything Claude Code) 🧠
