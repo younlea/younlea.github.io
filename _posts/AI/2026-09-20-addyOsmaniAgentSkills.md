@@ -1,6 +1,6 @@
 ---
-layout: post
 title: "Addy Osmani의 Agent Skills — AI 에이전트에게 시니어 개발자의 절차를 주입하기"
+excerpt_separator: "<!--more-->"
 date: 2026-09-20
 categories: [AI, Dev]
 tags: [claude-code, agent-skills, addy-osmani, sdlc, ai-tooling]
