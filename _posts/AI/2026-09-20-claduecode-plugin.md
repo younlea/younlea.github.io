@@ -56,10 +56,6 @@ Ponytail이 설치되고 세션이 재시작되면, 평소처럼 코딩 지시�
 * **`/ponytail-help`**
 전체 명령어와 빠른 도움말을 확인합니다.
 
-```
-
-```
-
 ---
 
 ## 2. 옵니라우트 (OmniRoute) 🔀
@@ -80,8 +76,9 @@ Ponytail이 설치되고 세션이 재시작되면, 평소처럼 코딩 지시�
 npm install -g omniroute
 
 ```
+설치하면 서버가 localhost:20128에서 뜬다. CLI와 웹 대시보드가 같은 프로세스에서 한 포트로 서비스된다.
 
-*(설치 후 Claude Code의 API Endpoint를 `http://localhost:8080`으로 변경해야 합니다.)*
+업데이트는 omniroute update를 쓰자. 내부적으로 --include=optional을 항상 붙여서 돌기 때문에, npm 설정에 omit=optional이 있어도 네이티브 SQLite 드라이버나 OS 키링 바인딩이 조용히 빠지는 사고를 막아준다.
 
 ---
 
