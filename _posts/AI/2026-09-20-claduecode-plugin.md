@@ -167,37 +167,71 @@ mkdir -p ~/.claude/skills/my-skill
 👉 **자세한 내용**: [Claude Code 에이전트 스킬 완전 정리](/ai/claude-code-agent-skills/)
 
 
-## 5. ECC (Everything Claude Code / ecc-universal) 🧠
+### 5. ECC (Everything Claude Code) 🧠
 
-Anthropic 해커톤 우승자가 개발한, 단순한 코딩 어시스턴트를 '고급 자율 엔지니어링 팀'처럼 작동하게 만들어주는 강력한 **AI 하네스(Agent Harness) 통합 시스템**입니다.
+Claude Code에 `계획 → 테스트 → 구현 → 리뷰 → 검증 → 기억 → 개선` 파이프라인을
+통째로 얹는 에이전트 하네스 시스템입니다. 매번 프롬프트로 "TDD로 해줘"를
+설명하는 대신, 그 절차를 설치해서 에이전트의 기본 동작으로 만듭니다.
 
-### 💡 유용한 점
-- **체계적인 워크플로우 강제:** AI가 무턱대고 코드를 짜는 것을 막고 `요구사항 분석 ➡️ 구현 계획 승인 대기 ➡️ TDD(테스트 주도 개발) 기반 작성 ➡️ 코드 리뷰`라는 정해진 절차를 따르도록 유도합니다.
-- **역할 분담 (Agent Roles):** 코드 작성, 보안 감사(AgentShield), 리팩토링 등 각 작업에 특화된 에이전트와 스킬을 부여해 결과물의 품질을 극대화합니다.
-- **컨텍스트 최적화 (Codemap):** 프로젝트 구조를 AI가 효율적으로 탐색하게 만들어 불필요한 토큰 낭비(컨텍스트 소모)를 방지합니다.
+#### 💡 유용한 점
 
-### 🛠️ 설치 방법
-터미널에서 Node.js 환경의 `npx`를 사용하거나, Claude Code 내부의 마켓플레이스 명령어를 통해 설치할 수 있습니다. 
+* **워크플로우 강제**: 계획을 채팅 기록에 흘려보내는 대신 편집 가능한
+  산출물로 만들고, TDD를 RED → GREEN → REFACTOR 게이트로 돌립니다.
+* **역할 분리**: 코드를 짠 컨텍스트가 아니라 **새 컨텍스트의 리뷰어**가
+  검토합니다. 플래너, 아키텍트, 보안 리뷰어, 빌드 복구 등 68개 서브에이전트.
+* **AgentShield**: 프롬프트, 훅, MCP 설정, 권한, 시크릿, 에이전트 파일까지
+  하네스 자체를 공격 표면으로 보고 스캔합니다.
 
-**방법 A. Claude Code 내부 플러그인으로 설치 (권장)**
-Claude Code를 실행한 상태에서 아래 명령어를 순서대로 입력합니다.
+MIT 라이선스이고, 이 글 기준 v2.2.2 / 에이전트 68개 / 스킬 292개입니다.
+
+#### 🛠️ 설치 방법
+
+**설치 경로는 반드시 하나만 고르세요.** 같은 하네스에 두 번 설치하면 스킬,
+명령어, 훅이 중복됩니다.
+
+**권장 — 가이드 설치 마법사**
+
 ```bash
-/plugin marketplace add affaan-m/everything-claude-code
+npx ecc-universal@2.2.2 setup
+```
+
+기존 설치 상태를 먼저 점검한 뒤 스코프(user/project/local)와 훅 프로파일을
+물어보고 진행합니다. 업데이트나 스코프 변경도 같은 명령을 다시 실행하면 됩니다.
+
+**대안 — Claude Code 네이티브 플러그인 명령**
+
+```
+/plugin marketplace add https://github.com/affaan-m/ECC
 /plugin install ecc@ecc
-
 ```
 
-**방법 B. NPM을 통한 전역 설치**
-터미널에서 npm 패키지(`ecc-universal`)를 이용해 설치합니다.
+둘 중 하나만. 이 위에 수동 설치를 얹지 마세요.
+
+**rules는 별도입니다.** Claude Code 플러그인은 rules를 배포할 수 없어서
+직접 복사해야 합니다.
 
 ```bash
-npm install -g ecc-universal
-# 특정 언어(예: typescript) 환경에 맞게 초기화
-npx ecc typescript /plan
-
+git clone https://github.com/affaan-m/ECC.git && cd ECC
+mkdir -p ~/.claude/rules/ecc
+cp -R rules/common ~/.claude/rules/ecc/
+cp -R rules/typescript ~/.claude/rules/ecc/   # 본인 스택으로 교체
 ```
 
-*(설치 후에는 프롬프트에 "현재 설치된 ECC 기능을 사용해 계획부터 세워줘"라고 요청하면 ECC의 강력한 워크플로우를 바로 체감할 수 있습니다.)*
+#### 첫 사용
+
+```
+/ecc:plan "OAuth 기반 사용자 인증 추가"
+```
+
+플러그인 설치는 `/ecc:` 네임스페이스를 씁니다. 수동 설치라면 `/plan`처럼
+짧은 형태가 노출될 수 있습니다.
+
+> ⚠️ **공식 채널만 사용하세요.** 저장소 `affaan-m/ECC`, npm `ecc-universal`과
+> `ecc-agentshield`, 플러그인 슬러그 `ecc@ecc`, 사이트 `ecc.tools`뿐입니다.
+> 서드파티 재업로드와 비공식 미러는 프로젝트가 관리·검토하지 않으며
+> 악성코드가 있을 수 있다고 공식 경고돼 있습니다.
+
+👉 **자세한 내용**: [ECC 설치와 사용 완전 정리](/ai/ecc-everything-claude-code/)
 
 ---
 
