@@ -119,26 +119,53 @@ graphify install
 
 ---
 
-## 4. 에이전트 스킬 (Agent Skills) 🛠️
+### 4. 에이전트 스킬 (Agent Skills) 🛠️
 
-구글 AI 엔지니어링 디렉터 출신이 개발한 24가지의 전문 코딩 워크플로우 스킬 팩입니다. (MCP 지원)
+Claude Code에 전문 워크플로우를 추가하는 확장 방식입니다. `SKILL.md` 파일
+하나에 "언제 쓰는지"와 "어떻게 하는지"를 적어두면, Claude가 상황에 맞을 때
+알아서 불러옵니다.
 
-### 💡 유용한 점
+#### 💡 유용한 점
 
-* **시니어급 워크플로우:** 기획 ➡️ 코딩 ➡️ 테스트 ➡️ 배포의 각 단계에 맞춰 AI가 알아서 적절한 도구를 활성화합니다.
-* **자동화된 퀄리티 컨트롤:** 단순히 코드를 짜는 것을 넘어, 테스트 코드를 작성하고 린트(Lint) 에러를 스스로 수정하는 등 완성도를 높입니다.
-* **플러그앤플레이:** 복잡한 프롬프트 엔지니어링 없이 스킬 팩만 연결하면 AI의 지능이 크게 향상된 것을 체감할 수 있습니다.
+* **반복 프롬프팅 감소**: 매번 설명하던 규칙을 파일로 고정합니다. 코드 리뷰
+  기준, 커밋 컨벤션, 배포 절차 같은 것들이요.
+* **자동 호출**: 슬래시 명령을 외울 필요가 없습니다. Claude가 `description`을
+  보고 관련 있을 때 스스로 로드합니다. 직접 `/스킬이름`으로 부를 수도 있고요.
+* **팀 공유**: 프로젝트의 `.claude/skills/`에 넣고 git에 커밋하면 팀 전체가
+  같은 워크플로우를 씁니다.
 
-### 🛠️ 설치 방법
+#### 🛠️ 설치 방법
 
-Claude Code의 MCP(Model Context Protocol) 환경 파일(`clauderc.json` 등)에 스킬 서버를 추가하여 연동합니다.
-
-```bash
-npm install -g @agent-skills/mcp-server
+**방법 A — 플러그인 마켓플레이스** (Claude Code 안에서)
 
 ```
+/plugin marketplace add <owner>/<repo>
+/plugin install <플러그인>@<마켓플레이스>
+```
 
-*(설치 후 설정 파일의 `mcpServers` 항목에 추가해 줍니다.)*
+**방법 B — skills CLI** (Claude Code, Cursor, Codex 등 공용)
+
+```bash
+npx skills add <owner>/<repo> --list          # 목록 확인
+npx skills add <owner>/<repo> --all           # 전부 설치
+```
+
+**방법 C — 직접 복사**
+
+```bash
+mkdir -p ~/.claude/skills/my-skill
+# 그 안에 SKILL.md 를 만들면 끝
+```
+
+설치 후 `/skills`로 목록을 확인하고, 재시작 없이 반영하려면 `/reload-skills`를
+실행합니다.
+
+> ⚠️ **스킬은 MCP가 아닙니다.** 스킬을 `mcpServers` 항목에 등록하라는 안내를
+> 봤다면 잘못된 정보입니다. 둘은 다른 메커니즘이고, Claude Code에
+> `clauderc.json`이라는 설정 파일은 존재하지 않습니다.
+
+👉 **자세한 내용**: [Claude Code 에이전트 스킬 완전 정리](/ai/claude-code-agent-skills/)
+
 
 ## 5. ECC (Everything Claude Code / ecc-universal) 🧠
 
