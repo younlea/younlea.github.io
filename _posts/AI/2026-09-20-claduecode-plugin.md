@@ -58,7 +58,7 @@ Ponytail이 설치되고 세션이 재시작되면, 평소처럼 코딩 지시�
 
 ---
 
-## 2. 옵니라우트 (OmniRoute) 🔀
+## 2. 옵니라우트 [omniroute](https://younlea.github.io/ai/OmniRoute/) 🔀
 
 350여 개의 무료 AI 모델 제공자를 연결해 사실상 무제한에 가까운 토큰을 사용할 수 있게 해주는 로컬 AI 게이트웨이입니다.
 
@@ -80,10 +80,10 @@ npm install -g omniroute
 
 업데이트는 omniroute update를 쓰자. 내부적으로 --include=optional을 항상 붙여서 돌기 때문에, npm 설정에 omit=optional이 있어도 네이티브 SQLite 드라이버나 OS 키링 바인딩이 조용히 빠지는 사고를 막아준다.
 
-[omniroute](https://younlea.github.io/ai/OmniRoute/).   
+.   
 ---
 
-## 3. 그래피파이 (Graphify) 🕸️
+## 3. 그래피파이 [Graphify](https://younlea.github.io/ai/Graphify/) 🕸️
 
 프로젝트의 전체 코드베이스를 '지식 그래프(Knowledge Graph)' 형태로 변환해 주는 컨텍스트 맵핑 도구입니다.
 
