@@ -1,0 +1,420 @@
+---
+title: "Graphify — 코드베이스를 지식 그래프로 만들어 AI에게 지도 쥐여주기"
+excerpt_separator: "<!--more-->"
+date: 2026-09-20
+categories:
+  - AI
+tags:
+  - [graphify, claude-code, knowledge-graph, tree-sitter, ai-tooling]
+
+toc : true
+toc_sticky : true
+---
+
+## Graphify가 뭔가
+
+한 줄로: **프로젝트 폴더 전체를 질의 가능한 지식 그래프로 바꿔주는 AI
+어시스턴트 스킬**이다.
+
+Claude Code에서 `/graphify .` 한 줄이면 끝난다. CLI 빌드 도구가 아니라
+어시스턴트 안에서 호출하는 스킬이라는 게 핵심이다.
+
+```
+graphify-out/
+├── graph.html       브라우저로 열어서 노드 클릭, 필터, 검색
+├── GRAPH_REPORT.md  핵심 개념, 의외의 연결, 던져볼 만한 질문
+└── graph.json       전체 그래프 — 파일을 다시 안 읽고 이걸 질의
+```
+
+Claude Code 외에 Codex, Cursor, OpenCode, Gemini CLI, GitHub Copilot CLI,
+Aider, Kiro, Antigravity 등 20개 가까운 환경을 지원한다.
+
+---
+
+## 왜 쓰나
+
+### 1. 에이전트가 파일을 하나씩 읽는 걸 줄여준다
+
+수백 개 파일짜리 저장소에서 "인증이 어디서 DB를 건드리지?"를 물으면,
+에이전트는 grep 돌리고 파일 열고 또 열고를 반복한다. 매번, 새 세션마다.
+
+그래프를 만들어두면 그 질문에 대해 파일을 읽는 대신 그래프를 조회한다.
+
+```
+/graphify query "what connects auth to the database?"
+/graphify path "UserService" "DatabasePool"
+/graphify explain "RateLimiter"
+```
+
+다만 오해는 말자. **파일 읽기를 "차단"하는 건 아니다.** 더 싼 경로를
+제공하고, 훅과 지시문으로 그쪽을 쓰도록 유도하는 구조다.
+
+### 2. 코드 파싱은 로컬에서, API 호출 없이
+
+이게 비슷한 도구들과 갈리는 지점이다. 코드는 tree-sitter AST로 파싱한다.
+결정적(deterministic)이고, LLM을 안 거치고, **아무것도 밖으로 안 나간다.**
+코드만 있는 프로젝트는 API 키 없이 완전 오프라인으로 돌아간다.
+
+지원 문법이 36개다. Python, TS/JS, Go, Rust, Java, C/C++, Ruby, C#, Kotlin,
+Scala, PHP, Swift, Lua, Zig, PowerShell, Elixir, Dart, Vue, Svelte, Astro,
+SQL, Fortran, Pascal, 셸 스크립트, CUDA, Metal까지 들어간다.
+
+문서·PDF·이미지는 의미 추출이 필요해서 어시스턴트 모델을 쓴다. 영상과 오디오는
+faster-whisper로 **로컬 전사**한다.
+
+### 3. 찾은 것과 추측한 것을 구분해준다
+
+모든 관계에 태그가 붙는다.
+
+- `EXTRACTED` — 소스에 명시적으로 있음
+- `INFERRED` — 추론. 신뢰도 점수가 같이 붙음
+- `AMBIGUOUS` — 애매해서 검토 필요
+
+AI 도구를 쓸 때 제일 불안한 게 "이게 진짜 코드에 있는 건가, 지어낸 건가"인데,
+그걸 그래프 레벨에서 구분해둔다.
+
+### 4. 리포트가 생각보다 쓸 만하다
+
+`GRAPH_REPORT.md`에 들어가는 것들.
+
+- **God nodes** — 가장 많이 연결된 개념들. 모든 게 여기를 통과한다
+- **의외의 연결** — 서로 다른 파일·모듈에 사는 것들 사이의 링크를 의외성 순으로 정렬
+- **"왜"** — `# NOTE:`, `# WHY:`, `# HACK:` 같은 인라인 주석과 docstring, 문서의
+  설계 근거를 **별도 노드로 뽑아서** 해당 코드에 연결한다
+- **제안 질문** — 이 그래프가 특히 잘 답할 수 있는 질문 4~5개
+
+세 번째가 특히 좋다. 낯선 코드베이스에서 "이거 왜 이렇게 짰지?"의 답이 보통
+3년 전 주석 한 줄에 있는데, 그걸 검색 가능한 노드로 올려준다.
+
+### 5. 벡터 DB가 필요 없다
+
+임베딩도 벡터 스토어도 안 쓴다. 그래프 구조 자체가 유사도 신호 역할을 하고,
+커뮤니티 탐지에 직접 반영된다. 인프라가 하나 줄어드는 셈이다.
+
+---
+
+## 설치
+
+### 사전 요구사항
+
+Python 3.10 이상. 그리고 uv를 권장한다.
+
+```bash
+# macOS
+brew install python@3.12 uv
+
+# Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Windows
+winget install astral-sh.uv
+```
+
+### 1단계 — 패키지 설치
+
+```bash
+# 권장
+uv tool install graphifyy
+
+# 또는
+pipx install graphifyy
+
+# pip도 되지만 PATH 문제가 생길 수 있다
+pip install graphifyy
+```
+
+**Mac/Windows에서 plain `pip`은 피하는 게 좋다.** 스킬이 런타임에
+`graphify-out/.graphify_python`으로 파이썬을 찾는데, pip이 설치한 환경과
+다르면 `ModuleNotFoundError: No module named 'graphify'`가 난다.
+`uv tool install`과 `pipx install`은 자체 환경에 격리해서 이 문제를 피한다.
+
+### 2단계 — 어시스턴트에 스킬 등록
+
+```bash
+graphify install
+```
+
+Claude Code는 이걸로 끝이다(Windows도 자동 감지). 다른 환경은 플래그를 준다.
+
+| 플랫폼 | 명령 |
+|---|---|
+| Claude Code | `graphify install` |
+| Codex | `graphify install --platform codex` |
+| Cursor | `graphify cursor install` |
+| Gemini CLI | `graphify install --platform gemini` |
+| OpenCode | `graphify install --platform opencode` |
+| GitHub Copilot CLI | `graphify install --platform copilot` |
+| VS Code Copilot Chat | `graphify vscode install` |
+| Kiro | `graphify kiro install` |
+| 범용 Agent Skills | `graphify install --platform agents` |
+
+사용자 프로필이 아니라 현재 저장소에만 깔고 싶으면 `--project`를 붙인다.
+`.claude/skills/graphify/SKILL.md` 아래에 쓰이고, 커밋할 파일에 대한
+`git add` 힌트를 출력해준다.
+
+```bash
+graphify install --project
+graphify install --project --platform codex
+```
+
+### 필요한 것만 골라서
+
+기본 설치는 코드만 다룬다. 나머지는 extras다.
+
+```bash
+uv tool install "graphifyy[pdf]"        # PDF
+uv tool install "graphifyy[office]"     # .docx, .xlsx
+uv tool install "graphifyy[video]"      # 영상/음성 전사
+uv tool install "graphifyy[sql]"        # SQL 스키마 추출
+uv tool install "graphifyy[terraform]"  # .tf/.hcl
+uv tool install "graphifyy[mcp]"        # MCP 서버
+uv tool install "graphifyy[neo4j]"      # Neo4j 푸시
+uv tool install "graphifyy[all]"        # 전부
+```
+
+### 안 될 때
+
+**`graphify: command not found`** — 설치는 됐는데 PATH에 없는 거다.
+uv면 `uv tool update-shell`, pipx면 `pipx ensurepath`를 실행하고 새 터미널을
+열자. pip이면 `~/.local/bin`(Linux) 또는 `~/Library/Python/3.x/bin`(Mac)을
+PATH에 추가하거나 `python -m graphify`로 실행한다.
+
+**`uvx graphify ...`가 패키지를 못 찾는다** — `uv tool run`은 첫 단어를
+*패키지 이름*으로 읽는데, 패키지는 `graphifyy`고 `graphify`는 그 안의
+명령이라서 그렇다. 이렇게 쓰자.
+
+```bash
+uvx --from graphifyy graphify install
+```
+
+**PowerShell에서 경로 에러** — PowerShell은 앞의 `/`를 경로 구분자로 본다.
+`/graphify .` 말고 `graphify .`를 쓰자.
+
+---
+
+## 사용법
+
+### 기본
+
+Claude Code를 열고:
+
+```
+/graphify .
+```
+
+끝이다. 몇 가지 자주 쓰는 변형.
+
+```
+/graphify ./docs --update        # 바뀐 파일만 재추출
+/graphify . --mode deep          # 관계 추출을 더 공격적으로
+/graphify . --cluster-only       # 재추출 없이 클러스터링만 다시
+/graphify . --no-viz             # HTML 생략, 리포트 + JSON만
+/graphify . --wiki               # 그래프에서 마크다운 위키 생성
+```
+
+아키텍처 문서가 필요하면 Mermaid 콜플로우 다이어그램이 들어간 HTML을 뽑을 수 있다.
+
+```bash
+graphify export callflow-html
+```
+
+### 그래프에 질문하기
+
+```
+/graphify query "인증 흐름을 보여줘"
+/graphify path "DigestAuth" "Response"
+/graphify explain "SwinTransformer"
+```
+
+터미널에서도 된다.
+
+```bash
+graphify query "what connects auth to the database?"
+```
+
+외부 자료를 그래프에 추가할 수도 있다.
+
+```
+/graphify add https://arxiv.org/abs/1706.03762   # 논문
+/graphify add <youtube-url>                       # 영상 전사 후 추가
+```
+
+### 어시스턴트가 항상 그래프를 쓰게 만들기
+
+그래프를 만든 뒤 프로젝트에서 한 번 실행한다.
+
+```bash
+graphify claude install     # CLAUDE.md + PreToolUse 훅
+```
+
+Claude Code와 Gemini CLI처럼 페이로드를 받는 훅을 지원하는 환경에서는,
+검색 계열 도구 호출 전에 — Claude Code는 Read/Glob으로 소스 파일을 하나씩
+읽기 전에도 — 훅이 발동해서 그래프 경로로 유도한다. Codex나 Cursor 같은
+환경은 `AGENTS.md`, `.cursor/rules/` 같은 지시문 파일이 같은 역할을 한다.
+
+전체 제거는 한 방에 된다.
+
+```bash
+graphify uninstall           # 모든 플랫폼에서 제거
+graphify uninstall --purge   # graphify-out/ 까지 삭제
+```
+
+### 제외할 파일
+
+`.graphifyignore`를 프로젝트 루트에 만들면 된다. `.gitignore` 문법 그대로,
+`!` 부정도 된다.
+
+`.gitignore`는 **자동으로 존중된다.** 둘 다 있으면 병합되고,
+`.graphifyignore` 패턴이 나중에 평가돼서 충돌 시 이긴다. 다만
+`.graphifyignore`는 **더 제외하는 것만 가능**하다. `.gitignore`가 이미
+제외한 파일을 다시 포함시키지는 못한다.
+
+```
+# .graphifyignore
+node_modules/
+dist/
+*.generated.py
+```
+
+---
+
+## 팀에서 쓰기
+
+`graphify-out/`은 **git에 커밋하라고 만들어진 디렉터리**다. 모두가 같은 지도를
+들고 시작하게 된다.
+
+```
+# .gitignore 에 추가 권장
+graphify-out/cost.json        # 로컬 전용
+# graphify-out/cache/         # 선택: 속도를 원하면 커밋, 저장소 크기를 원하면 제외
+```
+
+워크플로는 이렇다.
+
+1. 한 명이 `/graphify .`를 돌리고 `graphify-out/`을 커밋
+2. 나머지는 pull — 각자의 어시스턴트가 바로 그래프를 읽는다
+3. `graphify hook install`로 커밋마다 자동 재빌드. **AST만 돌리므로 API 비용이 없다**
+4. 문서나 논문이 바뀌면 `/graphify --update`로 해당 노드만 갱신
+
+3번에는 덤이 하나 있다. 훅을 설치하면 git merge driver도 같이 설정돼서,
+두 명이 동시에 커밋해도 `graph.json`이 충돌 마커로 더럽혀지지 않고 자동으로
+union 머지된다.
+
+> graphify를 재설치하거나 업그레이드했다면 `graphify hook install`을 다시
+> 실행하자. 훅 스크립트에 인터프리터 경로가 설치 시점에 박히기 때문이다.
+
+### MCP 서버로 띄우기
+
+반복 조회가 많으면 MCP 서버로 노출하는 게 낫다.
+
+```bash
+# stdio (개발자별 로컬)
+python -m graphify.serve graphify-out/graph.json
+
+# HTTP (팀 전체가 한 URL을 바라봄)
+python -m graphify.serve graphify-out/graph.json \
+  --transport http --host 0.0.0.0 --api-key "$SECRET"
+```
+
+`query_graph`, `get_node`, `get_neighbors`, `shortest_path` 같은 도구를
+구조화된 형태로 제공한다.
+
+기본 바인딩은 `127.0.0.1` 루프백이다. **공유 호스트에 노출할 거면
+`--host 0.0.0.0`과 `--api-key`를 반드시 같이 쓰자.**
+
+---
+
+## CI에서 돌리기 (헤드리스)
+
+IDE 없이 추출하려면 `graphify extract`를 쓴다. 백엔드를 고를 수 있다.
+
+```bash
+graphify extract ./docs --backend gemini
+graphify extract ./docs --backend ollama        # 완전 로컬
+graphify extract ./docs --backend bedrock       # IAM, API 키 불필요
+graphify extract --postgres "postgresql://user:pass@host/db"   # 라이브 스키마 introspection
+```
+
+**Claude Pro/Max 구독자라면 이 옵션을 보자.**
+
+```bash
+graphify extract ./docs --backend claude-cli
+```
+
+API 키 없이 `claude` CLI 바이너리를 통해 본인 구독을 쓴다. 별도 API 요금이
+안 나간다는 뜻이다. 다만 구독 사용량 풀에서 차감되니 한도는 신경 쓰자.
+
+`ANTHROPIC_BASE_URL`을 받기 때문에 LiteLLM 프록시나 게이트웨이를 끼울 수도 있다.
+
+```bash
+ANTHROPIC_BASE_URL=http://localhost:4000 ANTHROPIC_MODEL=my-model \
+  graphify extract ./docs --backend claude
+```
+
+> **다시 강조:** `/graphify` 스킬을 IDE 안에서 쓸 때는 모델 API를 IDE 세션이
+> 제공하므로 **API 키가 전혀 필요 없다.** 위 환경변수들은 헤드리스 추출
+> 전용이다.
+
+---
+
+## 주의사항
+
+**쿼리가 로컬에 로깅된다.** 모든 `graphify query`, `path`, `explain`,
+MCP `query_graph` 호출이 `~/.cache/graphify-queries.log`에 JSON Lines로
+기록된다. 타임스탬프, 질문, 코퍼스, 반환 노드 수, 소요 시간이 남는다.
+전체 응답 본문은 기본적으로 저장되지 않는다. 끄려면:
+
+```bash
+export GRAPHIFY_QUERY_LOG_DISABLE=1
+```
+
+텔레메트리나 사용량 추적은 없다. 어디로 전송되는 게 아니라 로컬 파일이다.
+그래도 알고는 있자.
+
+**노드가 5천 개를 넘으면 HTML이 브라우저에서 안 열린다.** `--no-viz`로
+건너뛰고 JSON을 직접 질의하자.
+
+```bash
+graphify cluster-only ./my-project --no-viz
+```
+
+**리팩터링 후 노드가 줄었다면 `--force`가 필요하다.** 파일을 삭제해도 옛
+노드가 남는다. 새 그래프의 노드 수가 더 적으면 기본적으로 덮어쓰지 않기 때문이다.
+
+```bash
+graphify extract . --force
+```
+
+**문서·PDF 추출이 비었다면 API 키 문제다.** 코드만 있는 코퍼스는 키가 필요
+없지만, 문서와 이미지는 LLM 호출이 필요하다.
+
+**포크가 많다.** 원본 저장소는 `safishamsi/graphify` 하나다. 같은 이름의
+저장소가 GitHub에 여럿 떠 있는데 대부분 포크다.
+
+**`graph.json`에 512MiB 상한이 있다.** 아주 큰 코퍼스라면
+`GRAPHIFY_MAX_GRAPH_BYTES`로 올릴 수 있다.
+
+---
+
+## 정리
+
+- 패키지는 **`graphifyy`**(y 두 개), 명령은 `graphify`. `graphify-code`는 아니다
+- `uv tool install graphifyy && graphify install` → Claude Code에서 `/graphify .`
+- 코드는 tree-sitter로 **로컬에서** 파싱한다. 코드만이면 키도 네트워크도 불필요
+- 모든 관계에 EXTRACTED / INFERRED / AMBIGUOUS 태그가 붙어서 추측을 구분할 수 있다
+- `graphify claude install`까지 해야 어시스턴트가 실제로 그래프를 쓴다. 이걸 빼면
+  그래프만 만들어두고 안 쓰게 된다
+- 팀이면 `graphify-out/`을 커밋하고 `graphify hook install`로 자동 재빌드
+
+수백 개 파일짜리 저장소에서 같은 파일을 반복해 읽게 만드는 비용을 생각하면,
+초기 세팅 10분은 금방 회수된다. 작은 프로젝트에서는 굳이 필요 없다.
+
+### 참고
+
+- 저장소: <https://github.com/safishamsi/graphify>
+- PyPI: <https://pypi.org/project/graphifyy/>
+- 한국어 README: `docs/translations/README.ko-KR.md`
+- 동작 원리: `docs/how-it-works.md`
+
+> 이 글은 2026년 9월 기준이다. 릴리스가 잦으니 명령어가 안 먹으면 저장소의
+> 최신 README를 먼저 확인하자.
