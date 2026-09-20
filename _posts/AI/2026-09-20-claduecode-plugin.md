@@ -98,10 +98,24 @@ npm install -g omniroute
 Python 환경에서 pip를 통해 설치하고 프로젝트 루트 폴더에서 실행하여 그래프를 생성합니다.
 
 ```bash
-pip install graphify-code
-graphify build --output knowledge-graph.json
+bash
+# 1단계: 설치 (uv 권장 — PATH 설정이 자동)
+uv tool install graphifyy
 
+# pipx도 가능
+pipx install graphifyy
+
+# pip을 쓸 거면 PATH 설정이 필요할 수 있음
+pip install graphifyy
+
+# 2단계: 어시스턴트에 스킬 등록
+graphify install
 ```
+그 다음 Claude Code를 열고 이렇게 칩니다.
+```
+/graphify .
+```
+
 
 ---
 
