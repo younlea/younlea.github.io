@@ -316,10 +316,10 @@ npx skills add sanjay3290/ai-skills --all     # 전부 설치
 > `clauderc.json`이라는 설정 파일은 존재하지 않습니다.
 
 👉 **이 팩 자세히**: [Addy Osmani의 Agent Skills 완전 정리](/ai/addy-osmani-agent-skills/)
-👉 **스킬 메커니즘**: [Claude Code 에이전트 스킬 완전 정리](/ai/claude-code-agent-skills/)
+👉 **스킬 메커니즘**: [Claude Code 에이전트 스킬 완전 정리](https://younlea.github.io/ai/Agent-Skills/)
 ---
 
-## 5. ECC (Everything Claude Code) 🧠
+## 5. ECC [Everything Claude Code](https://younlea.github.io/ai/ECC-(Everything-Claude-Code)/) 🧠
 
 Claude Code에 `계획 → 테스트 → 구현 → 리뷰 → 검증 → 기억 → 개선` 파이프라인을
 통째로 얹는 에이전트 하네스 시스템입니다. 매번 프롬프트로 "TDD로 해줘"를
@@ -402,7 +402,7 @@ rules는 **상시 로드**되니 `common` 하나에 실제로 쓰는 언어 팩 
 > 악성코드가 있을 수 있다고 공식 경고돼 있습니다. 옛 마켓플레이스 식별자
 > `everything-claude-code@everything-claude-code`는 이제 동작하지 않습니다.
 
-👉 **자세한 내용**: [ECC 설치와 사용 완전 정리](/ai/ecc-everything-claude-code/)
+👉 **자세한 내용**: [ECC 설치와 사용 완전 정리](https://younlea.github.io/ai/ECC-(Everything-Claude-Code))
 
 ---
 
