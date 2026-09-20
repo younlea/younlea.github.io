@@ -77,8 +77,7 @@ Ponytail이 설치되고 세션이 재시작되면, 평소처럼 코딩 지시�
 로컬 프록시 서버 형태로 구동하는 것이 안정적이며, Docker를 사용한 설치를 권장합니다.
 
 ```bash
-docker pull omniroute/gateway
-docker run -d -p 8080:8080 omniroute/gateway
+npm install -g omniroute
 
 ```
 
