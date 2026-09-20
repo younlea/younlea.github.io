@@ -33,10 +33,10 @@ AI 에이전트에게 "게으른 시니어 개발자"의 마인드를 부여하�
 
 1. 터미널에서 `claude`를 입력해 Claude Code를 실행합니다.
 2. 프롬프트 창에 아래 **두 개의 명령어를 한 줄씩 따로따로** 입력합니다.
-```bash
+
+```
    /plugin marketplace add DietrichGebert/ponytail
    /plugin install ponytail@ponytail
-
 ```
 
 3. **[매우 중요]** 플러그인을 활성화하려면 세션을 재시작해야 합니다. `/exit`을 입력해 종료한 후, 다시 `claude`를 실행하세요.
