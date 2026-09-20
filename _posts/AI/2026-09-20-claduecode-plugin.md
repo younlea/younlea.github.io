@@ -80,7 +80,7 @@ npm install -g omniroute
 
 업데이트는 omniroute update를 쓰자. 내부적으로 --include=optional을 항상 붙여서 돌기 때문에, npm 설정에 omit=optional이 있어도 네이티브 SQLite 드라이버나 OS 키링 바인딩이 조용히 빠지는 사고를 막아준다.
 
-[omniroute](https://github.com/younlea/younlea.github.io/blob/master/_posts/AI/2026-09-20-OmniRoute.md).   
+[omniroute](https://younlea.github.io/ai/OmniRoute/).   
 ---
 
 ## 3. 그래피파이 (Graphify) 🕸️
