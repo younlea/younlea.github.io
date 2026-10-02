@@ -26,7 +26,7 @@
 .tpe-leg .what{grid-column:3;font-size:.85em;padding:.35em 0;display:flex;flex-wrap:wrap;gap:.35em;align-items:center}
 .tpe-chip{display:inline-block;padding:.05em .55em;border-radius:3px;color:#fff;font-size:.9em;font-weight:600;white-space:nowrap}
 .tpe-chip.walk,.tpe-chip.taxi,.tpe-chip.bus{background:transparent;color:inherit;border:1px solid var(--line);font-weight:500}
-.tpe-chip.green{background:var(--green)}.tpe-chip.red{background:var(--red)}.tpe-chip.blue{background:var(--blue)}.tpe-chip.pink{background:var(--pink);color:#3a0a12}
+.tpe-chip.green{background:var(--green)}.tpe-chip.red{background:var(--red)}.tpe-chip.blue{background:var(--blue)}.tpe-chip.pink{background:var(--pink);color:#3a0a12}.tpe-chip.purple{background:#8246AF}.tpe-chip.tour{background:#555}
 .tpe-leg .what a{margin-left:.2em}
 .tpe-pin{width:28px;height:28px;border-radius:50%;background:var(--day);color:#fff;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;font:700 13px/1 sans-serif}
 .tpe-pin.home{background:#444;font-size:14px}
@@ -36,6 +36,7 @@
   <div class="tpe-tabs" role="tablist" aria-label="여행 날짜">
     <button type="button" role="tab" data-day="0" aria-selected="true">1일차 · 10/2(금)<small>시내 핵심 투어</small></button>
     <button type="button" role="tab" data-day="1" aria-selected="false">2일차 · 10/3(토)<small>레드라인 따라 북쪽으로</small></button>
+    <button type="button" role="tab" data-day="2" aria-selected="false">3일차 · 10/4(일)<small>예스진지 투어 · 출국</small></button>
   </div>
   <div class="tpe-map" id="tpe-map" role="region" aria-label="일정 지도"></div>
   <p class="tpe-hint">지도의 점선은 방문 순서를 이은 선이에요. 실제 이동 경로는 각 구간의 '길찾기'를 누르면 구글맵에서 열립니다.</p>
@@ -81,6 +82,27 @@
       {time:'21:15',name:'까르푸 구이린점',lat:25.0376995,lng:121.5062259,pid:'ChIJZfLxBKepQjQRKWVPxv7a9aI',note:'24시간. 펑리수·누가크래커 기념품은 오늘 밤에!',
         leg:{chips:[['walk','도보 10분']],text:'숙소까지',mode:'walking'}},
       Object.assign({},HOME,{time:'22:00',name:'숙소 복귀',note:'모레 패키지 투어 대비 짐 정리'})
+    ]},
+    {color:'#8246AF',stops:[
+      Object.assign({},HOME,{time:'09:15',note:'체크아웃. 짐은 숙소·락커·짐 보관 앱에 맡기고 가볍게 출발',
+        leg:{chips:[['walk','도보 5분']],text:'시먼역 5번 출구 지상으로',mode:'walking'}}),
+      {time:'09:40',name:'집결: 시먼역 5번 출구 지상 앞',lat:25.0428443,lng:121.5087636,pid:'ChIJva9PIQCpQjQRerdNNKTAUvg',note:'가이드에게 한글 성함 말하기 (바우처 없음). 비상연락처 0987-770-987',
+        leg:{chips:[['tour','투어 버스']],text:'타이베이역 경유(10:20 출발) → 예류, 약 1시간 10분',mode:'driving'}},
+      {time:'11:20',name:'예류지질공원',lat:25.2054087,lng:121.6906879,pid:'ChIJ1ZrmCnZMXTQRV2jCWjAX0eQ',note:'여왕머리 바위·버섯 바위. 입장료 NT$120 별도',
+        leg:{chips:[['tour','투어 버스']],text:'약 1시간',mode:'driving'}},
+      {time:'13:30',name:'스펀 폭포',lat:25.0489609,lng:121.7874508,pid:'ChIJ8Z5my_JQXTQRSSmYoOP3EbA',note:'약 50분 관광. 출렁다리 건너 폭포 전망대까지',
+        leg:{chips:[['tour','투어 버스']],text:'약 10분',mode:'driving'}},
+      {time:'14:30',name:'스펀 라오제 (천등)',lat:25.0423966,lng:121.7763662,pid:'ChIJ_____y9RXTQRvnNyOkDE3vY',note:'철길 위 천등 날리기 NT$200~ (색 개수별 가격 다름), 닭날개 볶음밥',
+        leg:{chips:[['tour','투어 버스']],text:'약 50분',mode:'driving'}},
+      {time:'16:10',name:'진과스 황금박물관',lat:25.109722,lng:121.857222,pid:'ChIJjV5f7uFEXTQRzn0SVf1Tb8w',note:'황금 덩어리 만져보기 NT$80, 광부도시락 별도. 일요일이라 대중교통 섞어 이동할 수 있음',
+        leg:{chips:[['tour','버스'],['bus','주말엔 대중교통 혼합']],text:'지우펀까지 약 10분',mode:'driving'}},
+      {time:'17:30',name:'지우펀 라오지에',lat:25.109806,lng:121.845223,pid:'ChIJcZT7-hdFXTQR0qekplqCFV8',note:'홍등 켜지는 시간. 타로볼·땅콩 아이스크림. 인파 많으니 아이들 손 꼭 잡기',
+        leg:{chips:[['tour','투어 버스']],text:'19:20 출발 → 시먼역 하차, 약 50분~',mode:'driving'}},
+      {ref:1,time:'20:10~',name:'하차: 시먼역',lat:25.0428443,lng:121.5087636,note:'하차는 라오허제가 아닌 시먼역 선택. 맡긴 짐 찾고 간단히 저녁',
+        leg:{chips:[['blue','블루라인 1정거장']],text:'시먼역 → 타이베이역, 공항철도 A1역으로 이동',mode:'transit'}},
+      {time:'22:00',name:'타이베이역 공항철도 (A1)',lat:25.04882,lng:121.51375,pid:'ChIJlWImqHKpQjQREk5-6lec4-w',note:'늦어도 22시엔 출발. 샌딩 차량 예약했다면 시먼에서 바로 탑승',
+        leg:{chips:[['purple','공항철도 직통열차']],text:'타이베이역 → 타오위안 공항, 약 40분',mode:'transit'}},
+      {time:'23:00',name:'타오위안 국제공항',lat:25.0804884,lng:121.2311579,pid:'ChIJ1RXSYsCfQjQRCbG1qZC2o3A',note:'진에어 10/5 01:25 출발. 탑승 터미널 미리 확인'}
     ]}
   ];
   var root=document.getElementById('tpe-trip');
@@ -93,16 +115,18 @@
   function render(d){
     var day=DAYS[d];root.style.setProperty('--day',day.color);
     layer.clearLayers();markers=[];
-    var list=document.getElementById('tpe-list'),html='',pts=[],n=0,homeDrawn=false;
+    var list=document.getElementById('tpe-list'),html='',pts=[],n=0,homeIdx=-1,labels=[];
     day.stops.forEach(function(s,i){
       pts.push([s.lat,s.lng]);
-      var label=s.home?'⌂':String(++n);
-      if(!s.home||!homeDrawn){
+      var refIdx=s.ref!==undefined?s.ref:(s.home&&homeIdx>=0?homeIdx:-1);
+      var label=refIdx>=0?labels[refIdx]:(s.home?'⌂':String(++n));
+      labels[i]=label;
+      if(refIdx<0){
         var m=L.marker([s.lat,s.lng],{icon:L.divIcon({className:'',html:'<div class="tpe-pin'+(s.home?' home':'')+'" style="--day:'+day.color+'">'+label+'</div>',iconSize:[28,28],iconAnchor:[14,14]})})
           .bindPopup('<b>'+s.time+' '+s.name+'</b><br>'+s.note).addTo(layer);
-        if(s.home)homeDrawn=true;markers[i]=m;
-      }else{markers[i]=markers[0];}
-      html+='<li class="tpe-stop" data-i="'+i+'"><span class="tpe-time">'+s.time+'</span><span class="tpe-num'+(s.home?' home':'')+'">'+label+'</span><div><p class="tpe-name">'+s.name+'</p><p class="tpe-note">'+s.note+'</p>'+(s.home?'':'<span class="tpe-links"><a href="'+gmap(s)+'" target="_blank" rel="noopener">구글맵에서 보기</a></span>')+'</div></li>';
+        if(s.home)homeIdx=i;markers[i]=m;
+      }else{markers[i]=markers[refIdx];}
+      html+='<li class="tpe-stop" data-i="'+i+'"><span class="tpe-time">'+s.time+'</span><span class="tpe-num'+(label==='⌂'?' home':'')+'">'+label+'</span><div><p class="tpe-name">'+s.name+'</p><p class="tpe-note">'+s.note+'</p>'+(s.home||s.ref!==undefined?'':'<span class="tpe-links"><a href="'+gmap(s)+'" target="_blank" rel="noopener">구글맵에서 보기</a></span>')+'</div></li>';
       var next=day.stops[i+1];
       if(s.leg&&next){
         var chips=s.leg.chips.map(function(c){return '<span class="tpe-chip '+c[0]+'">'+c[1]+'</span>';}).join('');
