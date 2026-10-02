@@ -1,0 +1,133 @@
+<!-- 타이베이 가족여행 1·2일차 지도 일정 (Leaflet + OpenStreetMap) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+.tpe-trip{--green:#008659;--red:#E3002C;--blue:#0070BD;--pink:#F58FA0;--grey:#7a7f87;--line:rgba(127,127,127,.28);--soft:rgba(127,127,127,.08);margin:1.5em 0;font-size:.95em;line-height:1.55}
+.tpe-trip *{box-sizing:border-box}
+.tpe-tabs{display:flex;gap:0;border-bottom:2px solid var(--line);margin:0 0 .9em}
+.tpe-tabs button{flex:1;appearance:none;background:none;border:0;border-bottom:4px solid transparent;margin:0 0 -2px;padding:.65em .5em;font:inherit;font-weight:600;color:inherit;opacity:.55;cursor:pointer;text-align:left;line-height:1.3}
+.tpe-tabs button small{display:block;font-weight:400;font-size:.8em}
+.tpe-tabs button[aria-selected="true"]{opacity:1;border-bottom-color:var(--day)}
+.tpe-tabs button:focus-visible{outline:2px solid var(--day);outline-offset:2px}
+.tpe-map{height:420px;width:100%;border-radius:6px;border:1px solid var(--line);z-index:0}
+.tpe-hint{font-size:.8em;opacity:.7;margin:.4em 0 1.2em}
+.tpe-list{list-style:none;margin:0;padding:0}
+.tpe-list li{margin:0;padding:0}
+.tpe-stop{display:grid;grid-template-columns:3.6em 2em 1fr;gap:.2em .6em;align-items:start;padding:.55em .4em;border-radius:6px;cursor:pointer}
+.tpe-stop:hover,.tpe-stop.is-on{background:var(--soft)}
+.tpe-time{font-variant-numeric:tabular-nums;font-weight:600;padding-top:.15em}
+.tpe-num{width:1.75em;height:1.75em;border-radius:50%;background:var(--day);color:#fff;font-weight:700;font-size:.85em;display:flex;align-items:center;justify-content:center;margin-top:.1em}
+.tpe-num.home{background:#444}
+.tpe-name{font-weight:700;margin:0}
+.tpe-note{margin:.15em 0 .3em;opacity:.85}
+.tpe-links a{font-size:.85em;margin-right:.9em}
+.tpe-leg{display:grid;grid-template-columns:3.6em 2em 1fr;gap:0 .6em;padding:.1em .4em}
+.tpe-leg .bar{grid-column:2;justify-self:center;width:3px;min-height:2.4em;background:repeating-linear-gradient(var(--day) 0 5px,transparent 5px 9px)}
+.tpe-leg .what{grid-column:3;font-size:.85em;padding:.35em 0;display:flex;flex-wrap:wrap;gap:.35em;align-items:center}
+.tpe-chip{display:inline-block;padding:.05em .55em;border-radius:3px;color:#fff;font-size:.9em;font-weight:600;white-space:nowrap}
+.tpe-chip.walk,.tpe-chip.taxi,.tpe-chip.bus{background:transparent;color:inherit;border:1px solid var(--line);font-weight:500}
+.tpe-chip.green{background:var(--green)}.tpe-chip.red{background:var(--red)}.tpe-chip.blue{background:var(--blue)}.tpe-chip.pink{background:var(--pink);color:#3a0a12}
+.tpe-leg .what a{margin-left:.2em}
+.tpe-pin{width:28px;height:28px;border-radius:50%;background:var(--day);color:#fff;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;font:700 13px/1 sans-serif}
+.tpe-pin.home{background:#444;font-size:14px}
+@media (max-width:600px){.tpe-map{height:320px}.tpe-stop,.tpe-leg{grid-template-columns:3.1em 1.9em 1fr}.tpe-tabs button{font-size:.92em}}
+</style>
+<div class="tpe-trip" id="tpe-trip">
+  <div class="tpe-tabs" role="tablist" aria-label="여행 날짜">
+    <button type="button" role="tab" data-day="0" aria-selected="true">1일차 · 10/2(금)<small>시내 핵심 투어</small></button>
+    <button type="button" role="tab" data-day="1" aria-selected="false">2일차 · 10/3(토)<small>레드라인 따라 북쪽으로</small></button>
+  </div>
+  <div class="tpe-map" id="tpe-map" role="region" aria-label="일정 지도"></div>
+  <p class="tpe-hint">지도의 점선은 방문 순서를 이은 선이에요. 실제 이동 경로는 각 구간의 '길찾기'를 누르면 구글맵에서 열립니다.</p>
+  <ol class="tpe-list" id="tpe-list"></ol>
+</div>
+<script>
+(function(){
+  var HOME={name:'숙소 (쿤밍제 81)',lat:25.0436,lng:121.5047,home:true};
+  var DAYS=[
+    {color:'#008659',stops:[
+      Object.assign({},HOME,{time:'11:00',note:'출발 전 시먼역에서 이지카드 구매·충전, ATM 환전'}),
+      {time:'11:15',name:'아종면선 (곱창국수)',lat:25.0432921,lng:121.5077098,pid:'ChIJQXy1aAmpQjQR7UZhdHZCnLE',note:'좌석 없이 서서 먹는 곳. 브런치 후 시먼딩 골목·캐릭터숍 구경',
+        leg:{chips:[['green','그린라인 2정거장']],text:'시먼역 → 중정기념당역, 약 15분',mode:'transit'}},
+      {time:'13:30',name:'중정기념당',lat:25.035502,lng:121.5201832,pid:'ChIJTamiuZ2pQjQRsmnfkkID6UM',note:'14:00 정각 의장대 시범 (야외 민주대도에서 진행, 비 오면 취소)',
+        leg:{chips:[['walk','도보 15분']],text:'융캉제 방향으로 걷거나 동먼역 이용',mode:'walking'}},
+      {time:'15:00',name:'딘타이펑 신이점 (본점)',lat:25.0335035,lng:121.530118,pid:'ChIJbTKSE4KpQjQRXDZZI57v-pM',note:'늦은 점심. 도착하자마자 번호표부터 받기',
+        leg:{chips:[['walk','도보 2분']],text:'바로 옆 융캉제 골목',mode:'walking'}},
+      {time:'16:15',name:'Smoothie House (망고빙수)',lat:25.0325219,lng:121.5298132,pid:'ChIJgQNISIKpQjQRlzATmWyjcz0',note:'10월은 망고 비시즌이라 냉동 망고 사용',
+        leg:{chips:[['red','레드라인 직행']],text:'동먼역 → 타이베이101/세계무역센터역, 약 15분',mode:'transit'}},
+      {time:'17:00',name:'타이베이 101 전망대',lat:25.0336752,lng:121.5648831,pid:'ChIJSTLZ6barQjQRMdkCqrP3CNU',note:'일몰(17:40경)부터 야경까지. 댐퍼 꼭 보기, 티켓은 앱으로 미리',
+        leg:{chips:[['taxi','택시 10~15분']],text:'101 앞에서 택시',mode:'driving'}},
+      {time:'19:15',name:'라오허제 야시장',lat:25.0508854,lng:121.5774891,pid:'ChIJg6W0DZyrQjQR9vZdgYMRoj0',note:'입구 후자오빙(후추빵) 필수',
+        leg:{chips:[['green','그린라인 직행']],text:'입구 옆 송산역 → 시먼역, 약 30분',mode:'transit'}},
+      Object.assign({},HOME,{time:'21:00',name:'숙소 복귀',note:'첫날 마무리'})
+    ]},
+    {color:'#E3002C',stops:[
+      Object.assign({},HOME,{time:'09:30',note:'시먼역에서 출발',
+        leg:{chips:[['blue','블루라인'],['red','레드라인'],['pink','신베이터우 지선']],text:'시먼 → 타이베이역 환승 → 베이터우역 환승 → 신베이터우역, 약 40분',mode:'transit'}}),
+      {time:'10:15',name:'베이터우 도서관',lat:25.1364397,lng:121.5062909,pid:'ChIJC1DM2kSuQjQRHQpu_eh59Mg',note:'숲속 나무 도서관. 내부는 조용히 관람',
+        leg:{chips:[['walk','도보 10분']],text:'베이터우 공원 따라 올라가기',mode:'walking'}},
+      {time:'10:45',name:'베이터우 지열곡',lat:25.137894,lng:121.5118863,pid:'ChIJq73cSEKuQjQRF6Pddi_UFeg',note:'무료. 김이 펄펄 나는 온천 연못, 아이들 과학 체험으로 좋음',
+        leg:{chips:[['pink','신베이터우 지선'],['red','레드라인']],text:'신베이터우 → 베이터우 환승 → 단수이역(종점), 약 30분',mode:'transit'}},
+      {time:'12:30',name:'단수이 라오제',lat:25.168927,lng:121.4440921,pid:'ChIJkf3MYFilQjQRxSE-z1AbDKQ',note:'아게이·어묵탕으로 점심',
+        leg:{chips:[['walk','도보 5분']],text:'라오제 따라 걷기',mode:'walking'}},
+      {time:'13:45',name:'대왕 카스테라 (원조점)',lat:25.170698,lng:121.4391383,pid:'ChIJv7-NpFmlQjQRfdPTf81p-lY',note:'갓 구운 카스테라 간식',
+        leg:{chips:[['walk','도보 15분'],['bus','또는 버스']],text:'언덕 위 홍마오청까지',mode:'walking'}},
+      {time:'14:30',name:'홍마오청',lat:25.1754267,lng:121.4329366,pid:'ChIJqZ4mwE-lQjQR3d6CJEWh2O8',note:'토요일 18:00까지. 옆 진리대학 옥스퍼드 칼리지에서 가족사진',
+        leg:{chips:[['bus','버스 紅26'],['taxi','또는 택시']],text:'위런마터우까지 10~15분',mode:'driving'}},
+      {time:'16:45',name:'위런마터우 연인교',lat:25.1830233,lng:121.4108016,pid:'ChIJ51jpLi6lQjQRj7jRASaeAHQ',note:'17:40경 일몰 감상',
+        leg:{chips:[['bus','버스 紅26'],['red','레드라인']],text:'단수이역 → 젠탄역, 약 50분',mode:'transit'}},
+      {time:'19:00',name:'스린 야시장',lat:25.0884972,lng:121.5243504,pid:'ChIJBa_9xLGuQjQRKfnnhr5twuc',note:'지파이(대왕 닭튀김)·게임 노점',
+        leg:{chips:[['red','레드라인'],['blue','블루라인']],text:'젠탄역 → 타이베이역 환승 → 시먼역, 약 25분',mode:'transit'}},
+      {time:'21:15',name:'까르푸 구이린점',lat:25.0376995,lng:121.5062259,pid:'ChIJZfLxBKepQjQRKWVPxv7a9aI',note:'24시간. 펑리수·누가크래커 기념품은 오늘 밤에!',
+        leg:{chips:[['walk','도보 10분']],text:'숙소까지',mode:'walking'}},
+      Object.assign({},HOME,{time:'22:00',name:'숙소 복귀',note:'모레 패키지 투어 대비 짐 정리'})
+    ]}
+  ];
+  var root=document.getElementById('tpe-trip');
+  if(!root||typeof L==='undefined')return;
+  var map=L.map('tpe-map',{scrollWheelZoom:false});
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap'}).addTo(map);
+  var layer=L.layerGroup().addTo(map),markers=[];
+  function gmap(s){return 'https://www.google.com/maps/search/?api=1&query='+s.lat+','+s.lng+(s.pid?'&query_place_id='+s.pid:'');}
+  function gdir(a,b,m){return 'https://www.google.com/maps/dir/?api=1&origin='+a.lat+','+a.lng+'&destination='+b.lat+','+b.lng+'&travelmode='+m;}
+  function render(d){
+    var day=DAYS[d];root.style.setProperty('--day',day.color);
+    layer.clearLayers();markers=[];
+    var list=document.getElementById('tpe-list'),html='',pts=[],n=0,homeDrawn=false;
+    day.stops.forEach(function(s,i){
+      pts.push([s.lat,s.lng]);
+      var label=s.home?'⌂':String(++n);
+      if(!s.home||!homeDrawn){
+        var m=L.marker([s.lat,s.lng],{icon:L.divIcon({className:'',html:'<div class="tpe-pin'+(s.home?' home':'')+'" style="--day:'+day.color+'">'+label+'</div>',iconSize:[28,28],iconAnchor:[14,14]})})
+          .bindPopup('<b>'+s.time+' '+s.name+'</b><br>'+s.note).addTo(layer);
+        if(s.home)homeDrawn=true;markers[i]=m;
+      }else{markers[i]=markers[0];}
+      html+='<li class="tpe-stop" data-i="'+i+'"><span class="tpe-time">'+s.time+'</span><span class="tpe-num'+(s.home?' home':'')+'">'+label+'</span><div><p class="tpe-name">'+s.name+'</p><p class="tpe-note">'+s.note+'</p>'+(s.home?'':'<span class="tpe-links"><a href="'+gmap(s)+'" target="_blank" rel="noopener">구글맵에서 보기</a></span>')+'</div></li>';
+      var next=day.stops[i+1];
+      if(s.leg&&next){
+        var chips=s.leg.chips.map(function(c){return '<span class="tpe-chip '+c[0]+'">'+c[1]+'</span>';}).join('');
+        html+='<li class="tpe-leg"><span class="bar"></span><span class="what">'+chips+'<span>'+s.leg.text+'</span><a href="'+gdir(s,next,s.leg.mode)+'" target="_blank" rel="noopener">길찾기</a></span></li>';
+      }
+    });
+    list.innerHTML=html;
+    L.polyline(pts,{color:day.color,weight:3,opacity:.75,dashArray:'6 8'}).addTo(layer);
+    map.fitBounds(pts,{padding:[30,30]});
+  }
+  root.querySelectorAll('.tpe-tabs button').forEach(function(b){
+    b.addEventListener('click',function(){
+      root.querySelectorAll('.tpe-tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false');});
+      render(+b.getAttribute('data-day'));
+    });
+  });
+  document.getElementById('tpe-list').addEventListener('click',function(e){
+    if(e.target.closest('a'))return;
+    var li=e.target.closest('.tpe-stop');if(!li)return;
+    var m=markers[+li.getAttribute('data-i')];if(!m)return;
+    root.querySelectorAll('.tpe-stop.is-on').forEach(function(x){x.classList.remove('is-on');});
+    li.classList.add('is-on');
+    map.flyTo(m.getLatLng(),15,{duration:.6});m.openPopup();
+    document.getElementById('tpe-map').scrollIntoView({behavior:'smooth',block:'nearest'});
+  });
+  render(0);
+})();
+</script>
