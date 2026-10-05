@@ -1,10 +1,11 @@
 ---
 title: "fourier-demo"
 excerpt_separator: "<!--more-->"
+date: 2026-10-05
 categories:
-  - etc
+  - AI
 tags:
-  - etc
+  - [fourier]
 
 toc : true
 toc_sticky : true
